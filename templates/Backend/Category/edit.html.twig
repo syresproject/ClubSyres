@@ -1,0 +1,47 @@
+{% extends 'Backend/_layout.html.twig' %}
+
+{% block page_title %}
+    <h3 class="page-title"> Catégories
+        <small>édition d'une catégorie</small>
+    </h3>
+{% endblock %}
+
+{% block content %}
+    <div class="portlet light bordered">
+
+        <div class="portlet-title">
+            <div class="caption">
+                <span class="caption-subject font-red-sunglo bold uppercase">Edition</span>
+            </div>
+            <div class="actions">
+                {{ form_start(delete_form) }}
+                    <button class="btn btn-circle btn-icon-only btn-default" type="submit">
+                        <i class="icon-trash"></i>
+                    </button>
+                {{ form_end(delete_form) }}
+            </div>
+        </div>
+        <div class="portlet-body form">
+            {{ form_start(edit_form, {'attr' : {
+                'class' : 'form-horizontal'
+            }}) }}
+                <div class="form-body">
+                    <div class="form-group">
+                        {{ form_label(edit_form.name, null, {'label': 'name' |trans({}, 'bo_formlabel'), 'label_attr': {'class': 'col-md-2 control-label'}}) }}
+                        <div class="col-md-10">
+                            {{ form_widget(edit_form.name, {'attr': {'class': 'form-control', 'placeholder' : 'Nom'}}) }}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <div class="row">
+                        <div class="col-md-offset-3 col-md-4">
+                            <button class="btn green" type="submit">Enregistrer</button>
+                            <a class="btn default" href="{{ path('admin_category_index') }}">Retour</a>
+                        </div>
+                    </div>
+                </div>
+            {{ form_end(edit_form) }}
+        </div>
+    </div>
+{% endblock %}

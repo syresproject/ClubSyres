@@ -1,0 +1,123 @@
+<?php //%255BApp%255CEntity%255CHomePage%2524CLASSMETADATA%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ClassMetadata')),
+        clone ($p['Doctrine\\ORM\\Id\\IdentityGenerator'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Id\\IdentityGenerator')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\HomePage',
+            ],
+            'namespace' => [
+                'App\\Entity',
+            ],
+            'rootEntityName' => [
+                'App\\Entity\\HomePage',
+            ],
+            'customRepositoryClassName' => [
+                'App\\Repository\\HomePageRepository',
+            ],
+            'identifier' => [
+                [
+                    'id',
+                ],
+            ],
+            'generatorType' => [
+                4,
+            ],
+            'fieldMappings' => [
+                [
+                    'id' => [
+                        'fieldName' => 'id',
+                        'type' => 'integer',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'id' => true,
+                        'columnName' => 'id',
+                    ],
+                    'textWelcome' => [
+                        'fieldName' => 'textWelcome',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 191,
+                        'unique' => false,
+                        'nullable' => true,
+                        'precision' => 0,
+                        'columnName' => 'text_welcome',
+                    ],
+                    'imageName' => [
+                        'fieldName' => 'imageName',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'image_name',
+                    ],
+                    'imageNameUn' => [
+                        'fieldName' => 'imageNameUn',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => true,
+                        'precision' => 0,
+                        'columnName' => 'image_name_un',
+                    ],
+                    'updatedAt' => [
+                        'fieldName' => 'updatedAt',
+                        'type' => 'datetime',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'updated_at',
+                    ],
+                ],
+            ],
+            'fieldNames' => [
+                [
+                    'id' => 'id',
+                    'text_welcome' => 'textWelcome',
+                    'image_name' => 'imageName',
+                    'image_name_un' => 'imageNameUn',
+                    'updated_at' => 'updatedAt',
+                ],
+            ],
+            'columnNames' => [
+                [
+                    'id' => 'id',
+                    'textWelcome' => 'text_welcome',
+                    'imageName' => 'image_name',
+                    'imageNameUn' => 'image_name_un',
+                    'updatedAt' => 'updated_at',
+                ],
+            ],
+            'table' => [
+                [
+                    'name' => 'home_page',
+                ],
+            ],
+            'lifecycleCallbacks' => [
+                [
+                    'prePersist' => [
+                        'setCreatedAtValue',
+                    ],
+                ],
+            ],
+            'idGenerator' => [
+                $o[1],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

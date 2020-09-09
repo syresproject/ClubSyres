@@ -1,0 +1,45 @@
+{% extends './frontend/_layout.html.twig' %}
+{#
+c'est toi ?
+#}
+{% block title %}Insc index{% endblock %}
+
+{% block content %}
+    {{ parent() }}
+
+    <div class="container">
+        <h1>Insc index</h1>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Prenom</th>
+                <th>actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for insc in inscs %}
+                <tr>
+                    <td>{{ insc.id }}</td>
+                    <td>{{ insc.name }}</td>
+                    <td>{{ insc.prenom }}</td>
+                    <td>
+                        <a href="{{ path('insc_show', {'id': insc.id}) }}">show</a>
+                        <a href="{{ path('insc_edit', {'id': insc.id}) }}">edit</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="4">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{{ path('insc_new') }}">Create new</a>
+    </div>
+{% endblock %}
+{% block javascripts %}
+{% endblock %}

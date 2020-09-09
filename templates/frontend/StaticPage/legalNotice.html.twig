@@ -1,0 +1,17 @@
+{% extends "frontend/_layout.home..html.twig" %}
+
+{% block content %}
+    <div class="header-clear-large"></div>
+
+    <div class="content">
+        <div class="container heading-style-5">
+            <h4 class="heading-title">{{ 'notices' |trans({}, 'sidebar') }}</h4>
+            <i class="fa fa-align-left heading-icon"></i>
+            <div class="line bg-black"></div>
+        </div>
+
+        <div class="container">
+            {{ legal_notice.content | raw }}
+        </div>
+    </div>
+{% endblock %}

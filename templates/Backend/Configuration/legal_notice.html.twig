@@ -1,0 +1,52 @@
+{% extends 'Backend/_layout.html.twig' %}
+
+{% block page_title %}
+    <h3 class="page-title"> Mentions légales
+        <small>édition des mentions légales</small>
+    </h3>
+{% endblock %}
+
+{% block content %}
+    {{ form_start(legal_notice_form, {'attr' : {
+        'class' : 'form-horizontal'
+    }}) }}
+    <div class="portlet light bordered">
+
+        {# GENERALE #}
+        <div class="portlet-title">
+            <div class="caption">
+                <span class="caption-subject font-red-sunglo bold uppercase">Mentions légales</span>
+            </div>
+        </div>
+        <div class="portlet-body form">
+            <div class="form-body">
+                <div class="form-group">
+                    {{ form_label(legal_notice_form.title, null, {'label': 'Titre', 'label_attr': {'class': 'col-md-2 control-label'}}) }}
+                    <div class="col-md-10">
+                        {{ form_widget(legal_notice_form.title, {'attr': {'class': 'form-control', 'placeholder' : 'Titre'}}) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    {{ form_label(legal_notice_form.content, null, {'label': 'Contenu', 'label_attr': {'class': 'col-md-2 control-label'}}) }}
+                    <div class="col-md-10">
+                        {{ form_widget(legal_notice_form.content, {'attr': {'class': 'form-control', 'placeholder' : 'Contenu'}}) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {# SAVE #}
+        <div class="form-actions">
+            <div class="row">
+                <div class="col-md-offset-3 col-md-4">
+                    <button class="btn green" type="submit">Enregistrer</button>
+                    <a class="btn default" href="{#{ path('backend_configuration_legal_notice') }#}">Retour</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ form_end(legal_notice_form) }}
+
+{% endblock %}
+
+

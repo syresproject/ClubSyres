@@ -1,0 +1,20 @@
+internal_id: ID Interne
+name: Nom
+category: Catégorie
+access_group: Groupe d'accès
+yes: Oui
+no: Non
+upcoming: À venir
+on_going: En cours
+closed: Cloturé
+survey: Enquête
+preselection: Pré-recrutement
+email: Adresse email
+birthdate: Date de naissance
+enabled: Activé
+title: Titre
+firstname: Prénom
+groups: Groupes
+mr: Monsieur
+mrs: Madame
+ms: Mademoiselle

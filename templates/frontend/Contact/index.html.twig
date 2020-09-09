@@ -1,0 +1,83 @@
+{% extends "frontend/_layout.html.twig" %}
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .header{
+            text-align: center;
+        }
+    </style>
+
+
+    <link href="{{ asset('frontend/styles/style.css') }}"           rel="stylesheet" type="text/css">
+    <link href="{{ asset('frontend/styles/menu_layout.css') }}"           rel="stylesheet" type="text/css">
+    <link href="{{ asset('frontend/styles/menus.css') }}"           rel="stylesheet" type="text/css">
+    <link href="{{ asset('frontend/styles/framework.css') }}"       rel="stylesheet" type="text/css">
+    <link href="{{ asset('frontend/styles/font-awesome.css') }}"    rel="stylesheet" type="text/css">
+    <link href="{{ asset('frontend/styles/animate.css') }}"         rel="stylesheet" type="text/css">
+    <link href="{{ asset('frontend/styles/override.css') }}"        rel="stylesheet" type="text/css">
+{% endblock %}
+{% block content %}
+    {{ parent() }}
+
+    <div class="content">
+        <div class="container heading-style-5">
+            <h4 class="heading-title" style="margin-top: 20px">{{ 'contact' }}</h4>
+            <i class="fa fa-envelope-o heading-icon"></i>
+            <div class="line bg-black"></div>
+        </div>
+
+        <div class="container no-bottom">
+            <div class="contact-form no-bottom">
+                {{ include('/_widgets/flash_notifications.html.twig') }}
+
+                {{ form_start(contact_form, {'attr' : {
+                    'class' : 'contactForm'
+                }}) }}
+
+
+                    <fieldset>
+                        <div class="formFieldWrap">
+                            {{ form_label(contact_form.idPaneliste, null, {'label': 'ID panéliste', 'label_attr': {'class': 'field-title contactNameField'}}) }}
+                            {{ form_widget(contact_form.idPaneliste, {'attr': {'class': 'contactField', 'placeholder' : 'Votre ID panéliste'}}) }}
+                        </div>
+                        <div class="formFieldWrap">
+                            {{ form_label(contact_form.lastname, null, {'label': 'Nom' |trans({}, 'contact'), 'label_attr': {'class': 'field-title contactNameField'}}) }}
+                            {{ form_widget(contact_form.lastname, {'attr': {'class': 'contactField', 'placeholder' : 'Votre nom'}}) }}
+                        </div>
+                        <div class="formFieldWrap">
+                            {{ form_label(contact_form.firstname, null, {'label': 'Prénom' |trans({}, 'contact'), 'label_attr': {'class': 'field-title contactNameField'}}) }}
+                            {{ form_widget(contact_form.firstname, {'attr': {'class': 'contactField', 'placeholder' : 'Votre prénom'}}) }}
+                        </div>
+                        <div class="formFieldWrap">
+                            {{ form_label(contact_form.email, null, {'label': 'Votre adresse email' |trans({}, 'contact'), 'label_attr': {'class': 'field-title contactNameField'}}) }}
+                            {{ form_widget(contact_form.email, {'attr': {'class': 'contactField', 'placeholder' : 'Votre adresse email'}}) }}
+                        </div>
+                        <div class="formFieldWrap">
+                            {{ form_label(contact_form.subject, null, {'label': 'Subjet' |trans({}, 'contact'), 'label_attr': {'class': 'field-title contactNameField'}}) }}
+                            {{ form_widget(contact_form.subject, {'attr': {'class': 'contactField', 'placeholder' : 'Subjet' |trans({}, 'contact')}}) }}
+                        </div>
+                        <div class="formTextareaWrap">
+                            {{ form_label(contact_form.content, null, {'label': 'Message' |trans({}, 'contact'), 'label_attr': {'class': 'field-title contactNameField'}}) }}
+                            {{ form_widget(contact_form.content, {'attr': {'class': 'contactTextarea', 'placeholder' : 'Contenu de message' |trans({}, 'contact')}}) }}
+                        </div>
+                        <div class="formSubmitButtonErrorsWrap contactFormButton">
+                            <button class="buttonWrap button button-green contactSubmitButton" type="submit">{{ 'send' |trans({}, 'contact') }}</button>
+                        </div>
+                    </fieldset>
+                {{ form_end(contact_form) }}
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+{% endblock %}

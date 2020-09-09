@@ -1,0 +1,41 @@
+<?php //%255BApp%255CController%255CBackend%255CSurveyController%2523indexAction%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        clone $p['Symfony\\Component\\Routing\\Annotation\\Route'],
+        clone $p['Symfony\\Component\\Routing\\Annotation\\Route'],
+    ],
+    null,
+    [
+        'Symfony\\Component\\Routing\\Annotation\\Route' => [
+            'path' => [
+                '/tests/',
+                '/enquetes/',
+                '/pre_recrutements/',
+            ],
+            'name' => [
+                'tests_index',
+                'enquetes_index',
+                'pre_recrutements_index',
+            ],
+            'defaults' => [
+                [
+                    'surveyType' => 2,
+                ],
+                [
+                    'surveyType' => 0,
+                ],
+                [
+                    'surveyType' => 1,
+                ],
+            ],
+        ],
+    ],
+    [
+        $o[0],
+        $o[1],
+        $o[2],
+    ],
+    []
+); }];

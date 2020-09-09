@@ -1,0 +1,17 @@
+{% for flashMessage in app.session.flashbag.get('success') %}
+    <div class="static-notification bg-green-dark tap-dismiss" style="background-color: white">
+        <p>
+            <i class="fa fa-check"></i>
+            {{ flashMessage }}
+        </p>
+    </div>
+{% endfor %}
+
+{% for flashMessage in app.session.flashbag.get('error') %}
+    <div class="static-notification bg-red-dark tap-dismiss">
+        <p>
+            <i class="fa fa-times"></i>
+            {{ flashMessage }}
+        </p>
+    </div>
+{% endfor %}

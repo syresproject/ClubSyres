@@ -1,0 +1,80 @@
+.divNavbarHome{
+    margin: auto;
+    display: flex
+}
+.h1DivNavbarHome{
+    margin: auto;
+    text-align: center;
+    text-align: -webkit-center;
+    width: 90%
+}
+.iconeLoginHome{
+    top: 0vmin;
+    text-align: end;
+    padding-right: 1%;
+}
+
+#logo_layout{
+    margin: auto;
+}
+.header {
+    background-color: rgba(255,255,255,.75);
+    padding: 1px;
+    margin: 0px;
+    text-align: center;
+}
+
+#navbar {
+    overflow: hidden;
+    background-color: #2980b9;
+}
+
+#navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+#navbar a:hover {
+    background-color: white;
+    color: black;
+}
+
+#navbar a.active {
+    background-color: #DC3D78;
+    color: white;
+}
+
+#navbar a.active:hover {
+    background-color: white;
+    color: black;
+}
+
+#navbar #contactF {
+    background-color: #DC3D78;
+    color: white;
+}
+
+#navbar #contactF:hover {
+    background-color: white;
+    color: black;
+}
+
+.content {
+    padding: 16px;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.sticky + .content {
+    padding-top: 60px;
+}
+

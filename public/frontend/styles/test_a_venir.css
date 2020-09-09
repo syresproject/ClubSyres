@@ -1,0 +1,580 @@
+.wrap {
+    width: 709px;
+    margin: 0 auto; }
+
+.logo {
+    text-align: center;
+    padding: 35px 0;
+    background: url(img/top.png) left bottom no-repeat; }
+
+.content {
+    background: url(img/mid.png) repeat;
+    padding: 0 110px;
+    font-weight: 200; }
+.content h1 {
+    color: #2a3c49;
+    font-size: 22px;
+    text-align: center;
+    font-weight: bold;
+    font-family: "Myriad Pro","FrutigerLT Black", sans-serif;
+    padding: 10px 0 25px 0; }
+.content strong {
+    font-weight: bold; }
+.content em {
+    font-style: italic; }
+.content .bloc {
+    width: 97px;
+    height: 67px;
+    background: url(img/number.png) no-repeat;
+    float: left;
+    padding-top: 30px;
+    text-align: center;
+    color: #767676;
+    margin-right: 30px; }
+.content .bloc strong {
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    color: #2a3c49;
+    margin-bottom: 15px; }
+.content .last {
+    margin-right: 0px; }
+.content .numbers {
+    overflow: hidden;
+    *zoom: 1;
+    padding: 40px 0; }
+
+body {
+    min-height: 500px;
+}
+
+#marge-top{
+    margin-top: 80px;
+}
+
+
+
+h1{
+    font-size: 28px;
+}
+.titleTestAVenir{
+    margin-top: 25px;
+}
+.dark{
+    color: #555;
+}
+th{
+    font-size: 22px;
+}
+.p_align{
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    color: #0E1112;
+    font-size: 16px;
+}
+.text_align{
+    text-align: center;
+}
+
+.text {
+    color: black;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+ul {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+    }
+
+    li {
+        margin-left: 2px;
+        float: left; /*pour IE*/
+    }
+
+    input{
+        border: 2px solid cadetblue;
+    }
+
+    #appbundle_complementalimentaire_idPaneliste{
+        display: none;
+    }
+    select{
+        border: 2px solid cadetblue;
+    }
+
+
+    table td {
+        text-align: start;
+    }
+
+    table th {
+        border: none;
+        text-align: start;
+    }
+
+
+    @media screen and (min-width: 768px) {
+        #langues div #d_flex input{
+            text-align: -webkit-center;
+            margin-left: 45%;
+        }
+        #langues div d_flex input{
+            text-align: -webkit-center;
+        }
+
+        table {
+            width: 70%;
+        }
+
+        select{
+            height: 50px;
+        }
+
+        #appbundle_preinscription_vousEtes{
+            width: 216px;
+        }
+
+    }
+
+    @media screen and (max-width: 767px) {
+        #langues div d_flex input{
+            text-align: initial;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        #msform fieldset {
+            background: white;
+            border: 0 none;
+            border-radius: 3px;
+            box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+            padding: 20px 30px;
+            box-sizing: border-box;
+            width: 100%;
+            margin: 0%;
+
+            /*stacking fieldsets above each other*/
+            position: relative;
+            background-color: rgba(255,255,255,.75);
+        }
+
+        .container{
+            padding-right: 1px;
+            padding-left: 1px;
+            margin-top: -9px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        select {
+            height: 52px;
+        }
+
+        #appbundle_preinscription_vousEtes{
+            width: 100%;
+            height: 52px;
+        }
+    }
+
+    label {
+        padding-left: 4px;
+        padding-right: 5px;
+        font-size: 14px;
+        color: black;
+    }
+    p{
+        color: black;
+    }
+
+    #appbundle_preinscription_nettoyageVisage {
+        display: inline-block;
+    }
+
+    ul li {
+        list-style: none;
+    }
+
+
+
+
+    * {
+        box-sizing: border-box;
+    }
+
+    html {
+        font: 14px/1.4 Sans-Serif;
+    }
+
+    form {
+        float: left;
+        margin: 20px;
+
+    div {
+        position: relative;
+        overflow: hidden;
+    }
+
+    input, textarea {
+        width: 100%;
+        border: 2px solid gray;
+        background: none;
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        padding: 8px 12px;
+        outline: 0;
+
+    &
+    :valid {
+    / / Hides the label background: white;
+    }
+
+    &
+    :focus {
+        border-color: #f06d06;
+    }
+
+    &
+    :focus + label {
+        background: #f06d06;
+        color: white;
+        font-size: 70%;
+        padding: 1px 6px;
+        z-index: 2;
+        text-transform: uppercase;
+    }
+
+    }
+    label {
+        transition: / / not padding background 0.2s,
+        color 0.2s,
+        top 0.2s,
+        bottom 0.2s,
+        right 0.2s,
+        left 0.2s;
+        position: absolute;
+        color: #999;
+        padding: 7px 6px;
+    }
+
+    textarea {
+        display: block;
+        resize: vertical;
+    }
+
+    }
+
+    form.go-bottom {
+
+    input, textarea {
+        padding: 12px 12px 12px 12px;
+    }
+
+    label {
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    input:focus, textarea:focus {
+        padding: 4px 6px 20px 6px;
+    }
+
+    input:focus + label, textarea:focus + label {
+        top: 100%;
+        margin-top: -16px;
+    }
+
+    }
+    form.go-right {
+
+    label {
+        top: 2px;
+        right: 100%;
+        width: 100%;
+        margin-right: -100%;
+        bottom: 2px;
+    }
+
+    input:focus + label, textarea:focus + label {
+        right: 0;
+        margin-right: 0;
+        width: 40%;
+        padding-top: 5px;
+    }
+
+    }
+
+
+    .divformatageTextJs {
+        margin-top: 10px;
+    }
+
+    .container {
+        /* On ajoute une marge sur les cotés de l'écran */
+        padding-right: 17px;
+        padding-left: 17px;
+
+        margin-top: -9px;
+        /* Et on centre */
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+
+    @media (min-width: 960px) {
+
+        #langues div #d_flex input{
+            text-align: -webkit-center;
+            margin-left: 45%;
+        }
+
+
+        .d_flex {
+            display: flex;
+        }
+
+        .col-left {
+            width: 50%;
+        }
+
+        .col-right {
+            width: 50%;
+            padding-left: 10px;
+            border-top: none;
+        }
+    }
+
+    /* Sur les grands écrans, on limite la largeur du contenu */
+    @media (min-width: 1200px) {
+        .container {
+            width: 1170px;
+            margin-top: -48px;
+        }
+    }
+
+    .input_mail {
+        width: 100%;
+        padding: 12px;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+    }
+
+    /* formulaire */
+    input[type=text], select, textarea {
+        width: 100%;
+        padding: 12px;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+        background-color: rgba(255,255,255,.75);
+
+    }
+
+    input[type=mail], select, textarea {
+        width: 100%;
+        padding: 12px;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+        background-color: rgba(255,255,255,.75);
+
+    }
+
+    input[type=submit] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+        background-color: #45a049;
+    }
+
+    label {
+        margin-left: 0px;
+    }
+
+
+    .a joutText {
+        background-color: #0b84fe;
+    }
+
+    /*************/
+    #lirelasuite {
+        display: none;
+    }
+
+    .pjs {
+        margin-top: 0px;
+        padding-top: 0px;
+        margin-bottom: 10px;
+    }
+
+    .formatageTextJs {
+        margin-bottom: 0px;
+        font-size: 18px;
+        color: #0a6aa1;
+        padding-left: 4px;
+        margin-top: px;
+    }
+
+    p {
+        display: block;
+    }
+
+    input{
+        margin-top: 7px;
+        border-top: none;
+    }
+    #appbundle_preinscription_peauVisageSinsible{
+        display: flex;
+        width: 50px;
+    }
+
+    #appbundle_preinscription_autreCaracteristiqueCorpsPeau{
+        display: flex;
+        width: 50px;
+    }
+    #appbundle_preinscription_autreCaracteristiqueCorpsPeau input{
+        display: flex;
+        width: auto;
+    }
+    #appbundle_preinscription_visageIntolerante input{
+        width: auto;
+    }
+
+    #appbundle_preinscription_peauVisageSinsible{
+        display: flex;
+        width: 50px;
+    }
+    #appbundle_preinscription_visageIntolerante input{
+        width: auto;
+    }
+
+    #appbundle_preinscription_peauVisageReactive{
+        display: flex;
+        width: 50px;
+    }
+    #appbundle_preinscription_peauVisageReactive input{
+        width: auto;
+    }
+
+    #appbundle_preinscription_date{
+        display: none;
+    }
+
+
+
+    .sidebar-light-clean .menu-item i:first-child {
+        color: #FFFFFF;
+        position: absolute;
+        font-size: 14px;
+        width: 35px;
+        height: 35px;
+        border-radius: 35px;
+        line-height: 35px;
+        text-align: center;
+
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+    </style>
+
+      <style>
+      .checkUn, a, p, img, blockquote, form, fieldset, textarea, input, label, iframe, code, pre {
+          display: inline;
+      }
+
+    .labelCheck {
+        padding-left: 4px;
+        text-align: left;
+    }
+
+    #langues div #d_flex input {
+        width: auto;
+        margin: 1px;
+        padding-top: 29px;
+        margin-top: 9px;
+        background-color: red;
+    }
+
+    appbundle_preinscription_checkboxUN input{
+        margin-top: 8px;
+    }
+
+
+    #id_p{
+        display: none;
+    }
+    #appbundle_complementalimentaire_idPaneliste{
+        display: none;
+    }
+
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: center;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+
+
+    .p_align {
+        margin-bottom: 0px;
+    }
+
+    .home-navigation {
+        padding-top: 5px;
+        max-width: 100%;
+        margin: auto;
+    }
+
+
+    .container{
+        width: 80%;
+        margin: auto;
+    }
+    {# Media query #}
+    @media screen and {
+        .container {
+            width: 70%;
+
+        }
+    }
+    .idPanelist{
+        display: none;
+    }
+    #appbundle_complementalimentaire_date{
+        display: none;
+    }

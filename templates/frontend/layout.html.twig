@@ -1,0 +1,106 @@
+{% extends "base.html.twig" %}
+
+{# TITLE #}
+{% block title %}{% endblock %}
+
+{# METADATA #}
+{% block metas %}
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0 minimal-ui"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+{% endblock %}
+
+{# ICONS #}
+{% block icons %}
+    <link rel="icon" type="image/png" href="{{ asset('frontend/images/splash/android-chrome-192x192_v2.png') }}" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="196x196" href="{{ asset('frontend/images/splash/apple-touch-icon-196x196_v2.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('frontend/images/splash/apple-touch-icon-180x180_v2.png') }}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('frontend/images/splash/apple-touch-icon-152x152_v2.png') }}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('frontend/images/splash/apple-touch-icon-144x144_v2.png') }}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('frontend/images/splash/apple-touch-icon-120x120_v2.png') }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('frontend/images/splash/apple-touch-icon-114x114_v2.png') }}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('frontend/images/splash/apple-touch-icon-76x76_v2.png') }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('frontend/images/splash/apple-touch-icon-72x72_v2.png') }}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('frontend/images/splash/apple-touch-icon-60x60_v2.png') }}">
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('frontend/images/splash/apple-touch-icon-57x57_v2.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('frontend/images/splash/favicon-96x96_v2.png') }}" sizes="96x96">
+    <link rel="icon" type="image/png" href="{{ asset('frontend/images/splash/favicon-32x32_v2.png') }}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{{ asset('frontend/images/splash/favicon-16x16_v2.png') }}" sizes="16x16">
+    <link rel="shortcut icon" href="{{ asset('frontend/images/splash/favicon_v2.ico') }}" type="image/x-icon" />
+{% endblock %}
+
+{# CSS #}
+{% block stylesheets %}
+     <link href="{{ asset('frontend/styles/style.css') }}"           rel="stylesheet" type="text/css">
+    <link href="{{ asset('frontend/styles/menu_layout.css') }}"           rel="stylesheet" type="text/css">
+    <link href="{{ asset('frontend/styles/menus.css') }}"           rel="stylesheet" type="text/css">
+    <link href="{{ asset('frontend/styles/framework.css') }}"       rel="stylesheet" type="text/css">
+    <link href="{{ asset('frontend/styles/font-awesome.css') }}"    rel="stylesheet" type="text/css">
+    <link href="{{ asset('frontend/styles/animate.css') }}"         rel="stylesheet" type="text/css">
+    <link href="{{ asset('frontend/styles/override.css') }}"        rel="stylesheet" type="text/css">
+
+{% endblock %}
+
+{# BODY #}
+{% block content %}
+    <div class="header">
+        <div class="divNavbarHome">
+            <h1 class="h1DivNavbarHome" style="">
+                <img  height="150px" src="{{ asset('frontend/images/logo-syres.png') }}" alt="Syres">
+                <p class="text_align pSize">Sensory & consumer rechearch.</p>
+
+
+            </h1>
+            <p class="iconeLoginHome">
+                <a href="{{ path('app_logout') }}">
+                    <img  height="40px" width="40px" src="{{ asset('frontend/images/icon_logout.png') }}">
+                </a>
+            </p>
+
+        </div>
+    </div>
+    <style>
+        .pSize{
+            font-size: xx-large;
+            font-weight: normal;
+            margin-top: 8px;
+        }
+        p{margin-bottom: 4px
+        }
+    </style>
+    <div id="navbar" style="height: 20px">
+        {#
+        <a class="active" href="{{ path('user_accueil_index') }}">ACCUEIL</a>
+        <a href="{{ path('user_test_a_venirs_index') }}">TEST A VENIR</a>
+        <a id="contactF" href="{{ path('user_contact_index') }}">CONTACT</a>
+        #}
+    </div>
+
+
+{% endblock %}
+
+{# JAVASCRIPTS #}
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('frontend/scripts/jquery.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('frontend/scripts/framework-plugins.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('frontend/scripts/jqueryui.js') }}"></script>
+
+    {#
+    <script type="text/javascript" src="{{ asset('frontend/scripts/custom.js') }}"></script>
+    #}
+    <script>
+        window.onscroll = function() {myFunction()};
+
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+    </script>
+{% endblock %}

@@ -1,0 +1,16 @@
+dashboard: Dashboard
+admin: admin
+visible_article: Visible article
+non_visible_article: Non visible article
+total_article: Total articles
+total_number_article: Number of total articles
+categories_dashboard: Dashboard for categories
+sub_categories_dashboard: Dashboard for sub-categories
+brands_dashboard: Dashboard for brands
+
+visible_number_article: Number of visible articles
+non_visible_number_article: Number of non visible articles
+category_name: Category Name
+number_article: Number of articles
+sub_category_name: Sub-category name
+brand_name: Brand name

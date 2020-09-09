@@ -1,0 +1,95 @@
+{% extends 'Backend/_layout.html.twig' %}
+
+{% block page_title %}
+    <h3 class="page-title"> Panélistes
+        <small>affichage d'un panéliste</small>
+    </h3>
+{% endblock %}
+
+{% block content %}
+    <div class="portlet light bordered">
+        <div class="portlet-title">
+            <div class="caption">
+                <span class="caption-subject font-red-sunglo bold uppercase">Informations</span>
+            </div>
+        </div>
+        <div class="portlet-body form">
+            <form action="#" class="form-horizontal">
+                <div class="form-body">
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">ID Panéliste</label>
+                        <div class="col-md-4">
+                            <p class="form-control-static">
+                                {{ entity.idPaneliste }}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Titre</label>
+                        <div class="col-md-4">
+                            <p class="form-control-static">
+                                {{ entity.title }}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Nom</label>
+                        <div class="col-md-4">
+                            <p class="form-control-static">
+                                {{ entity.firstname }}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Prénom</label>
+                        <div class="col-md-4">
+                            <p class="form-control-static">
+                                {{ entity.lastname }}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Date de naissance</label>
+                        <div class="col-md-4">
+                            <p class="form-control-static">
+                                {{ entity.birthdate | date('d/m/Y') }}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Adresse email</label>
+                        <div class="col-md-4">
+                            <p class="form-control-static">
+                                {{ entity.email }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Enregistré le</label>
+                        <div class="col-md-4">
+                            <p class="form-control-static">
+                                {{ entity.createdAt | date('d/m/Y à H\\hi') }}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">État</label>
+                        <div class="col-md-4">
+                            <p class="form-control-static">
+                                {{ entity.enabled ? 'Activé' : 'Désactivé' }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <div class="row">
+                        <div class="col-md-offset-3 col-md-9">
+                            <a class="btn default" href="{{ path('admin_user_index') }}">Retour</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

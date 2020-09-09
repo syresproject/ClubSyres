@@ -1,0 +1,196 @@
+{% extends 'Backend/_layout.html.twig' %}
+
+{% block page_title %}
+    {% if survey.type == 0 %}
+        <h3 class="page-title"> Enquêtes
+            <small>affichage d'une enquête</small>
+        </h3>
+    {% elseif survey.type == 1 %}
+        <h3 class="page-title"> Pré-recrutements
+            <small>affichage d'un pré-recrutement</small>
+        </h3>
+    {% elseif survey.type == 2 %}
+        <h3 class="page-title"> Tests
+            <small>affichage d'un test</small>
+        </h3>
+    {% endif %}
+{% endblock %}
+
+{% block stylesheet %}
+    <link href="{{ asset('backend/assets/global/plugins/datatables/datatables.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('backend/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css') }}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block content %}
+    <div class="portlet light bordered">
+        <div class="portlet-title">
+            <div class="caption">
+                <span class="caption-subject font-red-sunglo bold uppercase">Informations</span>
+            </div>
+        </div>
+        <div class="portlet-body form">
+            <form action="#" class="form-horizontal">
+                <div class="form-body">
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Status</label>
+                        <div class="col-md-4">
+                            <p class="form-control-static">
+                                {{ survey.statusFormatted }}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">ID Interne</label>
+                        <div class="col-md-4">
+                            <p class="form-control-static">
+                                {{ survey.idSurvey }}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Nom</label>
+                        <div class="col-md-4">
+                            <p class="form-control-static">
+                                {{ survey.name }}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Type</label>
+                        <div class="col-md-4">
+                            <p class="form-control-static">
+                                {{ survey.typeFormatted }}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Catégorie</label>
+                        <div class="col-md-4">
+                            <p class="form-control-static">
+                                {{ survey.category }}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Description</label>
+                        <div class="col-md-4">
+                            <p class="form-control-static">
+                                {{ survey.description }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <div class="row">
+                        <div class="col-md-offset-3 col-md-9">
+                            {% if survey.type == 0 %}
+                                <a class="btn default" href="{{ path('admin_survey_enquetes_index') }}">Retour</a>
+                            {% elseif survey.type == 1 %}
+                                <a class="btn default" href="{{ path('admin_survey_pre_recrutements_index') }}">Retour</a>
+                            {% elseif survey.type == 2 %}
+                                <a class="btn default" href="{{ path('admin_survey_tests_index') }}">Retour</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="portlet light bordered">
+        <div class="portlet-title">
+            <div class="caption">
+                <span class="caption-subject font-red-sunglo bold uppercase">Questionnaires</span>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <table id="table_links" class="table table-striped table-bordered table-hover table-checkable order-column">
+                <thead>
+                <tr>
+                    <th style="width:80px;">Id</th>
+                    <th>Nom</th>
+                    <th>Url</th>
+                    <th>Accès</th>
+                    <th>Réponses</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for link in survey.links %}
+                    <tr class="odd gradeX">
+                        <td>{{ link.id }}</td>
+                        <td>{{ link.name }}</td>
+                        <td><a href="{{ link.link }}" target="_blank">{{ link.link }}</a></td>
+                        <td>
+                            <a href="{{ path('admin_link_access_details', {'link' : link.id}) }}" class="label label-success">historique des accès</a>
+                        </td>
+                        <td>
+                            <a href="{{ path('admin_link_replies_details', {'link' : link.id}) }}" class="label label-success">détails des réponses</a>
+                          {# <a href="{{ path('admin_link_sync_replies', {'link' : link.id}) }}" class="label label-success">sync. des réponses</a>
+                            <span class="alert-danger">Fichier excel uniquement</span>
+                            #}
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="portlet light bordered">
+        <div class="portlet-title">
+            <div class="caption">
+                <span class="caption-subject font-red-sunglo bold uppercase">Panélistes</span>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <table id="table_users" class="table table-striped table-bordered table-hover table-checkable order-column">
+                <thead>
+                <tr>
+                    <th>ID Panéliste</th>
+                    <th>Titre</th>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Né le</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% if survey.panelisteGroup %}
+                    {% for entity in survey.panelisteGroup.users %}
+                        <tr class="odd gradeX">
+                            <td><a href="{{ path('admin_user_show', { 'id': entity.id }) }}">{{ entity.idPaneliste }}</a></td>
+                            <td>{{ entity.title }}</td>
+                            <td>{{ entity.lastname }}</td>
+                            <td>{{ entity.firstname }}</td>
+                            <td>{{ entity.birthdate | date('d/m/Y') }}</td>
+                            <td>{{ entity.email }}</td>
+                            <td>
+                                <a href="{{ path('admin_user_show', { 'id': entity.id }) }}" class="label label-success">afficher</a>
+                                <a href="{{ path('admin_user_edit', { 'id': entity.id }) }}" class="label label-success">éditer</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascript %}
+    <script src="{{ asset('backend/assets/global/plugins/datatables/datatables.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('backend/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js') }}" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#table_links').dataTable({
+                "order": [[ 0, "desc" ]]
+            });
+
+            $('#table_users').dataTable({
+                "order": [[ 0, "desc" ]]
+            });
+        });
+    </script>
+{% endblock %}

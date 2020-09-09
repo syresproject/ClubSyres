@@ -1,0 +1,74 @@
+<?php //App.Entity.Inscription
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        (($f = &\Symfony\Component\VarExporter\Internal\Registry::$factories)['Symfony\\Component\\Validator\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::f('Symfony\\Component\\Validator\\Mapping\\ClassMetadata'))(),
+        ($f['Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::f('Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'))(),
+        clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Validator\\Constraints\\Length'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Validator\\Constraints\\Length')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\Inscription',
+                'codePostal',
+            ],
+            'defaultGroup' => [
+                'Inscription',
+            ],
+            'members' => [
+                [
+                    'codePostal' => [
+                        $o[1],
+                    ],
+                ],
+            ],
+            'properties' => [
+                [
+                    'codePostal' => $o[1],
+                ],
+            ],
+            'class' => [
+                1 => 'App\\Entity\\Inscription',
+            ],
+            'property' => [
+                1 => 'codePostal',
+            ],
+            'constraints' => [
+                1 => [
+                    $o[2],
+                ],
+            ],
+            'constraintsByGroup' => [
+                1 => [
+                    'Default' => [
+                        $o[2],
+                    ],
+                    'Inscription' => [
+                        $o[2],
+                    ],
+                ],
+            ],
+            'maxMessage' => [
+                2 => 'Le code postale contient 5 caractere {{ limit }} characters',
+            ],
+            'minMessage' => [
+                2 => 'Le code postale contient 5 caractere {{ limit }} characters long',
+            ],
+            'max' => [
+                2 => 5,
+            ],
+            'min' => [
+                2 => 5,
+            ],
+            'groups' => [
+                2 => [
+                    'Default',
+                    'Inscription',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

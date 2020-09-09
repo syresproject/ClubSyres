@@ -1,0 +1,36 @@
+<div class="container-fullscreen heading-style-3">
+    <h3 class="heading-title">Focus test</h3>
+    <div class="overlay bg-gray-dark"></div>
+</div>
+
+<div class="decoration"></div>
+
+<div class="container">
+    {# IF STATUS ID : FOCUS_GROUP OR CLOSED #}
+    {% if survey.status == 2 or survey.status == 3 %}
+        {% if survey.focusGroup %}
+            {% if focusAccess %}
+                <p class="center-text">
+                    {{ 'discuss_with_other_panelists' |trans({}, 'focusgroup') }} :
+                </p>
+                <p class="center-text">
+                    <a href="{{ path('frontend_focusgroup_show', {'id': survey.focusGroup.id}) }}" class="button-small button-green">{{ 'access_focus_group' |trans({}, 'focusgroup') }}</a>
+                </p>
+            {% else %}
+                <p class="center-text">
+                    {{ 'cannot_access_focus_test' |trans({}, 'focusgroup') }}.
+                </p>
+            {% endif %}
+        {% else %}
+            <p class="center-text">
+                {{ 'not_yet_accessible_focus_group' |trans({}, 'focusgroup') }}
+            </p>
+        {% endif %}
+    {% else %}
+        <p class="center-text">
+            {{ 'not_yet_accessible_focus_group' |trans({}, 'focusgroup') }}
+        </p>
+    {% endif %}
+</div>
+
+<div class="decoration"></div>

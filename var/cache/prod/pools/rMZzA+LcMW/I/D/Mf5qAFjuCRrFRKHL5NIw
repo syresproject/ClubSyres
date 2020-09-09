@@ -1,0 +1,116 @@
+<?php //%255BApp%255CEntity%255CDeo%2524CLASSMETADATA%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ClassMetadata')),
+        clone ($p['Doctrine\\ORM\\Id\\IdentityGenerator'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Id\\IdentityGenerator')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\Deo',
+            ],
+            'namespace' => [
+                'App\\Entity',
+            ],
+            'rootEntityName' => [
+                'App\\Entity\\Deo',
+            ],
+            'customRepositoryClassName' => [
+                'App\\Repository\\DeoRepository',
+            ],
+            'identifier' => [
+                [
+                    'id',
+                ],
+            ],
+            'generatorType' => [
+                4,
+            ],
+            'fieldMappings' => [
+                [
+                    'id' => [
+                        'fieldName' => 'id',
+                        'type' => 'integer',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'id' => true,
+                        'columnName' => 'id',
+                    ],
+                    'utilisateur_deo' => [
+                        'fieldName' => 'utilisateur_deo',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 50,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'utilisateur_deo',
+                    ],
+                    'sels_alu' => [
+                        'fieldName' => 'sels_alu',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 5,
+                        'unique' => false,
+                        'nullable' => true,
+                        'precision' => 0,
+                        'columnName' => 'sels_alu',
+                    ],
+                    'pierre_alun' => [
+                        'fieldName' => 'pierre_alun',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 5,
+                        'unique' => false,
+                        'nullable' => true,
+                        'precision' => 0,
+                        'columnName' => 'pierre_alun',
+                    ],
+                    'forme_deo' => [
+                        'fieldName' => 'forme_deo',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 20,
+                        'unique' => false,
+                        'nullable' => true,
+                        'precision' => 0,
+                        'columnName' => 'forme_deo',
+                    ],
+                ],
+            ],
+            'fieldNames' => [
+                [
+                    'id' => 'id',
+                    'utilisateur_deo' => 'utilisateur_deo',
+                    'sels_alu' => 'sels_alu',
+                    'pierre_alun' => 'pierre_alun',
+                    'forme_deo' => 'forme_deo',
+                ],
+            ],
+            'columnNames' => [
+                [
+                    'id' => 'id',
+                    'utilisateur_deo' => 'utilisateur_deo',
+                    'sels_alu' => 'sels_alu',
+                    'pierre_alun' => 'pierre_alun',
+                    'forme_deo' => 'forme_deo',
+                ],
+            ],
+            'table' => [
+                [
+                    'name' => 'deo',
+                ],
+            ],
+            'idGenerator' => [
+                $o[1],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

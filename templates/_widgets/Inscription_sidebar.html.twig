@@ -1,0 +1,93 @@
+<div class="snap-drawer snap-drawer-left sidebar-light-clean">
+    <p class="sidebar-divider">Navigation</p>
+
+    <div class="sidebar-menu">
+        <a class="menu-item" href="{{ path('frontend_home_index') }}">
+            <i class="fa fa-home bg-night-dark"></i>
+            <em>{{ 'dashboard' |trans({}, 'sidebar') }}</em>
+        </a>
+
+        {% if app.user %}
+            <div class="has-submenu">
+                <a class="menu-item show-submenu {% if app.request.attributes.get('_route') starts with 'frontend_survey_' %}submenu-active{% endif %}" href="#">
+                    <i class="fa fa-user bg-blue-panelist-space"></i>
+                    <em>{{ 'space' |trans({}, 'sidebar') }}</em>
+                </a>
+                <div class="submenu submenu-active">
+                    <a class="submenu-item {% if app.request.attributes.get('_route') starts with 'frontend_survey_enquete' %}submenu-item-active{% endif %}" href="{{ path('frontend_survey_enquete') }}">
+                        <i class="fa fa-angle-right"></i>
+                        <em>{{ 'surveys' |trans({}, 'sidebar') }}</em>
+
+                        {% if surveys_count[0] > 0 %}
+                            <i class="sidebar-notification">{{ surveys_count[0] }}</i>
+                        {% endif %}
+                    </a>
+                    <a class="submenu-item {% if app.request.attributes.get('_route') starts with 'frontend_survey_pre-recrutement' %}submenu-item-active{% endif %}" href="{{ path('frontend_survey_pre-recrutement') }}">
+                        <i class="fa fa-angle-right"></i>
+                        <em>{{ 'preselections' |trans({}, 'sidebar') }}</em>
+
+                        {% if surveys_count[1] > 0 %}
+                            <i class="sidebar-notification">{{ surveys_count[1] }}</i>
+                        {% endif %}
+                    </a>
+                    <a class="submenu-item {% if app.request.attributes.get('_route') starts with 'frontend_survey_test' %}submenu-item-active{% endif %}" href="{{ path('frontend_survey_test') }}">
+                        <i class="fa fa-angle-right"></i>
+                        <em>{{ 'tests' |trans({}, 'sidebar') }}</em>
+
+                        {% if surveys_count[2] > 0 %}
+                            <i class="sidebar-notification">{{ surveys_count[2] }}</i>
+                        {% endif %}
+                    </a>
+                </div>
+            </div>
+
+            <div class="has-submenu">
+                <a id="pasInscription" class="menu-item show-submenu {% if app.request.attributes.get('_route') starts with 'frontend_club_' %}submenu-active{% endif %}" href="#">
+                    <i class="fa fa-users bg-orange-club-syres"></i>
+                    <em>{{ 'clubsyres' |trans({}, 'sidebar') }}</em>
+                </a>
+                <div class="submenu submenu-active">
+                    <a class="submenu-item" href="{{ path('frontend_club-syres_index') }}">
+                        <i class="fa fa-angle-right"></i>
+                        <em>{{ 'articles' |trans({}, 'sidebar') }}</em>
+                    </a>
+                    <a class="submenu-item" href="{{ path('frontend_club-syres_new-article') }}">
+                        <i class="fa fa-angle-right"></i>
+                        <em>{{ 'write' |trans({}, 'sidebar') }}</em>
+                    </a>
+                </div>
+            </div>
+
+            <a class="menu-item {% if app.request.attributes.get('_route') starts with 'frontend_gamification_' %}submenu-item-active{% endif %}" href="{{ path('frontend_gamification_index') }}">
+                <i class="fa fa-star bg-green-my-points"></i>
+                <em>{{ 'points' |trans({}, 'sidebar') }}</em>
+            </a>
+        {% endif %}
+
+        {% if app.user %}
+            <a class="menu-item" href="{{ path('frontend_contact_index') }}">
+                <i class="fa fa-envelope-o bg-pink-contact-us"></i>
+                <em>{{ 'contact' |trans({}, 'sidebar') }}</em>
+            </a>
+        {% endif %}
+
+        <a class="menu-item" href="{{ path('frontend_static_page_legal_notice') }}">
+            <i class="fa fa-align-left bg-gray-dark"></i>
+            <em>{{ 'notices' |trans({}, 'sidebar') }}</em>
+        </a>
+
+        {% if app.user %}
+            <a class="menu-item" href="{{ path('frontend_security_logout') }}">
+                <i class="fa fa-sign-out bg-night-dark"></i>
+                <em>{{ 'logoff' |trans({}, 'sidebar') }}</em>
+            </a>
+        {% endif %}
+
+        <a class="menu-item close-sidebar" href="#">
+            <i class="fa fa-times bg-red-dark"></i>
+            <em>{{ 'close' |trans({}, 'sidebar') }}</em>
+        </a>
+    </div>
+
+    <p class="sidebar-footer">Copyright {{ 'now' | date('Y') }}. {{ 'rights' |trans({}, 'sidebar') }}</p>
+</div>

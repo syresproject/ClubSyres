@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PDeuxIns{% endblock %}
+
+{% block body %}
+    <h1>PDeuxIns</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ p_deux_in.id }}</td>
+            </tr>
+            <tr>
+                <th>DomaineM</th>
+                <td>{{ p_deux_in.domaineM }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('p_deux_ins_index') }}">back to list</a>
+
+    <a href="{{ path('p_deux_ins_edit', {'id': p_deux_in.id}) }}">edit</a>
+
+    {{ include('p_deux_ins/_delete_form.html.twig') }}
+{% endblock %}

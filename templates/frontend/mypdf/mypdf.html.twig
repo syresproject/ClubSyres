@@ -1,0 +1,80 @@
+{% extends "frontend/pdf_layout.html.twig" %}
+
+{# CONTENT #}
+{% block content %}
+    <div class="content">
+        <style>
+            .content{
+                color: 2px solid #0c203a;
+                width: 100%;
+
+                border-style: solid double;
+                padding: 15px;
+                margin-top: 15px;
+                background-image: url("../../../public/frontend/images/logo-syres.png");
+            }
+
+            .container{
+                color: 2px solid #0c203a;
+                border-style: solid double;
+                width: 100%;
+
+                margin-top: 20px;
+                margin: 15px;
+            }
+
+            .cont{
+                color: 2px solid #0c203a;
+                border-style: solid double;
+                padding: 20px;
+            }
+        </style>
+
+
+
+        <div class="cont">
+            <div class="cont">
+                <div class="container">
+                    <div class="container">
+                       <h1 style="text-align: center">Test </h1>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" style="height: 436px; padding: 10px">
+           <p style="font-size: 20px">
+               {{ survey.description | raw }}
+           </p>
+        </div>
+
+        <div class="cont">
+            <div class="cont">
+                <div class="container">
+                    <div class="container" style="">
+                        <h1 style="text-align: center">Test </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        {% block footer %}
+
+        {% endblock %}
+
+        {% block javascripts %}
+
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    $('.tasklist-completed').click(function() {
+                        return confirm({{ 'confirmation' |trans({}, 'survey') }});
+                    });
+                });
+            </script>
+        {% endblock %}
+    </div>
+{% endblock %}
+

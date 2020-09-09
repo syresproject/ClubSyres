@@ -1,0 +1,90 @@
+{% extends "base.html.twig" %}
+
+{% block head %}
+
+    <div class="header" id="head" style=" z-index: 1;
+position: fixed;
+width: 100% !important;
+background-color: white;
+top: 0px;
+height: 130px;
+text-align: center;
+padding: 0px;
+margin: 0px;">
+        <h1>
+            <a href="https://www.syres.fr/">
+            <img height="96px" id="logo_layout" src="../../frontend/images/logo-syres.png" alt="">
+            </a>
+        </h1>
+        <p class="" style="text-align: center; line-height: 2.1">Sensory & consumer rechearch.</p>
+    </div>
+    <div id="navbar" style="height: 20px; background-color: #2980b9; margin-top: 130px;">
+    </div>
+{% endblock %}
+{# TITLE #}
+{% block title %}{% endblock %}
+
+{# METADATA #}
+{% block metas %}
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0 minimal-ui"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+{% endblock %}
+
+{# CSS #}
+{% block stylesheets %}
+    <link href="{{ asset('frontend/styles/style.css') }}"           rel="stylesheet" type="text/css">
+    <link href="{{ asset('frontend/styles/font-awesome.css') }}"    rel="stylesheet" type="text/css">
+    <link href="{{ asset('frontend/styles/animate.css') }}"         rel="stylesheet" type="text/css">
+
+    <style>
+        #head{
+            z-index: 1;
+            position: fixed;
+            width: 100% !important;
+            background-color: white;
+            top: 0px;
+            height: 100px;
+        }
+    </style>
+
+{% endblock %}
+
+{# BODY #}
+{% block content %}
+
+
+    {% block footer %}
+
+    {% endblock %}
+{% endblock %}
+
+
+
+{# JAVASCRIPTS #}
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('frontend/scripts/jquery.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('frontend/scripts/framework-plugins.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('frontend/scripts/jqueryui.js') }}"></script>
+
+    {#
+    <script type="text/javascript" src="{{ asset('frontend/scripts/custom.js') }}"></script>
+    #}
+    <script>
+        window.onscroll = function() {myFunction()};
+
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+    </script>
+{% endblock %}
+
+

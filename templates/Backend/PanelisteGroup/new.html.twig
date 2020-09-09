@@ -1,0 +1,52 @@
+{% extends "Backend/_layout.html.twig" %}
+
+{% block page_title %}
+    <h3 class="page-title"> Groupes
+        <small>ajout d'un groupe de panélistes</small>
+    </h3>
+
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        #content{
+            min-height: 800px;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    {{ parent() }}
+
+    <div class="portlet light bordered">
+        <div class="portlet-title">
+            <div class="caption">
+                <span class="caption-subject font-red-sunglo bold uppercase">Ajout</span>
+            </div>
+        </div>
+        {{ include('/_widgets/flash_notifications.html.twig') }}
+
+        <div class="portlet-body form">
+            {{ form_start(form, {'attr' : {
+                'class' : 'form-horizontal'
+            }}) }}
+                <div class="form-body">
+                    <div class="form-group">
+                        {{ form_label(form.name, null, {'label': 'Name', 'label_attr': {'class': 'col-md-2 control-label'}}) }}
+                        <div class="col-md-10">
+                            {{ form_widget(form.name, {'attr': {'class': 'form-control', 'placeholder' : 'Name'}}) }}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <div class="row">
+                        <div class="col-md-offset-3 col-md-4">
+                            <button class="btn green" type="submit">Enregistrer</button>
+                            <a class="btn default" href="{{ path('admin_paneliste_groups_index') }}">Retour</a>
+                        </div>
+                    </div>
+                </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}

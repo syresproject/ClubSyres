@@ -1,0 +1,154 @@
+<?php //%255BApp%255CEntity%255CFocusGroup%2524CLASSMETADATA%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ClassMetadata')),
+        clone ($p['Doctrine\\ORM\\Id\\IdentityGenerator'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Id\\IdentityGenerator')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\FocusGroup',
+            ],
+            'namespace' => [
+                'App\\Entity',
+            ],
+            'rootEntityName' => [
+                'App\\Entity\\FocusGroup',
+            ],
+            'customRepositoryClassName' => [
+                'App\\Repository\\FocusGroupRepository',
+            ],
+            'identifier' => [
+                [
+                    'id',
+                ],
+            ],
+            'generatorType' => [
+                4,
+            ],
+            'fieldMappings' => [
+                [
+                    'id' => [
+                        'fieldName' => 'id',
+                        'type' => 'integer',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'id',
+                        'id' => true,
+                    ],
+                    'article' => [
+                        'fieldName' => 'article',
+                        'type' => 'text',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => true,
+                        'precision' => 0,
+                        'columnName' => 'article',
+                    ],
+                ],
+            ],
+            'fieldNames' => [
+                [
+                    'id' => 'id',
+                    'article' => 'article',
+                ],
+            ],
+            'columnNames' => [
+                [
+                    'id' => 'id',
+                    'article' => 'article',
+                ],
+            ],
+            'table' => [
+                [
+                    'name' => 'focus_groups',
+                ],
+            ],
+            'associationMappings' => [
+                [
+                    'survey' => [
+                        'fieldName' => 'survey',
+                        'targetEntity' => 'App\\Entity\\Survey',
+                        'joinColumns' => [
+                            [
+                                'name' => 'survey_id',
+                                'unique' => true,
+                                'nullable' => true,
+                                'onDelete' => null,
+                                'columnDefinition' => null,
+                                'referencedColumnName' => 'id',
+                            ],
+                        ],
+                        'mappedBy' => null,
+                        'inversedBy' => 'focusGroup',
+                        'cascade' => [],
+                        'orphanRemoval' => false,
+                        'fetch' => 2,
+                        'type' => 1,
+                        'isOwningSide' => true,
+                        'sourceEntity' => 'App\\Entity\\FocusGroup',
+                        'isCascadeRemove' => false,
+                        'isCascadePersist' => false,
+                        'isCascadeRefresh' => false,
+                        'isCascadeMerge' => false,
+                        'isCascadeDetach' => false,
+                        'sourceToTargetKeyColumns' => [
+                            'survey_id' => 'id',
+                        ],
+                        'joinColumnFieldNames' => [
+                            'survey_id' => 'survey_id',
+                        ],
+                        'targetToSourceKeyColumns' => [
+                            'id' => 'survey_id',
+                        ],
+                    ],
+                    'focusMessages' => [
+                        'fieldName' => 'focusMessages',
+                        'mappedBy' => 'focusGroup',
+                        'targetEntity' => 'App\\Entity\\FocusMessage',
+                        'cascade' => [],
+                        'orphanRemoval' => false,
+                        'fetch' => 2,
+                        'type' => 4,
+                        'inversedBy' => null,
+                        'isOwningSide' => false,
+                        'sourceEntity' => 'App\\Entity\\FocusGroup',
+                        'isCascadeRemove' => false,
+                        'isCascadePersist' => false,
+                        'isCascadeRefresh' => false,
+                        'isCascadeMerge' => false,
+                        'isCascadeDetach' => false,
+                    ],
+                    'focusAccesses' => [
+                        'fieldName' => 'focusAccesses',
+                        'mappedBy' => 'focusGroup',
+                        'targetEntity' => 'App\\Entity\\FocusAccess',
+                        'cascade' => [],
+                        'orphanRemoval' => false,
+                        'fetch' => 2,
+                        'type' => 4,
+                        'inversedBy' => null,
+                        'isOwningSide' => false,
+                        'sourceEntity' => 'App\\Entity\\FocusGroup',
+                        'isCascadeRemove' => false,
+                        'isCascadePersist' => false,
+                        'isCascadeRefresh' => false,
+                        'isCascadeMerge' => false,
+                        'isCascadeDetach' => false,
+                    ],
+                ],
+            ],
+            'idGenerator' => [
+                $o[1],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Insc{% endblock %}
+
+{% block body %}
+    <h1>Edit Insc</h1>
+
+    {{ include('insc/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('insc_index') }}">back to list</a>
+
+    {{ include('insc/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'AppBundle:Backend:_layout.html.twig' %}
+
+{% block page_title %}
+    <h3 class="page-title"> Exporter
+        <small>liste des articles</small>
+    </h3>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="portlet-body">
+                <div class="table-toolbar">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="btn-group">
+                                <a id="sample_editable_1_new" class="btn sbold green" href="{{ path('backend_configuration_download') }}"> Exporter les articles
+                                    {#<i class="fa fa-plus"></i>#}
+                                </a>
+                            </div>
+                            <div class="btn-group">
+                                <a id="sample_editable_1_new" class="btn sbold green" href="{{ path('backend_configuration_export-points') }}"> Exporter les points
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+{% endblock %}

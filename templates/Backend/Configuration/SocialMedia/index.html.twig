@@ -1,0 +1,35 @@
+{% extends 'Backend/_layout.html.twig' %}
+
+{% block title %}Configuration Des liens {% endblock %}
+
+{% block content %}
+    {{ parent() }}
+    <h1>List des liens</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Facebook</th>
+                <th>Insta</th>
+                <th>Site</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for configuration in configurations %}
+            <tr>
+                <td>{{ configuration.facebook }}</td>
+                <td>{{ configuration.insta }}</td>
+                <td>{{ configuration.site }}</td>
+                <td>
+                    <a href="{{ path('admin_configuration_edit', {'id': configuration.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

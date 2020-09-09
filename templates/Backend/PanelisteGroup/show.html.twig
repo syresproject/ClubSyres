@@ -1,0 +1,98 @@
+{% extends 'Backend/_layout.html.twig' %}
+
+{% block page_title %}
+    <h3 class="page-title"> Groupes
+        <small>affichage d'un groupe de panélistes</small>
+    </h3>
+{% endblock %}
+
+{% block stylesheet %}
+    <link href="{{ asset('backend/assets/global/plugins/datatables/datatables.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('backend/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css') }}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block content %}
+    <div class="portlet light bordered">
+        <div class="portlet-title">
+            <div class="caption">
+                <span class="caption-subject font-red-sunglo bold uppercase">Informations</span>
+            </div>
+        </div>
+        <div class="portlet-body form">
+            <form action="#" class="form-horizontal">
+                <div class="form-body">
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Name</label>
+                        <div class="col-md-4">
+                            <p class="form-control-static">
+                                {{ panelisteGroup.name }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <div class="row">
+                        <div class="col-md-offset-3 col-md-9">
+                            <a class="btn default" href="{{ path('admin_paneliste_groups_index') }}">Retour</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="portlet light bordered">
+        <div class="portlet-title">
+            <div class="caption">
+                <span class="caption-subject font-red-sunglo bold uppercase">Liste des panélistes associés au groupe</span>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <table id="table" class="table table-striped table-bordered table-hover table-checkable order-column">
+                <thead>
+                <tr>
+                    <th>ID Panéliste</th>
+                    <th>Titre</th>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Né le</th>
+                    <th>Email</th>
+                    <th>État</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for entity in panelisteGroup.users %}
+                    <tr class="odd gradeX">
+                        <td><a href="{{ path('admin_user_show', { 'id': entity.id }) }}">{{ entity.idPaneliste }}</a></td>
+                        <td>{{ entity.title }}</td>
+                        <td>{{ entity.lastname }}</td>
+                        <td>{{ entity.firstname }}</td>
+                        <td>{{ entity.birthdate | date('d/m/Y') }}</td>
+                        <td>{{ entity.email }}</td>
+                        <td>{{ entity.enabled ? 'Activé' : 'Désactivé' }}</td>
+                        <td>
+                            <a href="{{ path('admin_user_show', { 'id': entity.id }) }}" class="label label-success">afficher</a>
+                            <a href="{{ path('admin_user_edit', { 'id': entity.id }) }}" class="label label-success">éditer</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascript %}
+
+    <script src="{{ asset('backend/assets/global/plugins/datatables/datatables.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('backend/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js') }}" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var table = $('#table').dataTable({
+                "order": [[ 0, "desc" ]]
+            });
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,135 @@
+{% extends 'Backend/_layout.html.twig' %}
+
+{% block stylesheets %}
+    {% include 'styles.home.html.twig' %}
+    <link href="{{ asset('frontend/styles/inscription.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <style>
+        .m-c-e{
+            margin-bottom: 30px !important;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div class="containers" style="text-align: center">
+
+        {% for newsletter in newsletter %}
+           <p style="text-align: end; "> <a href="{{ path('admin_newsletter_edit', {'id': newsletter.id}) }}" style="font-size: 26px">Modifier
+                   <i class="fa fa-pencil heading-icon" style="font-size: 26px"></i>
+               </a></p>
+
+            <div class="row m-c-e">
+                <div class="col-md-6">
+                    {% if newsletter.imageName != null %}
+                        <img   src="{{ asset('./images/home_page/' ~ newsletter.imageName|url_encode) }}" style="height: 150px">
+                    {% endif %}
+                </div>
+                <div class="col-md-6">
+                    <div class="" style="">
+                        <p class="textDesc">{{ newsletter.salutation }}</p>
+                        <p class="presentation">{{ newsletter.presentation }}</p>
+                    </div>
+                    <div  style="">
+                        <p class="textDesc" style="margin-right: 2px">{{ newsletter.textDesc }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row m-c-e">
+                <div class="col-md-6">
+                    {% if newsletter.imageNameUn != null %}
+                        <img class="" style="text-align: center; height: 150px" src="{{ asset('./images/home_page/' ~ newsletter.imageNameUn|url_encode) }}">
+                    {% endif %}
+                </div>
+                <div class="col-md-6">
+                    <h5>{{ newsletter.footerTextUn }}</h5>
+                    <p>{{ newsletter.footerTextDeux }}</p>
+                </div>
+             </div>
+
+            <div class="row m-c-e">
+                <div class="col-md-6">
+                    {% if newsletter.imageNameDeux != null %}
+                        <img class="" style="text-align: center; height: 150px" src="{{ asset('./images/home_page/' ~ newsletter.imageNameDeux|url_encode) }}">
+                    {% endif %}
+                </div>
+                <div class="col-md-6">
+                    <h5>{{ newsletter.footerTextTrois }}</h5>
+                    <p>{{ newsletter.footerTextQuatre }}</p>
+                </div>
+            </div>
+
+            <div class="row m-c-e">
+                <div class="col-md-6">
+                    {% if newsletter.imageNameTrois != null %}
+                        <img src="{{ asset('./images/home_page/' ~ newsletter.imageNameTrois|url_encode) }}" style="height: 150px;">
+
+                    {% endif %}
+                </div>
+                <div class="col-md-6">
+                    <h5>{{ newsletter.footerTextCinq }}</h5>
+                    <p>{{ newsletter.footerTextSix }}</p>
+                </div>
+            </div>
+            <div class="row m-c-e">
+                <div class="col-md-6">
+                    {% if newsletter.imageNameQuatre != null %}
+                        <img class="" style="text-align: center; height: 150px" src="{{ asset('./images/home_page/' ~ newsletter.imageNameQuatre|url_encode) }}">
+                    {% endif %}
+                </div>
+                <div class="col-md-6">
+                    <h5>{{ newsletter.footerTextSept }}</h5>
+                    <p>{{ newsletter.footerTextHuit }}</p>
+                </div>
+            </div>
+        {% endfor %}
+
+    </div>
+
+    {% include 'js.html.twig' %}
+
+{% endblock %}
+{% block javascripts %}
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        function show(elementId) {
+            document.getElementById("id1").style.display="none";
+            document.getElementById(elementId).style.display="block";
+        }
+        function hide(elementId) {
+            document.getElementById("id1").style.display="block";
+            document.getElementById(elementId).style.display="none";
+        }
+
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+
+        var coll = document.getElementsByClassName("collapsible_facebook");
+        var ii;
+        for (i = 0; ii < coll.length; ii++) {
+            coll[ii].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
+{% endblock %}

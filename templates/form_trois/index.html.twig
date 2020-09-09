@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}FormTrois index{% endblock %}
+
+{% block content %}
+    {{ parent() }}
+    <h1>FormTrois index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Loisir</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for form_troi in form_trois %}
+            <tr>
+                <td>{{ form_troi.id }}</td>
+                <td>{{ form_troi.loisir }}</td>
+                <td>
+                    <a href="{{ path('form_trois_show', {'id': form_troi.id}) }}">show</a>
+                    <a href="{{ path('form_trois_edit', {'id': form_troi.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('form_trois_new') }}">Create new</a>
+{% endblock %}

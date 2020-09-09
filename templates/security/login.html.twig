@@ -1,0 +1,196 @@
+{% extends 'frontend/login.layout.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('dateVJ/css/datepicker-bs4.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('dateVJ/css/datepicker-bulma.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('dateVJ/css/datepicker-foundation.min.css') }}" rel="stylesheet" />
+    <style>
+        .container {
+            margin-left: auto;
+            margin-right: auto;
+            width: 350px;
+            padding-top: 20px;
+        }
+
+        #div-form {
+            width: 60%;
+            margin: auto;
+            margin-top: 148px;
+            text-align: center;
+        }
+
+
+        .inputLoginD{
+            width: 100%;
+            padding-left: 20px;
+            background: #f5f7ff;
+            margin-bottom: 4px;
+            border: 1px solid #eeeeee;
+            line-height: 40px;
+
+        }
+
+        #content {
+            background-image: url("../frontend/images/Holly_FRK__B.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            min-height: 850px;
+        }
+
+        .margeEntreDiv {
+            margin-bottom: 30px;
+        }
+
+        #inputEmail {
+            margin-bottom: 4px;
+            border-bottom: 1px solid #2980b9;
+            width: 239px;
+        }
+
+        #l_fa {
+            font-size: 27px;
+            margin-right: 4px;
+            color: #2980b9;
+        }
+
+        .d_flex {
+            display: flex;
+        }
+
+        .dateDeNaissanceLogin {
+            display: flex;
+        }
+
+        .dateDeNaissance {
+            border-bottom: 1px solid #2980b9;
+            margin: 5px;
+            text-align: -webkit-center;
+            width: 80px;
+
+
+        }
+
+        label {
+            margin: 0px;
+        }
+
+        input {
+        }
+
+        .div_login_butn {
+            background-color: #2980b9;
+            text-align: center;
+
+        }
+
+        .login_butn {
+            background-color: #2980b9;
+            color: white;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    {{ parent() }}
+
+    <div id="div-form" class="text-center" style="">
+        {% if app.user and enabledM == 0 %}
+            <a class="div_login_butn" href="{{ path('user_accueil_index') }}" style="display: flex">
+                <div style="width: 40%">
+                    <button class="login_butn" style=" line-height: 3">Bonjour {{ app.user.title }} {{ app.user.firstname }}, voulez-vous retouner à la page d'accueil ?</button>
+                </div>
+                <div style="width: 40%">
+                    <button class="login_butn" type="submit">
+                        <i class="large material-icons" style="padding-top: 9px">arrow_forward</i>
+                    </button>
+                </div>
+            </a>
+        {% endif %}
+    </div>
+    <div class="container">
+            <form class="styleCard" id="login_form" method="post">
+            {% if error %}
+                <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            {% endif %}
+
+            {% if enabledM %}
+                <div class="mb-3">
+                    <p>
+                        {{ enabledM }}
+                    </p>
+                </div>
+            {% endif %}
+
+            <h5 class="h3 mb-3 font-weight-normal" style="color: grey; text-align: center">Merci d’indiquer vos informations !</h5>
+            <div class="d_flex margeEntreDiv">
+                <input value="{{ last_username }}" name="idPaneliste" placeholder="Id Paneliste" id="idPaneliste" class="form-control inputLoginD" required autofocus>
+            </div>
+            <label for="inputPassword" style="">Merci d’indiquer votre date de naissance</label>
+            <div class="dateDeNaissanceLogin margeEntreDiv" style="justify-content: space-around">
+               <div>
+                    <input name="jour" id="jour" placeholder="JJ" class="form-control dateDeNaissance inputLoginD"
+                           required>
+                </div>
+                <div>
+                    <input name="mois" id="mois" placeholder="MM" class="form-control dateDeNaissance inputLoginD"
+                           required>
+                </div>
+                <div>
+                    <input name="annee" id="annee" placeholder="AAAA"
+                           class="form-control dateDeNaissance inputLoginD" required>
+                </div>
+            </div>
+
+                {#
+                <div id="inline" data-date="01/01/2007"></div>
+                <input type="text" placeholder="Format : mm/dd/yyy" name="dateL" class="inputLoginD">
+                #}
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+
+            {# je laisse continuer mais je pense que c'est l'enverse l'inverse de quoi sinon je rien dis chrome
+                Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+                See https://symfony.com/doc/current/security/remember_me.html
+
+                <div class="checkbox mb-3">
+                    <label>
+                        <input type="checkbox" name="_remember_me"> Remember me
+                    </label>
+                </div>
+            #}
+
+            <div class="div_login_butn">
+                <button class="login_butn inputLoginD" type="submit">Se connecter</button>
+            </div>
+        </form>
+    </div>
+
+
+
+
+
+
+{% endblock %}
+{% block footer %}
+    {{ parent() }}
+
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+    <script src="{{ asset('dateVJ/js/datepicker.min.js') }}"></script>
+    <script src="{{ asset('dateVJ/js/datepicker-full.js') }}"></script>
+
+    <script>
+        const elem = document.querySelector('input[name="dateL"]');
+        const datepicker = new Datepicker(elem, {
+            // options here
+            //maxDate: null,
+            //console.log(maxDate)
+        });
+    </script>
+{% endblock %}

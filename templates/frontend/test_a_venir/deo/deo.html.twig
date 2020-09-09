@@ -1,0 +1,102 @@
+{% extends "frontend/_layout.html.twig" %}
+
+{% block title %}
+
+{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/litera/bootstrap.min.css">
+
+{% endblock %}
+
+{% block content %}
+    <div class="jumbotron">
+        <h1 class="display-3">Test Deo</h1>
+        <p class="lead">
+
+
+            {{ form_start(form) }}
+        <div class="my-custom-class-for-errors">
+            {{ form_errors(form) }}
+        </div>
+
+        <fieldset>
+            <div class="form-group">
+                {{ form_label(form.utilisateur_deo, 'Etes-vous utilisatrice de déodorant ou anti-transpirant')}}
+                {{ form_widget(form.utilisateur_deo, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">Pierre d'Alun </th>
+                    <th scope="col">Oui</th>
+                    <th scope="col">Non</th>
+                </tr>
+                </thead>
+                <tbody>
+
+
+                <tr class="table-active">
+                <div id="deo_pierre_alun">
+                    <th scope="row">Votre déodorant contient-il de la pierre d'alun ?</th>
+                    <td>
+                        <input type="radio" id="deo_pierre_alun_0" name="deo[pierre_alun]" required="required" value="Oui"></td>
+                    <td>
+                    <input type="radio" id="deo_pierre_alun_1" name="deo[pierre_alun]" required="required" value="Non"></td>
+                </div>
+                </tr>
+                {% do form.pierre_alun.setRendered %}
+                </tbody>
+            </table>
+
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">Sels d'aluminium </th>
+                    <th scope="col">Oui</th>
+                    <th scope="col">Non</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr class="table-active">
+                        <th scope="row">Votre déodorant contient-il des sels d'aluminium ?</th>
+                        <div id="deo_sels_alu">
+                          <td><input
+                                    type="radio" id="deo_sels_alu_0" name="deo[sels_alu]" value="Oui"></td>
+
+                           <td> <input type="radio" id="deo_sels_alu_1" name="deo[sels_alu]"
+                                                                           value="Non"></td>
+                        </div>
+                    </tr>
+
+                {% do form.sels_alu.setRendered %}
+                </tbody>
+            </table>
+
+            <div class="form-group">
+                {{ form_label(form.forme_deo, 'Sous quel forme ce trouve votre Deo') }}
+                {{ form_widget(form.forme_deo, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+        </fieldset>
+        <button type="submit" class="btn btn-secondary">Envoyer</button>
+
+        {{ form_end(form) }}
+
+
+        </p>
+
+    </div>
+
+
+
+
+{% endblock %}
+{% block javascripts %}
+
+{% endblock %}
+
+
+
+
+

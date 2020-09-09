@@ -1,0 +1,407 @@
+Num cathégorie,1 category,2 sub_category,3 détail category
+,Administration,Education,
+,Administration,Justice,
+,Administration,Social ,
+,Administration,Tax,
+,Administration,City Hall,
+,Administration,Police,
+,Administration,Police station,
+,Administration,Tourist office,
+,,,
+,Food,Shops,
+,Food,Food Market,
+,Food,Organic shops,
+,Food,Services,
+,Food,Others,
+,,,
+,Automotive,Dealer,
+,Automotive,Manufacturer,
+,Automotive,Auto repair,
+,Automotive,Services,
+,Automotive,Driving school,
+,Automotive,Gas station,
+,Automotive,Car wash,
+,,,
+,Bank / Insurance,Car Insurance,
+,Bank / Insurance,Home insurance,
+,Bank / Insurance,Mortgage loan,
+,Bank / Insurance,Bank account,
+,Bank / Insurance,Other insurance,
+,Bank / Insurance,Other,
+,Bank / Insurance,Consumer loan,
+,Bank / Insurance,Life insurance,
+,,,
+,Well-being & Health,Spa,
+,Well-being & Health,Institute,
+,Well-being & Health,Pool,
+,Well-being & Health,Hairdresser,
+,Well-being & Health,Clinic,
+,Well-being & Health,Hospital,
+,Well-being & Health,Health Medical group,
+,Well-being & Health,Opticians,
+,Well-being & Health,Others,
+,Well-being & Health,Ambulances,
+,Well-being & Health,"physiotherapist, osteopaths, reflexology, massage & other",
+,Well-being & Health,Pharmacy,
+,Well-being & Health,Other services,
+,Well-being & Health,Health supplement,
+,,,
+,CLUB SYRES,Improvments,
+,CLUB SYRES,Others,
+,,,
+, Cosmetics,Face care,Moisturizing
+, Cosmetics,Face care,Anti-wrinkle
+, Cosmetics,Face care,Firming
+, Cosmetics,Face care,Lifting
+, Cosmetics,Face care,Radiance
+, Cosmetics,Face care,Acne issues
+, Cosmetics,Face care,Anti spot
+, Cosmetics,Face care,Skin imperfection
+, Cosmetics,Face care,Serum
+, Cosmetics,Face care,Capsule care
+, Cosmetics,Face care,Oil care
+, Cosmetics,Face care,BB cream
+, Cosmetics,Face care,CC cream
+, Cosmetics,Face care,Antioxidant
+, Cosmetics,Face care,Antipollution care
+, Cosmetics,Face care,Toner
+,,,
+, Cosmetics,Face pre-treatment,Brightening lotion
+, Cosmetics,Face pre-treatment,Lotion / Essence
+, Cosmetics,Face pre-treatment,Toner
+, Cosmetics,Face pre-treatment,Mattifying lotion
+, Cosmetics,Face pre-treatment,Oil care
+,,,
+, Cosmetics,Eye make-up,Crayon
+, Cosmetics,Eye make-up,Eye liner
+, Cosmetics,Eye make-up,Eye shadow
+, Cosmetics,Eye make-up,Mascara
+, Cosmetics,Eye make-up,Eyebrow make-up
+, Cosmetics,Eye make-up,Cream eye shadow
+, Cosmetics,Eye make-up,Powder eye shadow
+, Cosmetics,Eye make-up,False eyelashes
+, Cosmetics,Eye make-up,Classic mascara
+, Cosmetics,Eye make-up,Waterproof mascara
+, Cosmetics,Eye make-up,Middle volume mascara
+, Cosmetics,Eye make-up,Mascara base
+, Cosmetics,Eye make-up,Liquid eye shadow
+, Cosmetics,Eye make-up,Crayon eye shadow
+, Cosmetics,Eye make-up,Extra volume mascara
+, Cosmetics,Eye make-up,Eye shadow base
+,,,
+, Cosmetics,Lip make-up,Classic lipstick
+, Cosmetics,Lip make-up,Long-lasting lipstick
+, Cosmetics,Lip make-up,Gloss
+, Cosmetics,Lip make-up,Lip crayon
+, Cosmetics,Lip make-up,Lipstick blush
+, Cosmetics,Lip make-up,Lipstick base
+,,,
+, Cosmetics,Nail colour,Base
+, Cosmetics,Nail colour,Top coat
+, Cosmetics,Nail colour,Nail polish
+, Cosmetics,Nail colour,Varnished Brilliance
+, Cosmetics,Nail colour,Nail care
+, Cosmetics,Nail colour,French manucure
+, Cosmetics,Nail colour,False nails
+, Cosmetics,Nail colour,Solvent
+,,,
+, Cosmetics,Complexion make-up,Tinted cream
+, Cosmetics,Complexion make-up,Primer
+, Cosmetics,Complexion make-up,Concealer
+, Cosmetics,Complexion make-up,Fluid foundation
+, Cosmetics,Complexion make-up,Powder foundation
+, Cosmetics,Complexion make-up,Compact foundation
+, Cosmetics,Complexion make-up,Powder
+, Cosmetics,Complexion make-up,Tinted concealer
+, Cosmetics,Complexion make-up,Blush
+, Cosmetics,Complexion make-up,"Tinted gel, healthy-glow, radiance"
+, Cosmetics,Complexion make-up,Cream foundation
+, Cosmetics,Complexion make-up,Mousse foundation
+, Cosmetics,Complexion make-up,Touche éclat
+, Cosmetics,Complexion make-up,Sun powder
+, Cosmetics,Complexion make-up,Finishing powder
+, Cosmetics,Complexion make-up,Compact powder
+, Cosmetics,Complexion make-up,BB cream
+, Cosmetics,Complexion make-up,Two-way-cake
+, Cosmetics,Complexion make-up,Complexion perfector
+, Cosmetics,Complexion make-up,Blur
+, Cosmetics,Complexion make-up,CC cream
+, Cosmetics,Complexion make-up,Contouring
+, Cosmetics,Complexion make-up,Foundation with SPF
+, Cosmetics,Complexion make-up,Cushion foundation
+, Cosmetics,Complexion make-up,Highlighter
+,,,
+, Cosmetics,Rinsed make-up remover,Cleansing gel
+, Cosmetics,Rinsed make-up remover,Oil-based make-up remover
+, Cosmetics,Rinsed make-up remover,Mousse-based make-up remover
+, Cosmetics,Rinsed make-up remover,Foaming gel
+, Cosmetics,Rinsed make-up remover,Wipes
+, Cosmetics,Rinsed make-up remover,Cream-based make-up remover
+, Cosmetics,Rinsed make-up remover,Specific cleansing gel
+, Cosmetics,Rinsed make-up remover,Cleansing lotion
+, Cosmetics,Rinsed make-up remover,Soft exfoliating gel
+, Cosmetics,Rinsed make-up remover,Bar soap
+,,,
+, Cosmetics,non-rinsed make-up remover,Cleansing lotion
+, Cosmetics,non-rinsed make-up remover,Cleansing milk
+, Cosmetics,non-rinsed make-up remover,Cleansing water
+, Cosmetics,non-rinsed make-up remover,Toner
+, Cosmetics,non-rinsed make-up remover,Wipes
+, Cosmetics,non-rinsed make-up remover,Cream-based make-up repmover
+, Cosmetics,non-rinsed make-up remover,Micellar water
+, Cosmetics,non-rinsed make-up remover,Oil-based make-up remover
+, Cosmetics,non-rinsed make-up remover,Bi-phase remover
+,,,
+, Cosmetics,Body care,Moisturizer
+, Cosmetics,Body care,Firming care
+, Cosmetics,Body care,Slimming care
+, Cosmetics,Body care,Oil care
+, Cosmetics,Body care,Body scrub
+, Cosmetics,Body care,Anti-stretchmark care
+, Cosmetics,Body care,Heavy legs care
+, Cosmetics,Body care,Neck care
+, Cosmetics,Body care,Draining care
+, Cosmetics,Body care,Love handles care
+, Cosmetics,Body care,Body mask
+, Cosmetics,Body care,Body cream
+, Cosmetics,Body care,Body lotion
+, Cosmetics,Body care,Body gel
+,,,
+, Cosmetics,Hand care,Anti-stain care
+, Cosmetics,Hand care,Moisturizing
+, Cosmetics,Hand care,Hand scrub
+, Cosmetics,Hand care,Oil care
+, Cosmetics,Hand care,Nail care
+, Cosmetics,Hand care,Foot treatment
+,,,
+, Cosmetics,Sun care,Self-tanner
+, Cosmetics,Sun care,Sunscreen
+, Cosmetics,Sun care,After sun
+, Cosmetics,Sun care,SPF care
+, Cosmetics,Sun care,Tanning salons
+, Cosmetics,Sun care,Sunscreen for face
+, Cosmetics,Sun care,Sunscreen for body
+, Cosmetics,Sun care,After-sun for face
+, Cosmetics,Sun care,After-sun for body
+,,,
+, Cosmetics,Shampoos,Fatty hair 
+, Cosmetics,Shampoos,Normal hair
+, Cosmetics,Shampoos,Dry or damaged hair
+, Cosmetics,Shampoos,Combination hair
+, Cosmetics,Shampoos,Fine hair
+, Cosmetics,Shampoos,"For frequent use, soft shampoo"
+, Cosmetics,Shampoos,For coloured-hairs
+, Cosmetics,Shampoos,"Two-in-one, three-in-one"
+, Cosmetics,Shampoos,Anti-dandruff shampoo
+, Cosmetics,Shampoos,Anti-fall shampoo
+, Cosmetics,Shampoos,For highlighted hair
+, Cosmetics,Shampoos,"Wavy, curly hair"
+, Cosmetics,Shampoos,Dry shampoo
+, Cosmetics,Shampoos,Shower oil
+,,,
+, Cosmetics,Conditioner,Conditioner
+, Cosmetics,Conditioner,Detangling balm 
+, Cosmetics,Conditioner,Hair cream
+, Cosmetics,Conditioner,Hair mask
+, Cosmetics,Conditioner,Hair lotion
+, Cosmetics,Conditioner,Unrinsed mousse
+, Cosmetics,Conditioner,"Capsule, mask, unrinsed oil care"
+,,,
+, Cosmetics,Fixative care,Fixative gel
+, Cosmetics,Fixative care,Lacquers
+, Cosmetics,Fixative care,Styling mousse
+, Cosmetics,Fixative care,Sprays
+, Cosmetics,Fixative care,Styling water
+, Cosmetics,Fixative care,Styling wax
+, Cosmetics,Fixative care,Styling creams
+,,,
+, Cosmetics,Grooming,Bar soap
+, Cosmetics,Grooming,Liquid soap
+, Cosmetics,Grooming,Shower gel
+, Cosmetics,Grooming,Shampoo for hair and body
+,,,
+, Cosmetics,Deodorizers,Spray deodorizers
+, Cosmetics,Deodorizers,Stick deodorizers
+, Cosmetics,Deodorizers,Cream or tube deodorizers
+, Cosmetics,Deodorizers,Roll On deodorizers
+, Cosmetics,Deodorizers,Wipes deodorizers
+, Cosmetics,Deodorizers,Antiperspirant
+, Cosmetics,Deodorizers,Deodorizers without aluminium salts
+, Cosmetics,Deodorizers,Alum stone
+,,,
+, Cosmetics,Shaving products,Shaving cream
+, Cosmetics,Shaving products,Shaving gel
+, Cosmetics,Shaving products,Shaving cream
+, Cosmetics,Shaving products,With shaving brush
+, Cosmetics,Shaving products,Shaving soap
+, Cosmetics,Shaving products,Oil
+,,,
+, Cosmetics,Aftershave,After-shave gel
+, Cosmetics,Aftershave,After-shave balm
+, Cosmetics,Aftershave,After-shave cream
+, Cosmetics,Aftershave,After-shave wipes
+, Cosmetics,Aftershave,"Eau de toilette, after shave"
+, Cosmetics,Aftershave,After-shave lotion
+, Cosmetics,Aftershave,Soothing care
+,,,
+, Cosmetics,Personal hygiene,Soap
+, Cosmetics,Personal hygiene,Gel
+, Cosmetics,Personal hygiene,Deodorizer
+, Cosmetics,Personal hygiene,Wipes
+, Cosmetics,Personal hygiene,Cream
+, Cosmetics,Personal hygiene,Toothpaste
+,,,
+, Cosmetics,Fragrance,Fragrance
+, Cosmetics,Fragrance,Water treatment
+, Cosmetics,Fragrance,Eau de toilette
+, Cosmetics,Fragrance,Mist
+,,,
+, Cosmetics,Eye care,Concealer
+, Cosmetics,Eye care,Eye contour
+, Cosmetics,Eye care,Anti-puffiness care
+, Cosmetics,Eye care,Eye patch
+, Cosmetics,Eye care,Eye contour mask
+,,,
+, Cosmetics,Facial scrub,Facial scrub
+, Cosmetics,Facial scrub,Chemical peel at dermatologist'
+, Cosmetics,Facial scrub,Mechanical peel at home
+, Cosmetics,Facial scrub,Chemical peel at home
+, Cosmetics,Facial scrub,Institute peel
+, Cosmetics,Facial scrub,laser peel
+, Cosmetics,Facial scrub,Zxfolialting scrub
+, Cosmetics,Facial scrub,Peel mask
+,,,
+, Cosmetics,Face mask,Face mask
+, Cosmetics,Face mask,Instant radiance mask
+, Cosmetics,Face mask,Purifying mask
+, Cosmetics,Face mask,Patch mask
+, Cosmetics,Face mask,Anti-wrinkle mask 
+, Cosmetics,Face mask,Sheet mask
+, Cosmetics,Face mask,Detoxifying Mask
+, Cosmetics,Face mask,Rinsed mask
+, Cosmetics,Face mask,Other unrinsed mask
+,,,
+, Cosmetics,Lip care,Lipstick
+, Cosmetics,Lip care,Lip balm
+, Cosmetics,Lip care,Lip contour
+, Cosmetics,Lip care,Lip scrub
+,,,
+, Cosmetics,Beard care,Oil for beard
+, Cosmetics,Beard care,Scrub for beard
+, Cosmetics,Beard care,Shampoo for beard
+,,,
+, Cosmetics,Hair removers,Sugar-based wax
+, Cosmetics,Hair removers,Hot strips wax
+, Cosmetics,Hair removers,Cold strips wax
+, Cosmetics,Hair removers,Resin-wax
+, Cosmetics,Hair removers,Depilatory cream
+, Cosmetics,Hair removers,Epilator
+, Cosmetics,Hair removers,Depilatory gel
+, Cosmetics,Hair removers,Institute
+, Cosmetics,Hair removers,Depilatory mousse
+, Cosmetics,Hair removers,Shaving product
+, Cosmetics,Hair removers,Razor
+, Cosmetics,Hair removers,RollOn
+, Cosmetics,Hair removers,Permanent shaving
+, Cosmetics,Hair removers,Hair clipper
+, Cosmetics,Hair removers,Threading
+, Cosmetics,Hair removers,Tweezers
+, Cosmetics,Hair removers,Resin-wax Roll'on
+, Cosmetics,Hair removers,Sugar-based wax Roll'on
+, Cosmetics,Hair removers,Cold strips wax Roll'on
+, Cosmetics,Others,
+,,,
+, Cosmetics,Service in stores,
+,,,
+,Cybercommerce,Commercial website,
+,Cybercommerce,Online service,
+,Cybercommerce,Others,
+,,,
+,Household appliances,Construction materials,
+,Household appliances,Electricity and Gas,
+,Household appliances,Water Supply Company,
+,Household appliances,Fournitures,
+,Household appliances,Appliances,
+,Household appliances,Audiovisual,
+,Household appliances,Kitchen,
+,Household appliances,Others,
+,Household appliances,Customer service,
+,Household appliances,Small appliance,
+,Household appliances,Computing,
+,Household appliances,Telephony,
+,Household appliances,Toys,
+,Household appliances,Decoration,
+,,,
+,,,
+,Real estate,Estate agency,
+,Real estate,Promoter,
+,Real estate,Builder,
+,Real estate,Estate agent,
+,Real estate,Notary,
+,Real estate,Expert,
+,Real estate,Diagnostic ,
+,Real estate,Others,
+,Real estate,House rental,
+,Real estate,Leasing between individuals,
+,,,
+,Leisure/travel,Travel,
+,Leisure/travel,Travel agency,
+,Leisure/travel,Travel operator,
+,Leisure/travel,Club,
+,Leisure/travel,Culture,
+,Leisure/travel,Cinema,
+,Leisure/travel,Theatre,
+,Leisure/travel,Museum,
+,Leisure/travel,Outings,
+,Leisure/travel,Sports,
+,Leisure/travel,Amusement park,
+,Leisure/travel,Concert / Spectacle,
+,Leisure/travel,Hôtel,
+,Leisure/travel,Gym,
+,,,
+,Fashion,Ready-made clothes,
+,Fashion,Fashion accessory,
+,Fashion,Leatherwork/bags,
+,Fashion,Haute couture,
+,Fashion,Shoes,
+,Fashion,Household linen,
+,Fashion,Lingerie / underwear,
+,Fashion,Bags,
+,Fashion,Kids,
+,Fashion,Service in stores,
+,,,
+A RETIRER,Food,French food,
+A RETIRER,Food,World cuisine,
+,Food,Fast food,
+,Food,Out-of-home catering,
+,Food,Gourmet restaurant,
+,Food,Café / Pub,
+,Food,Tea room/glacier,
+,Food,Chinese food,
+,Food,Thai food,
+,Food,Vietnamese food,
+,Food,Singaporean food,
+,Food,Other Asian food,
+,Food,Western food,
+,,,
+,Service,Trade,
+,Service,Maintenance,
+,Service,Services to individuals,
+,Service,Pets,
+,Service,Liberal profession,
+,Service,Autres Others,
+,Service,Internet Service Provider / telecommunication company,
+,Service,Services to individuals,
+,,,
+,Transportation,Airline,
+,Transportation,Airports,
+,Transportation,Train stations,
+,Transportation,Subway,
+,Transportation,Bus,
+,Transportation,oBike,
+,Transportation,Boat,
+,Transportation,Others,
+,Transportation,Car rental,
+,Transportation,Car sharing,
+,Transportation,Cab,
+,Transportation,Transport package,

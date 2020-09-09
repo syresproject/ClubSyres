@@ -1,0 +1,41 @@
+{% extends "AppBundle:Frontend:_layout.html.twig" %}
+
+{# CONTENT #}
+{% block content %}
+    <div class="header-clear-large"></div>
+
+    <div class="content">
+        <div class="container heading-style-5">
+            <h4 class="heading-title">Focus group</h4>
+            <i class="fa fa-align-left heading-icon"></i>
+            <div class="line bg-black"></div>
+        </div>
+
+        <div class="blog-post-comments full-bottom">
+            {{ form_start(focus_message_form) }}
+                <div class="blog-post-comment-add">
+                    {% if focusMessage %}
+                        {% if focusMessage.user %}
+                            <h5>{{ 'reply_to' |trans({}, 'focusgroup') }} {{ focusMessage.user.firstname }}</h5>
+                        {% else %}
+                            <h5>{{ 'reply_to_syres' |trans({}, 'focusgroup') }}</h5>
+                        {% endif %}
+                        <p>
+                            {{ focusMessage.content }}
+                        </p>
+                    {% else %}
+                        <h5>{{ focusGroup.survey.name }}</h5>
+
+                        {{ focusGroup.article | raw }}
+                    {% endif %}
+
+                    <strong>{{ 'my_message' |trans({}, 'focusgroup') }}</strong><em>{{ 'required' |trans({}, 'focusgroup') }}</em>
+                    {{ form_widget(focus_message_form.content) }}
+                </div>
+
+                <button type="submit" class="button button-green button-right full-top full-bottom hardfix">{{ 'send' |trans({}, 'focusgroup') }}</button>
+                <a href="{{ path('frontend_focusgroup_show', {'id': focusGroup.id}) }}" class="button button-grey button-right full-top full-bottom">{{ 'back' |trans({}, 'focusgroup') }}</a>
+            {{ form_end(focus_message_form) }}
+        </div>
+    </div>
+{% endblock %}

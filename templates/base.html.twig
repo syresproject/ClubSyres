@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% block head %}
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            {% block stylesheets %}{% endblock %}
+        <title>{% block title %}{% endblock %} Syres</title>
+        {# ICONS test #}
+        {% block icons %}
+                <link rel="icon" type="image/png" href="{{ asset('frontend/images/splash/android-chrome-192x192_v2.png') }}" sizes="192x192">
+                <link rel="apple-touch-icon" sizes="196x196" href="{{ asset('frontend/images/splash/apple-touch-icon-196x196_v2.png') }}">
+                <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('frontend/images/splash/apple-touch-icon-180x180_v2.png') }}">
+                <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('frontend/images/splash/apple-touch-icon-152x152_v2.png') }}">
+                <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('frontend/images/splash/apple-touch-icon-144x144_v2.png') }}">
+                <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('frontend/images/splash/apple-touch-icon-120x120_v2.png') }}">
+                <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('frontend/images/splash/apple-touch-icon-114x114_v2.png') }}">
+                <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('frontend/images/splash/apple-touch-icon-76x76_v2.png') }}">
+                <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('frontend/images/splash/apple-touch-icon-72x72_v2.png') }}">
+                <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('frontend/images/splash/apple-touch-icon-60x60_v2.png') }}">
+                <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('frontend/images/splash/apple-touch-icon-57x57_v2.png') }}">
+                <link rel="icon" type="image/png" href="{{ asset('frontend/images/splash/favicon-96x96_v2.png') }}" sizes="96x96">
+                <link rel="icon" type="image/png" href="{{ asset('frontend/images/splash/favicon-32x32_v2.png') }}" sizes="32x32">
+                <link rel="icon" type="image/png" href="{{ asset('frontend/images/splash/favicon-16x16_v2.png') }}" sizes="16x16">
+                <link rel="shortcut icon" href="{{ asset('frontend/images/splash/favicon_v2.ico') }}" type="image/x-icon" />
+        {% endblock %}
+    {% endblock %}
+</head>
+<body>
+<div id="content">
+    {% block content %}
+            <style>
+                    #content{
+                            padding-top: 80px;
+                    }
+            </style>
+
+    {% endblock %}
+</div>
+<div id="footer" style="background-color: #435462">
+    {% block footer %}
+            {% include '_widgets/footer.html.twig' %}
+    {% endblock %}
+    {% block javascripts %}
+    {% endblock %}
+</div>
+</body>
+</html>

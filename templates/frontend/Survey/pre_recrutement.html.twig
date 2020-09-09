@@ -1,0 +1,50 @@
+{% extends "AppBundle:Frontend:_layout.html.twig" %}
+
+{# CONTENT #}
+{% block content %}
+    <div class="header-clear-large"></div>
+
+    <div class="content">
+        <div class="container heading-style-5">
+            <h4 class="heading-title">{{ 'preselections_inprogress' |trans({}, 'survey') }}</h4>
+            <i class="fa fa-align-left heading-icon"></i>
+            <div class="line bg-black"></div>
+        </div>
+
+        {% for category in surveysListByCategory %}
+            <div class="container">
+                <h5>{{ category.details.name }}</h5>
+                <div class="decoration"></div>
+
+                {% for surveys in category.surveys %}
+                    {% for survey in surveys %}
+                        <a href="{{ path('frontend_survey_details', {'id' : survey.id}) }}" class="user-list-item">
+                            <img src="{{ asset('frontend/images/tree.svg') }}" alt="img">
+                            <strong>{{ survey.name }}</strong>
+                            <em>
+                                {% if survey.status == 0 %}
+                                    {{ 'coming' |trans({}, 'survey') }}
+                                {% elseif survey.status == 1 %}
+                                    {{ 'inprogress' |trans({}, 'survey') }}
+                                {% elseif survey.status == 2 %}
+                                    {{ 'focus' |trans({}, 'survey') }}
+                                {% elseif survey.status == 3 %}
+                                    {{ 'closed' |trans({}, 'survey') }}
+                                {% else %}
+                                    {{ survey.name }}
+                                {% endif %}
+                                - #{{ survey.idSurvey }}
+                            </em>
+                            <i class="fa fa-chevron-right"></i>
+                        </a>
+                        <div class="decoration"></div>
+                    {% endfor %}
+                {% endfor %}
+            </div>
+        {% else %}
+            <p class="center-text">
+                {{ 'no_preselections' |trans({}, 'survey') }}
+            </p>
+        {% endfor %}
+    </div>
+{% endblock %}

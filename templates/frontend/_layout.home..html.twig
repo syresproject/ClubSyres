@@ -1,0 +1,95 @@
+{% extends "base.html.twig" %}
+
+{# TITLE #}
+{% block title %}{% endblock %}
+
+{# METADATA #}
+{% block metas %}
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0 minimal-ui"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+{% endblock %}
+
+{# ICONS #}
+{% block icons %}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+{% endblock %}
+
+{# CSS #}
+{% block stylesheets %}
+    <link href="{{ asset('frontend/scripts/fancyBox/jquery.fancybox.min.css') }}"           rel="stylesheet" type="text/css">
+    <link href="{{ asset('frontend/styles/style.css') }}"           rel="stylesheet" type="text/css">
+    <link href="{{ asset('frontend/styles/menu_layout.css') }}"           rel="stylesheet" type="text/css">
+    <link href="{{ asset('frontend/styles/menus.css') }}"           rel="stylesheet" type="text/css">
+    <link href="{{ asset('frontend/styles/framework.css') }}"       rel="stylesheet" type="text/css">
+    <link href="{{ asset('frontend/styles/font-awesome.css') }}"    rel="stylesheet" type="text/css">
+    <link href="{{ asset('frontend/styles/animate.css') }}"         rel="stylesheet" type="text/css">
+    <link href="{{ asset('frontend/styles/override.css') }}"        rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="{{ asset('frontend/styles/font-awesome.css') }}"    rel="stylesheet" type="text/css">
+
+{% endblock %}
+
+{# BODY #}
+{% block content %}
+    {% include 'frontend/home/styles.home.html.twig' %}
+
+    <style>
+        #content{
+            min-height: 800px !important;
+        }
+        .content{
+            min-height: 800px !important;
+        }
+
+            .navSize{
+                font-size: 20px;
+            }
+
+            .nav-item:hover{
+                background-color: #f8f9fa!important;
+            }
+
+            .container{
+                width: 90% !important;
+            }
+        </style>
+
+    <div style=" z-index: 1; position: fixed; width: 100% !important;">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 80px; box-shadow: 0 0 20px rgba(0,0,0,.1); background-color: white; padding-bottom: 6px !important;">
+            <div class="container" style="width: 90%;">
+                <a class="navbar-brand" href="{{ path('user_accueil_index') }}" style="width: 50%"><img id="logo" height="60px" src="../../frontend/images/logo-syres.png" alt="Syres"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" style="margin-left: auto; border: none; color: black">
+                    <i class="fa fa-sign-out heading-icon" style="margin-top: 4px;
+    margin-right: -29px; font-size: 26px"></i>
+
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav" style="margin-left: auto">
+                        <li class="nav-item">
+                            <a class="nav-link navC" id="navCL" href="{{ path('app_logout') }}">  <i class="fa fa-sign-out heading-icon" style="margin-top: 4px;
+    margin-right: -29px; font-size: 26px"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div style="height: 20px; background-color: #2980b9;">
+        </div>
+    </div>
+        {#
+    <div class="Navbar navM">
+
+    #}
+{% endblock %}
+
+{# JAVASCRIPTS #}
+{% block javascripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+{% endblock %}

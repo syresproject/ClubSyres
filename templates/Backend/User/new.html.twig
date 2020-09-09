@@ -1,0 +1,106 @@
+{% extends 'Backend/_layout.html.twig' %}
+
+{% block page_title %}
+    <h3 class="page-title"> Panélistes
+        <small>ajout d'un panéliste</small>
+    </h3>
+{% endblock %}
+
+{% block content %}
+    <div class="portlet light bordered">
+        <div class="portlet-title">
+            <div class="caption">
+                <span class="caption-subject font-red-sunglo bold uppercase">Ajout</span>
+            </div>
+        </div>
+        <div class="portlet-body form">
+           <div style="text-align: center"> {{ include('/_widgets/flash_notifications.html.twig') }}</div>
+
+            {{ form_start(form, {'attr' : {
+                'class' : 'form-horizontal'
+            }}) }}
+
+                <div class="form-body">
+                    <div class="form-group">
+                        {{ form_label(form.idPaneliste, null, {'label': 'ID Panéliste', 'label_attr': {'class': 'col-md-2 control-label'}}) }}
+                        <div class="col-md-10">
+                            {{ form_widget(form.idPaneliste, {'attr': {'class': 'form-control', 'placeholder' : 'ID Panéliste'}}) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(form.title, null, {'label': 'title' | trans({}, 'bo_formlabel'), 'label_attr': {'class': 'col-md-2 control-label'}}) }}
+                        <div class="col-md-10">
+                            {{ form_widget(form.title, {'attr': {'class': 'form-control', 'placeholder' : 'title' | trans({}, 'bo_formlabel') ~ ' (Monsieur / Madame)'}}) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(form.lastname, null, {'label': 'name' |trans({}, 'bo_formlabel'), 'label_attr': {'class': 'col-md-2 control-label'}}) }}
+                        <div class="col-md-10">
+                            {{ form_widget(form.lastname, {'attr': {'class': 'form-control', 'placeholder' : 'name' | trans({}, 'bo_formlabel')}}) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(form.firstname, null, {'label': 'firstname' | trans({}, 'bo_formlabel'), 'label_attr': {'class': 'col-md-2 control-label'}}) }}
+                        <div class="col-md-10">
+                            {{ form_widget(form.firstname, {'attr': {'class': 'form-control', 'placeholder' : 'firstname' | trans({}, 'bo_formlabel')}}) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(form.birthdate, null, {'label': 'Date de naissance', 'label_attr': {'class': 'col-md-2 control-label'}}) }}
+                        <div class="col-md-10">
+                            {{ form_widget(form.birthdate, {'attr': {'class': 'form-control', 'placeholder' : 'birthdate' | trans({}, 'bo_formlabel') ~ ' (JJ/MM/AAAA)'}}) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(form.phone, null, {'label': 'Numero telephone', 'label_attr': {'class': 'col-md-2 control-label'}}) }}
+                        <div class="col-md-10">
+                            {{ form_widget(form.phone, {'attr': {'class': 'form-control', 'placeholder' : 'Numero telephone' }}) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(form.email, null, {'label': 'email' | trans({}, 'bo_formlabel'), 'label_attr': {'class': 'col-md-2 control-label'}}) }}
+                        <div class="col-md-10">
+                            {{ form_widget(form.email, {'attr': {'class': 'form-control', 'placeholder' : 'email' | trans({}, 'bo_formlabel')}}) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(form.enabled, null, {'label': 'enabled' | trans({}, 'bo_formlabel'), 'label_attr': {'class': 'col-md-2 control-label'}}) }}
+                        <div class="col-md-10">
+                            <div class="radio-list">
+                                <label class="radio-inline">
+                                    {{ form_widget(form.enabled.0) }} {{ 'yes' |trans({}, 'bo_formlabel') }} </label>
+                                <label class="radio-inline">
+                                    {{ form_widget(form.enabled.1) }} {{ 'no' |trans({}, 'bo_formlabel') }} </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        {{ form_label(form.statut, null, {'label': 'Statut' | trans({}, 'bo_formlabel'), 'label_attr': {'class': 'col-md-2 control-label'}}) }}
+                        <div class="col-md-10">
+                            {{ form_widget(form.statut, {'attr': {'class': 'form-control', 'placeholder' : 'Statut'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        {{ form_label(form.panelisteGroups, null, {'label': 'groups' | trans({}, 'bo_formlabel'), 'label_attr': {'class': 'col-md-2 control-label'}}) }}
+                        <div class="col-md-10">
+                            {% for panelisteGroup in form.panelisteGroups %}
+                                <label class="radio">
+                                    {{ form_widget(panelisteGroup) }} {{ panelisteGroup.vars.label }} </label>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <div class="row">
+                        <div class="col-md-offset-3 col-md-4">
+                            <button class="btn green" type="submit">Enregistrer</button>
+                            <a class="btn default" href="{{ path('admin_user_index') }}">Retour</a>
+                        </div>
+                    </div>
+                </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}

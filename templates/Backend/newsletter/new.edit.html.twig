@@ -1,0 +1,24 @@
+{% extends 'Backend/_layout.html.twig' %}
+
+{% block stylesheet %}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="{{ asset('frontend/styles/imagesAccueil.css') }}"           rel="stylesheet" type="text/css">
+    {% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{% endblock %}
+{% block content %}
+    <h1 id="tittre_newsletter">Home page creation</h1>
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+
+
+    <button type="submit">Save</button>
+    <p> <a href="{#{ path('backend__news_shows') }#}"><i class="fas fa-eye">Back to the list</i></a></p>
+
+    {{ form_end(form) }}
+
+
+    {#% include 'AppBundle:Resources/views/imagesAccueil/test_a_venir.index.html.twig' %#}
+
+{% endblock %}

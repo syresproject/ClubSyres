@@ -1,0 +1,113 @@
+{% extends 'Backend/_layout.html.twig' %}
+
+{% block page_title %}
+    <h3 class="page-title"> Focus Group
+        <small>détails d'un focus group</small>
+    </h3>
+{% endblock %}
+
+{% block stylesheet %}
+    <link href="{{ asset('backend/assets/global/plugins/datatables/datatables.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('backend/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('backend/assets/layouts/layout/css/override.css') }}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block content %}
+    <div class="portlet light bordered">
+        <div class="portlet-title">
+            <div class="caption">
+                <span class="caption-subject font-red-sunglo bold uppercase">Focus Group</span>
+            </div>
+        </div>
+        <div class="portlet-body form">
+            {{ form_start(focus_form, {'attr' : {
+                'class' : 'form-horizontal'
+            }}) }}
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Status</label>
+                    <div class="col-md-10">
+                        <p class="form-control-static">
+                            {% if survey.type != 2 %}
+                                Fermé aux panélistes - L'enquête n'est plus de type "Test"
+                            {% elseif survey.status < 2 %}
+                                Fermé aux panélistes - L'enquête n'est pas encore cloturé
+                            {% else %}
+                                Ouvert aux panélistes
+                            {% endif %}
+                        </p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Accès</label>
+                    <div class="col-md-10">
+                        <p class="form-control-static">
+                           <a href="{{ path('admin_focus_group_accesses', {id: survey.id}) }}">Gérer les accès</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    {{ form_label(focus_form.article, null, {'label': 'Article', 'label_attr': {'class': 'col-md-2 control-label'}}) }}
+                    <div class="col-md-10">
+                        {{ form_widget(focus_form.article, {'attr': {'class': 'form-control', 'placeholder' : 'Article'}}) }}
+                    </div>
+                </div>
+            </div>
+            <div class="form-actions">
+                <div class="row">
+                    <div class="col-md-offset-3 col-md-4">
+                        <button class="btn green" type="submit">Enregistrer</button>
+                        <a class="btn default" href="{{ path('admin_survey_tests_index') }}">Retour</a>
+                    </div>
+                </div>
+            </div>
+            {{ form_end(focus_form) }}
+        </div>
+    </div>
+
+    <div class="portlet light bordered">
+        <div class="portlet-title">
+            <div class="row">
+                <div class="col-md-offset-8 col-md-4">
+                    {% if survey.focusGroup %}
+                        <a class="btn green" target="_blank" href="{{ path('admin_focus_group_export_participant', {'focusGroup': survey.focusGroup.id }) }}">Export Participants</a>
+                        <a class="btn green" target="_blank" href="{{ path('admin_focus_group_export_absents', {'focusGroup': survey.focusGroup.id }) }}">Export Absents</a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="caption">
+                <span class="caption-subject font-red-sunglo bold uppercase">Commentaires ({{ survey.focusGroup ? survey.focusGroup.focusMessages | length : '0' }})</span>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div class="row">
+                {% include "/Backend/FocusGroup/_message_tree.html.twig" with {
+                    'depth': 0,
+                    'focusMessages': focusMessages
+                } only %}
+            </div>
+        </div>
+    </div>
+
+    <div class="hidden">
+        {{ form(delete_message_form, {'attr':{'id':'delete-form'}}) }}
+    </div>
+{% endblock %}
+
+{% block javascript %}
+    <script src="{{ asset('backend/assets/global/plugins/datatables/datatables.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('backend/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js') }}" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.delete-item').click(function() {
+                if (confirm('Etes-vous certain de vouloir supprimer ce message ?')) {
+                    $('#appbundle_delete_id').val($(this).data('id'));
+                    $('#delete-form').submit();
+                }
+
+                return false;
+            });
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "frontend/_layout.html.twig" %}
+
+{# CONTENT #}
+{% block content %}
+    <div class="header-clear-large"></div>
+
+    <div class="content">
+        <div class="container heading-style-5">
+            <h4 class="heading-title">Focus group</h4>
+            <i class="fa fa-align-left heading-icon"></i>
+            <div class="line bg-black"></div>
+        </div>
+
+        <div class="blog-post-comments full-bottom">
+            {{ include('frontend/_widgets/flash_notifications.html.twig') }}
+
+            <div class="container-fullscreen heading-style-3">
+                <h3 class="heading-title">{{ focusGroup.survey.name }}</h3>
+                <em class="heading-subtitle">Focus group</em>
+                <div class="overlay bg-black"></div>
+            </div>
+
+            <div class="decoration"></div>
+
+            {{ focusGroup.article | raw }}
+
+            <div class="decoration"></div>
+
+            <div class="container">
+                <p class="center-text">
+                    <a href="{{ path('frontend_survey_details', {'id': focusGroup.survey.id}) }}" class="button-small button-grey">{{ 'back' |trans({}, 'focusgroup') }}</a>
+                    <a href="{{ path('frontend_focusgroup_reply', {'focusGroup': focusGroup.id}) }}" class="button-small button-green">{{ 'comment' |trans({}, 'focusgroup') }}</a>
+                </p>
+            </div>
+
+            <div class="decoration"></div>
+
+            <div class="container-fullscreen heading-style-3">
+                <h3 class="heading-title">{{ 'comments' |trans({}, 'focusgroup') }}</h3>
+                <div class="overlay bg-black"></div>
+            </div>
+
+            <div class="decoration"></div>
+
+            {% include "AppBundle:Frontend/FocusGroup:_message_tree.html.twig" with {
+                'depth': 0,
+                'focusGroup': focusGroup,
+                'focusMessages': focusMessages
+            } only %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,123 @@
+<?php //%255BApp%255CEntity%255CPDeuxIns%2524CLASSMETADATA%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ClassMetadata')),
+        clone ($p['Doctrine\\ORM\\Id\\IdentityGenerator'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Id\\IdentityGenerator')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\PDeuxIns',
+            ],
+            'namespace' => [
+                'App\\Entity',
+            ],
+            'rootEntityName' => [
+                'App\\Entity\\PDeuxIns',
+            ],
+            'customRepositoryClassName' => [
+                'App\\Repository\\PDeuxInsRepository',
+            ],
+            'identifier' => [
+                [
+                    'id',
+                ],
+            ],
+            'generatorType' => [
+                4,
+            ],
+            'fieldMappings' => [
+                [
+                    'id' => [
+                        'fieldName' => 'id',
+                        'type' => 'integer',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'id' => true,
+                        'columnName' => 'id',
+                    ],
+                    'domaineM' => [
+                        'fieldName' => 'domaineM',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 191,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'domaine_m',
+                    ],
+                ],
+            ],
+            'fieldNames' => [
+                [
+                    'id' => 'id',
+                    'domaine_m' => 'domaineM',
+                ],
+            ],
+            'columnNames' => [
+                [
+                    'id' => 'id',
+                    'domaineM' => 'domaine_m',
+                ],
+            ],
+            'table' => [
+                [
+                    'name' => 'pdeux_ins',
+                ],
+            ],
+            'associationMappings' => [
+                [
+                    'idInsc' => [
+                        'fieldName' => 'idInsc',
+                        'targetEntity' => 'App\\Entity\\Insc',
+                        'joinColumns' => [
+                            [
+                                'name' => 'id_insc_id',
+                                'unique' => true,
+                                'nullable' => false,
+                                'onDelete' => null,
+                                'columnDefinition' => null,
+                                'referencedColumnName' => 'id',
+                            ],
+                        ],
+                        'mappedBy' => null,
+                        'inversedBy' => null,
+                        'cascade' => [
+                            'persist',
+                            'remove',
+                        ],
+                        'orphanRemoval' => false,
+                        'fetch' => 2,
+                        'type' => 1,
+                        'isOwningSide' => true,
+                        'sourceEntity' => 'App\\Entity\\PDeuxIns',
+                        'isCascadeRemove' => true,
+                        'isCascadePersist' => true,
+                        'isCascadeRefresh' => false,
+                        'isCascadeMerge' => false,
+                        'isCascadeDetach' => false,
+                        'sourceToTargetKeyColumns' => [
+                            'id_insc_id' => 'id',
+                        ],
+                        'joinColumnFieldNames' => [
+                            'id_insc_id' => 'id_insc_id',
+                        ],
+                        'targetToSourceKeyColumns' => [
+                            'id' => 'id_insc_id',
+                        ],
+                    ],
+                ],
+            ],
+            'idGenerator' => [
+                $o[1],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

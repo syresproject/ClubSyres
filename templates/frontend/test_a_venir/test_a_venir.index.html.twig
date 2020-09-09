@@ -1,0 +1,63 @@
+{% extends "frontend/_layout.html.twig" %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('frontend/styles/test_a_venir.css') }}"           rel="stylesheet" type="text/css">
+
+{% endblock %}
+
+{# CONTENT #}
+{% block content %}
+    {{ parent() }}
+
+   <div class="container" id="marge-top">
+       <div class="header-clear-large"></div>
+       <div class="container heading-style-5">
+           <h4 class="heading-title inline-header">
+               {{ 'Test A Venir'}}
+               {% include 'frontend/header-title.html.twig' %}
+           </h4>
+            <div style="z-index: -1">
+                <i class="fa fa-align-left heading-icon" style="z-index: -1"></i>
+            </div>
+           <div class="line bg-black"></div>
+       </div>
+
+
+       <div style="padding: 0px;">
+           <p class="p_align">Participez à l'un des tests que je vous propose : démaquillant, lotion, soin...
+               Il y en a au moins un qui vous correspondra !</p>
+           </br>
+           <p class="p_align">Je vous rappelle que vous ne pouvez pas faire plusieurs tests en même temps.</p>
+           <p class="p_align">Après chaque test, vous devez attendre 2 mois minimum avant de pouvoir à nouveau tester
+               un autre produit.</p>
+           <p class="p_align">Si vous êtes déjà en test ou si vous avez testé récemment (moins de 2 mois) je ne pourrais
+               malheureusement pas vous proposer de test.
+           </p>
+
+           <table id="customers">
+               <tr>
+                   <th class="testCenter">Nom du test</th>
+                   <th class="testCenter">Sexe</th>
+                   <th class="testCenter">Age</th>
+                   <th class="testCenter">Date limite</th>
+                   <th class="testCenter" style="text-align: center">Souhaite tester</th>
+               </tr>
+               <tr style="display: none">
+               <td>Deodorant</td>
+               <td>Femme</td>
+               <td>20 => 50</td>
+               <td>14/09</td>
+               <td>
+                   <a href="{{ path('user_test_a_venirs_deo_create') }}">
+                       <button class="btn btn-primary">Postuler</button></a>
+                   </td>
+               </tr>
+           </table>
+       </div>
+   </div>
+    {{ dump(userP) }}
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+
+{% endblock %}

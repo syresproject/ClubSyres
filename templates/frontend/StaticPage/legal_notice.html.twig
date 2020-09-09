@@ -1,0 +1,20 @@
+{% extends "frontend/_layout.html.twig" %}
+
+{% block content %}
+    {{ parent() }}
+    <div class="header-clear-large"></div>
+
+    <div class="container heading-style-5" style="margin-top: 80px">
+        <h4 class="heading-title inline-header">
+            {{ 'notices' |trans({}, 'sidebar') }}
+            {% include 'frontend/header-title.html.twig' %}
+        </h4>
+        <i class="fa fa-align-left heading-icon"></i>
+        <div class="line bg-black"></div>
+    </div>
+    <div class="content">
+        <div class="container">
+            {{ legal_notice.content | raw }}
+        </div>
+    </div>
+{% endblock %}

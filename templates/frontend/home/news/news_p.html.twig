@@ -1,0 +1,97 @@
+<div class="container bodyPs" style="margin-bottom: 20px; display: none">
+    <div class="cont_flexn row" style=" text-align: center;">
+        <div class="AvantCar sticky newsletter-ent col-8 col-md-8" id="ent" style="text-align: -webkit-center; padding: 0px">
+            {% for newsletter in newsletter %}
+                <div style="padding-right: 0px; width: 80%; padding-top: 20px">
+                    <h3 class="text_align" style="margin-top: 20px; color: #2980b9; ">NEWSLETTERS</h3>
+                    <div class="aLaMemeLigne text_align divEnglobEntete" style="padding-right: 0px; text-align: right">
+                        {#  à cacher sur une md ecran #}
+                        <div class="aCacherMd marginAuto paddingSalutation">
+                        </div>
+                        <div class="text_align marginAuto" id="imgPEntete" style="text-align: right; align-content: end; padding-right: 0px;">
+                            {% if newsletter.imageName != null %}
+                                <img class="myImg imgLeft1 imgEntete imgPTail"   src="{{ asset('./images/home_page/' ~ newsletter.imageName|url_encode) }}" style="width:100%">
+                            {% endif %}
+                        </div>
+
+                        <div class="aCacherMd marginAuto paddingSalutation">
+                            <p class="presentation"></p>
+                            <p class="textDesc" ></p>
+                        </div>
+
+                        <div class="aLaLigne aCacherSml divSalutationSml" style="text-align: right; padding-right: 0px; margin-right: 0px;">
+                            <p class="presentation"></p>
+                            <p class="textDesc"><strong></strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slideshow-container" style="height: 300px; margin-top: 5px">
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">1 / 3</div>
+                        <img class="myImg imgLesTrois" style="text-align: center;width: 100%;  " src="{{ asset('images/home_page/' ~ newsletter.imageFileUn|url_encode) }}">
+                        <div class="text">
+                            <h3>{{ newsletter.footerTextUn }}</h3>
+                            <p>{{ newsletter.footerTextDeux }}</p>
+                        </div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">2 / 3</div>
+                        {% if newsletter.imageNameDeux != null %}
+                            <img class="myImg imgLesTrois" src="{{ asset('./images/home_page/' ~ newsletter.imageNameDeux|url_encode) }}" style="width: 100%; height: 360px; text-align: center; margin: auto">
+                        {% endif %}                        <div class="text">
+                            <h3>{{ newsletter.footerTextTrois }}</h3>
+                            <p>{{ newsletter.footerTextQuatre }}</p>
+                        </div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">3 / 3</div>
+                        <img class="myImg imgLesTrois" style="text-align: center;width: 100%;  " src="{{ asset('images/home_page/' ~ newsletter.imageFileTrois|url_encode) }}">
+                        <div class="text">
+                            <h3>{{ newsletter.footerTextCinq }}</h3>
+                            <p>{{ newsletter.footerTextSix }}</p>
+                        </div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">4 / 3</div>
+                        <img class="myImg imgLesTrois" style="text-align: center;width: 100%;  " src="{{ asset('images/home_page/' ~ newsletter.imageFileQuatre|url_encode) }}">
+                        <div class="text">
+                            <h3>{{ newsletter.footerTextSept }}</h3>
+                            <p>{{ newsletter.footerTextHuit }}</p>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div id="divB" style="text-align:center">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <div style="padding-top: 10px">
+                    <p class="textDesc">{{ newsletter.textDesc }}</p>
+                </div>
+            {% endfor %}
+            <hr>
+            <div style="display: none">
+                <h1 style="margin-bottom: 40px;  color: #0a6aa1">Instagram</h1>
+                <ul>
+                    <a href="https://www.instagram.com/syres_fr/?hl=fr" id="rudr_instafeedP"></a>
+                </ul>
+            </div>
+
+        </div>
+
+        <div id="face" class="" style="display: contents; margin-bottom: 10px">
+            <div id="fb-root"></div>
+            <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v4.0"></script>
+            <div class="fb-page" data-href="https://www.facebook.com/SyresTests/" data-tabs="timeline" data-height="450px" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/SyresTests/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/SyresTests/">Syres France Tests Cosmétiques</a></blockquote></div>
+        </div>
+
+    </div>
+
+</div>

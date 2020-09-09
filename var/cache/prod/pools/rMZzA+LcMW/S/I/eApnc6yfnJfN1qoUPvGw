@@ -1,0 +1,120 @@
+<?php //%255BApp%255CEntity%255CFormTrois%2524CLASSMETADATA%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ClassMetadata')),
+        clone ($p['Doctrine\\ORM\\Id\\IdentityGenerator'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Id\\IdentityGenerator')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\FormTrois',
+            ],
+            'namespace' => [
+                'App\\Entity',
+            ],
+            'rootEntityName' => [
+                'App\\Entity\\FormTrois',
+            ],
+            'customRepositoryClassName' => [
+                'App\\Repository\\FormTroisRepository',
+            ],
+            'identifier' => [
+                [
+                    'id',
+                ],
+            ],
+            'generatorType' => [
+                4,
+            ],
+            'fieldMappings' => [
+                [
+                    'id' => [
+                        'fieldName' => 'id',
+                        'type' => 'integer',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'id' => true,
+                        'columnName' => 'id',
+                    ],
+                    'loisir' => [
+                        'fieldName' => 'loisir',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 191,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'loisir',
+                    ],
+                ],
+            ],
+            'fieldNames' => [
+                [
+                    'id' => 'id',
+                    'loisir' => 'loisir',
+                ],
+            ],
+            'columnNames' => [
+                [
+                    'id' => 'id',
+                    'loisir' => 'loisir',
+                ],
+            ],
+            'table' => [
+                [
+                    'name' => 'form_trois',
+                ],
+            ],
+            'associationMappings' => [
+                [
+                    'idInsc' => [
+                        'fieldName' => 'idInsc',
+                        'targetEntity' => 'App\\Entity\\Insc',
+                        'joinColumns' => [
+                            [
+                                'name' => 'id_insc_id',
+                                'referencedColumnName' => 'id',
+                                'unique' => true,
+                            ],
+                        ],
+                        'mappedBy' => null,
+                        'inversedBy' => null,
+                        'cascade' => [
+                            'persist',
+                            'remove',
+                        ],
+                        'orphanRemoval' => false,
+                        'fetch' => 2,
+                        'type' => 1,
+                        'isOwningSide' => true,
+                        'sourceEntity' => 'App\\Entity\\FormTrois',
+                        'isCascadeRemove' => true,
+                        'isCascadePersist' => true,
+                        'isCascadeRefresh' => false,
+                        'isCascadeMerge' => false,
+                        'isCascadeDetach' => false,
+                        'sourceToTargetKeyColumns' => [
+                            'id_insc_id' => 'id',
+                        ],
+                        'joinColumnFieldNames' => [
+                            'id_insc_id' => 'id_insc_id',
+                        ],
+                        'targetToSourceKeyColumns' => [
+                            'id' => 'id_insc_id',
+                        ],
+                    ],
+                ],
+            ],
+            'idGenerator' => [
+                $o[1],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

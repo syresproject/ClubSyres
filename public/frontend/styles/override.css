@@ -1,0 +1,617 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
+
+/* Framework.css : 435 */
+
+.bg-tree {
+    /* background-image: url(../images/club-syres.png);*/
+    background-size: inherit;
+    background-repeat: no-repeat;
+    background-position: 50% 20%;
+}
+
+
+/* Framework.css : 441 */
+
+.footer-socials .mail-color {
+    background-color: #DC3D78;
+}
+
+.heading-title {
+    text-transform: uppercase;
+}
+
+
+/* Framework.css : 829 */
+
+.heading-style-3 .heading-title {
+    /*   text-shadow: 1px 1px 3px #333;*/
+}
+
+
+/* Framework.css : 840 */
+
+.heading-style-3 .heading-subtitle {
+    /*   text-shadow: 1px 1px 3px #333;*/
+}
+
+
+/* Framework.css : 903 */
+
+.heading-style-5 .heading-icon {
+    background-color: #fff;
+}
+
+
+/* Framework.css : 5289 */
+
+.pageapp-login .overlay {
+    opacity: 0.2;
+}
+
+
+/* Framework.css : 5311 */
+
+.pageapp-login .unboxed-layout .pageapp-login-field i {
+    color: #333333;
+}
+
+
+/* Framework.css : 5318 */
+
+.pageapp-login .unboxed-layout div input {
+    color: #333333;
+    border-bottom: solid 1px rgba(51, 51, 51, 0.2);
+}
+
+
+/* Framework.css : 5822 */
+
+.tasklist-item {
+    height: auto;
+}
+
+
+/* Framework.css : 5871 */
+
+.tasklist-completed h5 {
+    line-height: 22px;
+    padding: 20px;
+    margin: 0;
+}
+
+
+/* Framework.css : 6183 */
+
+.blog-post-comment .blog-post-comment-reply {
+    width: auto;
+}
+
+
+/* Framework.css : 6260 */
+
+.cover-center {
+    top: 60%;
+    width: 320px;
+}
+
+.inline-input {
+    width: 32%;
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    background-color: rgba(255, 255, 255, 0);
+    color: #1f1f1f;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    font-size: 12px;
+    text-align: center;
+}
+
+
+/* Framework.css : 6821 */
+
+.snap-drawer {
+    background: #efefef;
+}
+
+
+/* Framework.css : 6846 */
+
+#content {
+    background-color: #FFF;
+}
+
+
+/* Framework.css : 7652 */
+
+.pageapp-signup-content .boxed-layout,
+.pageapp-login-content .boxed-layout {
+    background: rgba(255, 255, 255, 0.9) none repeat scroll 0% 0%;
+    border: 1px solid rgb(204, 204, 204);
+}
+
+
+/* Menus.css : 86 */
+
+.header-light .header-logo {
+    background-image: url(../images/logo-syres.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 3px;
+    height: 52px;
+    /*
+    background: none;
+    text-align:center;
+    color:#333333;
+    font-size:20px;
+    width: 90px;
+    height: auto;
+    margin-top: 16px;
+    */
+}
+
+
+/* Menus.css : 97 */
+
+#header-fixed {
+    background: #EFEFEF;
+}
+
+
+/* Menus.css : 136 */
+
+#header-fixed .header-icon-left i {
+    font-size: 21px;
+}
+
+
+/* Menus.css : 412 */
+
+.footer-socials {
+    text-align: center;
+}
+
+
+/* Menus.css : 418 */
+
+.footer-socials a {
+    float: inherit;
+    display: inline-block;
+    border-radius: 60px;
+    padding: 5px 15px 0 15px !important;
+    height: 50px !important;
+    width: 50px !important;
+    border: 2px solid white !important;
+}
+
+
+/* Menus.css : 446 */
+
+.footer-light {
+    background: #435462;
+    color: white;
+}
+
+
+/* START - CUSTOM CSS : frontend_home_index */
+
+.home-description {
+    max-width: 550px;
+    margin: auto;
+    line-height: 18px;
+}
+
+.home-navigation {
+    padding-top: 5px;
+    max-width: 550px;
+    margin: auto;
+}
+
+.home-navigation .button-wrapper {
+    width: 50%;
+    padding: 8px;
+    float: left;
+    font-size: 16pxpx;
+}
+
+.home-navigation .big-home-button {
+    color: #fff;
+    height: 100px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.home-navigation .big-home-button.club-syres {
+    padding-top: 30px;
+}
+
+.home-navigation .big-home-button i.fa {
+    margin-top: 12px;
+    display: block;
+    font-size: 40px;
+}
+
+.button.hardfix {
+    line-height: 28px;
+}
+
+
+/* END - CUSTOM CSS : frontend_home_index */
+
+
+/* START - CUSTOM CSS : frontend_gamification_index */
+
+.gamification .sub-container {
+    max-width: 600px;
+    margin: auto;
+}
+
+.gamification .rating {
+    margin: 50px auto;
+    text-align: center;
+}
+
+.gamification .rating .title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.gamification .rating .stars {
+    font-size: 30px;
+}
+
+.gamification .rating i.on {
+    color: #f39c12;
+}
+
+.gamification img.medal {
+    margin: auto;
+}
+
+
+/* END - CUSTOM CSS : frontend_gamification_index */
+
+.id-forgot {
+    text-align: right;
+    color: #999;
+    font-size: 12px;
+}
+
+.pageapp-login h5 {
+    margin-bottom: 28px;
+}
+
+.sidebar-light-clean .submenu-item i.sidebar-notification:last-child {
+    font-size: 12px;
+    background: #fff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    opacity: 1;
+    color: #000;
+    margin-top: -15px;
+}
+
+i.insight-notification:last-child {
+    position: absolute;
+    font-size: 12px;
+    background: #fff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    opacity: 1;
+    top: 15px;
+    right: 15px;
+    color: #000;
+}
+
+.user-message {
+    font-weight: bold;
+}
+
+.user-id {
+    font-size: 12px;
+}
+
+.syres-message {
+    color: #e35b5a;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.tree-icon {
+    background-image: url(../images/club-syres.png);
+    background-size: contain;
+    height: 50px;
+    display: block;
+    margin: auto;
+    width: 50px;
+    background-repeat: no-repeat;
+}
+
+
+/* START - CUSTOM CSS : frontend_sidebar */
+
+.sidebar-light-clean .menu-item .bg-orange-club-syres {
+    background-color: #89d6f5;
+}
+
+.sidebar-light-clean .menu-item .bg-green-my-points {
+    background-color: #68cbf2;
+}
+
+.sidebar-light-clean .menu-item .bg-blue-panelist-space {
+    background-color: #08abeb;
+}
+
+.sidebar-light-clean .menu-item .bg-pink-contact-us {
+    background-color: #DC3D78;
+}
+
+
+/* END - CUSTOM CSS : frontend_sidebar */
+
+
+/* START - CUSTOM CSS : footer */
+
+.footer-message {
+    font-size: 18px;
+    text-transform: uppercase;
+    color: white;
+}
+
+
+/* END - CUSTOM CSS : footer */
+
+
+/* START - CUSTOM CSS : index - gamification */
+
+.table-tree {
+    background-image: url(../images/club-syres.png);
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.table-tree tr:nth-child(even) td,
+.table-tree tr:nth-child(even) th {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.table-tree tr:nth-child(odd) td,
+.table-tree tr:nth-child(odd) th {
+    background-color: rgba(239, 239, 239, 0.6);
+}
+
+
+/* START - END CSS : index - gamification */
+
+.stars-rating {
+    height: 70px;
+}
+
+.dateZone .dateField {
+    max-width: 100px;
+    display: inline-block;
+}
+
+.hiddenField {
+    display: none;
+}
+
+.syres-star {
+    float: left;
+    height: 48px;
+    width: 37px;
+    background: url('../images/star_grey.png');
+}
+
+.syres-star:hover {
+    cursor: pointer;
+}
+
+.syres-star.yellow {
+    background: url('../images/star.png');
+}
+
+ul.experience-details {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 0 60px;
+}
+
+ul.experience-details li {
+    padding: 0;
+    margin: 0;
+}
+
+ul.experience-details li .title {
+    font-weight: bold;
+}
+
+ul.experience-details li .comment {
+    margin: 20px 0;
+    display: block;
+}
+
+.experience-button {
+    display: inline-block;
+    margin: 20px;
+    border: 1px solid #ccc;
+    background: #08abeb;
+    padding: 10px 30px;
+    color: #fff;
+}
+
+.experience-button.back {
+    background: #4181AB;
+}
+
+
+/* START frontend - club article - new_article */
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #000000;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.tooltip .tooltiptext.red-tooltip {
+    background-color: red;
+}
+
+.tooltip .tooltiptext.orange-tooltip {
+    background-color: orange;
+}
+
+.tooltip .tooltiptext.light-green-tooltip {
+    background-color: limegreen;
+}
+
+.tooltip .tooltiptext.dark-green-tooltip {
+    background-color: green;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.checkbox-container {
+    display: inline-block;
+    width: 100%;
+}
+
+.checkbox-container .checkbox {
+    margin-right: 0;
+    margin-left: 0;
+    margin-top: 13px;
+}
+
+.contactCheckboxLocationLabel {
+    width: 12%;
+    display: inline-block;
+}
+
+.contactCheckboxLocation {
+    display: inline-block;
+    min-width: 10%;
+    height: 15px;
+    float: none;
+    width: 10%;
+}
+
+.contactLocationLabel {
+    width: 72%;
+    display: inline-block;
+}
+
+.contactLocation {
+    display: inline-block;
+    box-sizing: border-box;
+    height: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.4);
+    font-size: 12px;
+    color: #666;
+    border: solid 1px #cacaca;
+    transition: all 200ms ease;
+    min-width: 70%;
+}
+
+.contactLocation:focus {
+    border: solid 1px #27ae60;
+    transition: all 200ms ease;
+}
+
+.contactSatisfaction {
+    display: inline-block;
+    min-width: 49%;
+}
+
+@media screen and (max-width: 992px) {
+    .contactCheckboxLocationLabel {
+        width: 20%;
+    }
+    .contactLocationLabel {
+        width: 57%;
+    }
+    .contactCheckboxLocation {
+        width: 16%;
+    }
+    .contactLocation {
+        min-width: 55%
+    }
+    .checkbox-container .checkbox {
+        margin-left: 0;
+    }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) and (min-width: 992px) {
+    .checkbox-container .checkbox {
+        margin-left: 36px;
+    }
+}
+
+
+/* END frontend - club article - new_article */
+
+
+/* START frontend - test */
+
+.inline-header {
+    display: inline-block;
+}
+
+.inline-button {
+    position: absolute;
+    right: 0;
+    display: inline-block;
+}
+
+@media screen and (max-width: 768px) {
+    .inline-button {
+        display: block;
+        position: relative;
+    }
+}
+
+
+/* END frontend - test */

@@ -1,0 +1,20 @@
+internal_id: Internal ID
+name: Name
+category: Category
+access_group: Access group
+yes: Yes
+no: No
+upcoming: Upcoming
+on_going: On going
+closed: Closed
+survey: Survey
+preselection: Pre-selection
+email: Email
+birthdate: Birthdate
+enabled: Enabled
+title: Title
+firstname: Firstname
+groups: Groups
+mr: Mr
+mrs: Mrs
+ms: Ms

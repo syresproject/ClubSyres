@@ -1,0 +1,12 @@
+{% extends 'Backend/_layout.html.twig' %}
+
+{% block title %}Configuration{% endblock %}
+
+{% block content %}
+    {{ parent() }}
+    <h1>Creer Les Liens social</h1>
+
+    {{ include('Backend/Configuration/_form.html.twig') }}
+
+    <a href="{{ path('configuration_index') }}">Retour</a>
+{% endblock %}

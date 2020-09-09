@@ -1,0 +1,148 @@
+<div class="page-sidebar-wrapper">
+    <!-- BEGIN SIDEBAR -->
+    <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+    <!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+    <div class="page-sidebar navbar-collapse collapse">
+        <!-- BEGIN SIDEBAR MENU -->
+        <!-- DOC: Apply "page-sidebar-menu-light" class right after "page-sidebar-menu" to enable light sidebar menu style(without borders) -->
+        <!-- DOC: Apply "page-sidebar-menu-hover-submenu" class right after "page-sidebar-menu" to enable hoverable(hover vs accordion) sub menu mode -->
+        <!-- DOC: Apply "page-sidebar-menu-closed" class right after "page-sidebar-menu" to collapse("page-sidebar-closed" class must be applied to the body element) the sidebar sub menu mode -->
+        <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+        <!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
+        <!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+        <ul class="page-sidebar-menu  page-header-fixed " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" style="padding-top: 20px">
+            <!-- DOC: To remove the sidebar toggler from the sidebar you just need to completely remove the below "sidebar-toggler-wrapper" LI element -->
+            <li class="sidebar-toggler-wrapper hide">
+                <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+                <div class="sidebar-toggler"> </div>
+                <!-- END SIDEBAR TOGGLER BUTTON -->
+            </li>
+
+            <li class="heading">
+                <h3 class="uppercase">{{ 'content'}}</h3>
+            </li>
+            <li class="nav-item {% if app.request.attributes.get('_route') starts with 'backend_home_' %}active{% endif %}">
+                <a href="" class="nav-link">
+                    <i class="icon-home"></i>
+                    <span class="title">{{ 'dashboard' }}</span>
+                </a>
+            </li>
+
+            <li class="heading">
+                <h3 class="uppercase">ENQUÊTES</h3>
+            </li>
+
+            <li class="nav-item {% if app.request.attributes.get('_route') starts with 'backend_category_' %}active{% endif %}" data-tag-entity="category">
+                <a href="{{ path('admin_category_index') }}" class="nav-link">
+                    <i class="icon-folder"></i>
+                    <span class="title">Categorie</span>
+                </a>
+            </li>
+
+          <li class="nav-item {% if app.request.attributes.get('_route') starts with 'backend_survey_enquete_' %}active{% endif %}" data-tag-entity="survey">
+              <a href="{{ path('admin_survey_enquetes_index') }}" class="nav-link">
+                  <i class="icon-folder"></i>
+                  <span class="title">Enquêtes</span>
+              </a>
+          </li>
+            {#
+          <li class="nav-item {% if app.request.attributes.get('_route') starts with 'backend_survey_pre-recrutement_' %}active{% endif %}" data-tag-entity="survey">
+              <a href="" class="nav-link">
+                  <i class="icon-folder"></i>
+                  <span class="title">{{ 'pre_selection' |trans({}, 'bo_sidebar') }}</span>
+              </a>
+          </li>
+          #}
+            <li class="nav-item {% if app.request.attributes.get('_route') starts with 'backend_survey_test_' %}active{% endif %}" data-tag-entity="survey">
+                <a href="{{ path('admin_survey_tests_index') }}" class="nav-link">
+                    <i class="icon-folder"></i>
+                    <span class="title">Tests</span>
+                </a>
+            </li>
+
+
+            {#
+            <li class="heading">
+                <h3 class="uppercase">Home page</h3>
+            </li>
+            <li class="nav-item {% if app.request.attributes.get('_route') starts with 'backend_survey_test_' %}active{% endif %}" data-tag-entity="survey">
+                <a href="{{ path('admin_home_page_new') }}" class="nav-link">
+                    <i class="icon-folder"></i>
+                    <span class="title">Home page</span>
+                </a>
+            </li>
+            #}
+
+            <li class="heading">
+                <h3 class="uppercase">Newsletter</h3>
+            </li>
+            <li class="nav-item {% if app.request.attributes.get('_route') starts with 'admin_newsletter_' %}active{% endif %}" data-tag-entity="survey">
+                <a href="{{ path('admin_newsletter_show') }}" class="nav-link">
+                    <i class="icon-folder"></i>
+                    <span class="title">Newsletter</span>
+                </a>
+            </li>
+
+
+
+
+            <li class="heading">
+                <h3 class="uppercase">UTILISATEURS</h3>
+            </li>
+            <li class="nav-item {% if app.request.attributes.get('_route') starts with 'admin/panelistegroup_' %}active{% endif %}" data-tag-entity="contact">
+                <a href="{{ path('admin_paneliste_groups_index') }}" class="nav-link">
+                    <i class="icon-users"></i>
+                    <span class="title">Groupes</span>
+                </a>
+            </li>
+
+            <li class="nav-item {% if app.request.attributes.get('_route') starts with 'admin_user_' %}active{% endif %}" data-tag-entity="newsletter">
+                <a href="{{ path('admin_user_index') }}" class="nav-link">
+                    <i class="icon-folder"></i>
+                    <span class="title">Users</span>
+                </a>
+            </li>
+
+            {# CMS_GENERATOR_BUNDLE_END_TAG #}
+
+            <li class="heading">
+                <h3 class="uppercase">Contact</h3>
+            </li>
+            <li class="nav-item {% if app.request.attributes.get('_route') starts with 'admin_contact_' %}active{% endif %}" data-tag-entity="contact">
+                <a href="{{ path('admin_contact_index') }}" class="nav-link">
+                    <i class="icon-envelope"></i>
+                    <span class="title">{{ 'messages' }}</span>
+                </a>
+            </li>
+
+            <li class="heading">
+                <h3 class="uppercase">Configuration</h3>
+            </li>
+
+            <li class="nav-item {% if app.request.attributes.get('_route') starts with 'backend_configuration_index' %}active{% endif %}" data-tag-entity="configuration">
+                <a href="{{ path('admin_configuration_index') }}" class="nav-link">
+                    <i class="icon-settings"></i>
+                    <span class="title">{{ 'Liens'  }}</span>
+                </a>
+            </li>
+
+            <li class="nav-item {% if app.request.attributes.get('_route') starts with 'backend_configuration_legal_notice' %}active{% endif %}" data-tag-entity="configuration">
+                <a href="{{ path('admin_configuration_mentions_legales') }}" class="nav-link">
+                    <i class="icon-info"></i>
+                    <span class="title">{{ 'legal_notice'  }}</span>
+                </a>
+            </li>
+            {#
+            <li class="nav-item {% if app.request.attributes.get('_route') starts with 'backend_configuration_export' %}active{% endif %}" data-tag-entity="configuration">
+                <a href="" class="nav-link">
+                    <i class="icon-settings"></i>
+                    <span class="title">{{ 'export'  }}</span>
+                </a>
+            </li>
+            #}
+
+        </ul>
+        <!-- END SIDEBAR MENU -->
+    </div>
+    <!-- END SIDEBAR -->
+</div>

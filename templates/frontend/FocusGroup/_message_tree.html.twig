@@ -1,0 +1,26 @@
+{% for focusMessage in focusMessages %}
+    {% if focusMessage.visible %}
+        <div class="blog-post-comment" style="padding-left: {{ depth * 50}}px;">
+            <em>Le {{ focusMessage.createdAt | date('d/m/Y') }} à {{ focusMessage.createdAt | date('H\\hi') }}</em>
+            <a href="{{ path('frontend_focusgroup_reply', {'focusGroup': focusGroup.id, 'focusMessage': focusMessage.id}) }}" class="blog-post-comment-reply">{{ 'answer' |trans({}, 'focusgroup') }}</a>
+            {% if focusMessage.user %}
+                <span class="user-message">{{ focusMessage.user.firstname }}</span>
+                <span class="user-id">#{{ focusMessage.user.id }}</span>
+            {% else %}
+                <span class="syres-message">Syres</span>
+            {% endif %}
+            <p>
+                {{ focusMessage.content }}
+            </p>
+        </div>
+
+        <div class="decoration"></div>
+    {% endif %}
+    
+    {% include "AppBundle:Frontend/FocusGroup:_message_tree.html.twig" with {
+        'depth': depth + 1,
+        'focusGroup':focusGroup,
+        'focusMessages':focusMessage.children
+    } only %}
+
+{% endfor %}

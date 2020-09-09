@@ -1,0 +1,16 @@
+dashboard: Tableau de bord
+admin: espace administrateur
+visible_article: Articles visibles
+non_visible_article: Articles non visibles
+total_article: Nombre total d'articles
+total_number_article: Nombre d'articles au total
+categories_dashboard: Tableau de bord pour les catégories
+sub_categories_dashboard: Tableau de bord pour les sous-catégories
+brands_dashboard: Tableau de bord pour les marques
+
+visible_number_article: Nombre d'articles visibles
+non_visible_number_article: Nombre d'articles non visibles
+category_name: Nom de la catégorie
+number_article: Nombre d'articles
+sub_category_name: Nom de la sous-catégorie
+brand_name: Nom de la marque

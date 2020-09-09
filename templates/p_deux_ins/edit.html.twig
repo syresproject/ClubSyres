@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit PDeuxIns{% endblock %}
+
+{% block body %}
+    <h1>Edit PDeuxIns</h1>
+
+    {{ include('p_deux_ins/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('p_deux_ins_index') }}">back to list</a>
+
+    {{ include('p_deux_ins/_delete_form.html.twig') }}
+{% endblock %}

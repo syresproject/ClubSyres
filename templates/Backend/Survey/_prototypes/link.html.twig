@@ -1,0 +1,56 @@
+<style>
+    .labelDate{
+        padding-left: 2px;
+        margin-left: inherit;
+    }
+
+    .linkDate{
+        margin-left: 4px;
+        padding: 0px;
+        border: none;
+    }
+    .divColDate{
+        padding-left: 52px;
+    }
+</style>
+
+<div class="delete-parent">
+    <div class="form-group">
+        {{ form_label(link.numeroLien, null, {'label': 'Numero', 'label_attr': {'class': 'col-md-2 control-label'}}) }}
+        <div class="col-md-10">
+            {{ form_widget(link.numeroLien, {'attr': {'class': 'form-control', 'placeholder' : 'Numero'}}) }}
+        </div>
+    </div>
+
+    <div class="form-group">
+        {{ form_label(link.type, null, {'label': 'Type', 'label_attr': {'class': 'col-md-2 control-label'}}) }}
+        <div class="col-md-10">
+            {{ form_widget(link.type, {'attr': {'class': 'form-control', 'placeholder' : 'Lien du questionnaire'}}) }}
+        </div>
+    </div>
+    <div class="form-group">
+        {{ form_label(link.name, null, {'label': 'name' |trans({}, 'bo_formlabel'), 'label_attr': {'class': 'col-md-2 control-label'}}) }}
+        <div class="col-md-10">
+            {{ form_widget(link.name, {'attr': {'class': 'form-control', 'placeholder' : 'Nom du questionnaire'}}) }}
+
+        </div>
+
+    </div>
+
+    <div class="form-group col-md-offset-3">
+        {{ form_label(link.dateUn, null, {'label': 'Date du test', 'label_attr': {'class': 'col-md-2 control-label '}}) }}
+
+        <div class="col-md-10 ">
+            {{ form_widget(link.dateUn, {'attr': {'class': 'form-control', 'placeholder' : 'Nom du questionnaire'}}) }}
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        {{ form_label(link.link, null, {'label': 'Url', 'label_attr': {'class': 'col-md-2 control-label'}}) }}
+        <div class="col-md-10">
+            {{ form_widget(link.link, {'attr': {'class': 'form-control', 'placeholder' : 'Lien du questionnaire'}}) }}
+            <div class="help-block text-right"><a href="#" class="delete-link">Retirer le questionnaire</a></div>
+        </div>
+    </div>
+</div>

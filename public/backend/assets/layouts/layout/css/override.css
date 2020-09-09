@@ -1,0 +1,23 @@
+.loading_table:not(.dataTables_processing) td {
+    /*opacity: 0.2;*/
+}
+/* datatable.css LINE 390 */
+.dataTables_wrapper .dataTables_processing {
+    padding-top: 5px;
+}
+/* END datatable.css LINE 390 */
+/* START _message_tree.html */
+.invalid-focus-message {
+    color: red;
+}
+/* END _message_tree.html */
+
+/* backend sortable*/
+
+#simpleList {
+    list-style-type: none;
+}
+
+.hiddeninput {
+    display: none;
+}

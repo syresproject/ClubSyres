@@ -1,0 +1,564 @@
+{% extends "frontend/_layout.html.twig" %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;1,600;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;1,600;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,700;1,600;1,900&display=swap" rel="stylesheet">
+{% endblock %}
+
+{#
+ici preprod
+
+#}
+{# CONTENT #}
+{% block content %}
+    {{ parent() }}
+    {% include 'frontend/home/styles.home.html.twig' %}
+
+    <style>
+        @media (min-width: 1200px){
+            .container, .container-lg, .container-md, .container-sm, .container-xl {
+                max-width: 1253px;
+            }
+        }
+    </style>
+    {% for home_page in home_pages %}
+        <div class="" style="display: flex; background-color: #ffffff !important">
+            <div id="divEntete" style="background-color: #ffffff !important; height: auto !important;">
+                <div class="containerBody" id="tWelcom">
+
+                    {% for category in surveysListByCategory %}
+                        {% for surveys in category.surveys %}
+                            {% for survey in surveys %}
+                                <h1 style="font-size: 4em; font-weight: 700; color: #03363d">Hi {{ app.user.title }},</h1>
+                                <p style="" id="pWelcom">
+                                    Welcome to your test dashboard. Use the surveys below to give us your honest feedback on your
+                                    <strong style="font-weight: bold">{{ survey.name }}</strong>
+                                    test.
+                                </p>
+                            {% endfor %}
+                        {% endfor %}
+                    {% endfor %}
+
+                    {% for category in surveysListByCategoryTest %}
+                        {% for surveys in category.surveys %}
+                            {% for survey in surveys %}
+                                <h1 style="font-size: 50px; font-weight: 700; color: #03363d">Hi {{ app.user.title }},</h1>
+                                <p id="pWelcom">
+                                    Welcome to your test dashboard. Use the surveys below to give us your honest feedback on your
+                                    <strong style="font-weight: 900; color: #03363d">{{ survey.name }}</strong>
+                                    test.
+                                </p>
+                            {% endfor %}
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+            </div>
+            <div id="imgEntete" style="width: 50%">
+                <img  style="height: auto; width: 100%" src="{{ asset('images/home_page/' ~ home_page.imageName) }}" alt="img-syres">
+            </div>
+        </div>
+    {% endfor %}
+
+
+    {#
+
+
+    {% if idSurveyZero is null %}
+        <h1>{# text user Zero # } </h1>
+   {% else %}
+    {% endif %}
+
+
+#}
+
+
+    <div class="container-fluid padding_50" id="surveyList" style="box-shadow: 0 2px 120px 30px rgba(0,0,0,.05);
+    border: 1px solid #eeeeee;">
+        <div class="space-top"></div>
+        <div>
+            <div class="containerBody textAlignEnqueteAndTest" id="divSurveyName">
+                <div class="line bg-black heightEmpty"></div>
+                <div class=" heading-style-5" style="">
+                    {% for category in surveysListByCategory %}
+                        {% for surveys in category.surveys %}
+                            {% for survey in surveys %}
+                                <h4 class="heading-title colorTextBody colorTextH" id="h4SurveyName">
+                                    {{ survey.name }}
+                                </h4>
+
+                            {% endfor %}
+                        {% endfor %}
+                    {% endfor %}
+                    {% for category in surveysListByCategoryTest %}
+                        {% for surveys in category.surveys %}
+                            {% for survey in surveys %}
+                                <h4 class="heading-title colorTextBody colorTextH " id="h4SurveyName">
+                                    {#{ survey.name }#}SURVEY LIST
+                                </h4>
+                            {% endfor %}
+                        {% endfor %}
+                    {% endfor %}
+                    <h4 class="heading-title inline-header h_flex colorTextH" style="display: none">
+                        <hr class="hr">{{ 'ENGUÊTE EN COURS'}}<hr class="hr">
+                    </h4>
+                </div>
+                <div style="display: none">
+                    {% for category in surveysListByCategory %}
+                        <div>
+                            <h5 class="colorTextH">{{ category.details.name }}</h5>
+                            <div class="decoration"></div>
+                            {% for surveys in category.surveys %}
+                                {% for survey in surveys %}
+
+                                    <a href="{{ path('user_paneliste_details', {'id' : survey.id}) }}" class="user-list-item">
+                                        <img src="{{ asset('frontend/images/tree.svg') }}" alt="img">
+                                        <strong class="colorTextH">{{ survey.name }}</strong>
+                                        <em>
+                                            {% if survey.status == 0 %}
+                                                {{ 'coming' |trans({}, 'survey') }}
+                                            {% elseif survey.status == 1 %}
+                                                {{ 'inprogress' |trans({}, 'survey') }}
+                                            {% elseif survey.status == 2 %}
+                                                {{ 'focus' |trans({}, 'survey') }}
+                                            {% elseif survey.status == 3 %}
+                                                {{ 'closed' |trans({}, 'survey') }}
+                                            {% else %}
+                                                {{ survey.name }}
+                                            {% endif %}
+                                            - #{{ survey.idSurvey }}
+                                        </em>
+                                        <i class="fa fa-chevron-right"></i>
+                                    </a>
+                                    <div class="decoration"></div>
+                                {% endfor %}
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <p class="center-text colorTextBody colorTextH">
+                            {{ 'Aucune enquête en cours' }}
+                        </p>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="containerBody" style="width: 94%">
+                {% for category in surveysListByCategoryTest %}
+                    <div class="textAlignEnqueteAndTest">
+                        <div class="decoration"></div>
+                        {% for surveys in category.surveys %}
+                            {% for survey in surveys %}
+                                <a href="{{ path('user_paneliste_details', {'id' : survey.id}) }}" class="user-list-item" style="display: none">
+                                    <strong class="colorTextH">{{ survey.name }}</strong>
+                                    <em class="colorTextH">
+                                        {% if survey.status == 0 %}
+                                            {{ 'coming' }}
+                                        {% elseif survey.status == 1 %}
+                                            {{ 'inprogress' |trans({}, 'survey') }}
+                                        {% elseif survey.status == 2 %}
+                                            {{ 'focus' |trans({}, 'survey') }}
+                                        {% elseif survey.status == 3 %}
+                                            {{ 'closed' |trans({}, 'survey') }}
+                                        {% else %}
+                                            {{ survey.name }}
+                                        {% endif %}
+                                        - #{{ survey.idSurvey }}
+                                    </em>
+                                    <i class="fa fa-chevron-right"></i>
+                                </a>
+                                <div class="decoration"></div>
+                            {% endfor %}
+                        {% endfor %}
+                    </div>
+
+                    <div class="content">
+                        <div class="container-fullscreen heading-style-3" style="display: none">
+                            <h3 class="heading-title">{{ survey.name }}</h3>
+                            <em class="heading-subtitle">{{ survey.statusFormatted |trans({}, 'survey') }} - #{{ survey.idSurvey }}</em>
+                            <div class="overlay bg-gray-dark"></div>
+                        </div>
+                        <div class="decoration"></div>
+                        <div class="" style="display: none">
+                            {{ survey.description | raw }}
+                        </div>
+                        <div class="decoration"></div>
+                        {% if survey.status == 2 and survey.type == 2 %}
+                            {{ include('frontend/FocusGroup/_focus_block.html.twig') }}
+                        {% endif %}
+
+                        {% if survey.links | length > 0 %}
+
+                            <div class="decoration"></div>
+                            <div class="" style="">
+                                {% for link in survey.links %}
+
+                                    {% if history[link.id] is not defined %}
+                                        <div class="">
+                                            <div  style="" id="divL">
+                                                <div style="width: 10%">
+                                                    <p class="" style="margin: 0px">
+                                                        <strong class="fontLink" id="stLN">
+                                                            0{{ link.numeroLien }}
+                                                        </strong>
+                                                    </p>
+                                                </div>
+                                                <div style="width: 61%">
+                                                    <p class="colorTextContenus fontLink changeNom pln"  id="pLN">
+                                                        {{ link.name }}
+                                                        <span class=" hideG hideGD">
+                                                                        DUE {{ link.dateUn | date("m d")}}
+                                                                </span>
+                                                    </p>
+                                                </div>
+                                                <div style="width: 28%;  text-align: right; ">
+                                                    <a href="{{ path('user_link_redirect', {'token' : link.token}) }}" target="_blank" class="tasklist-item">
+                                                        <span class="hideG"><i class="material-icons" id="iconL">forward</i></span>
+
+                                                        <button class="hideP fontLink btn_desc hB" id="btnL" style="font-family: Montserrat;
+                                                        font-size: 14px;
+                                                        letter-spacing: 1px;
+                                                        color:#03363d">
+
+                                                            <strong  class="sF" style="color: black">
+                                                                DUE {{ link.dateUn | date("m d")}}
+
+
+                                                                {#
+                                                                <span class="days">
+                                                                </span>
+                                                                <span class="minutes">
+                                                                </span>
+                                                                <span class="seconds">
+                                                                </span>
+                                                                #}
+                                                            </strong>
+                                                        </button>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+                                        </div>
+
+
+                                    {% if link.dateUn is defined %}
+                                        <script>
+                                            let date = '{{ link.dateUn.timestamp }}';
+                                            console.log(date);
+                                            jQuery(function($){
+                                                const launch = new Date(date * 1000);
+                                                const days = $('.days');
+
+                                                var hours = $('.hours');
+                                                var minutes = $('.minutes');
+                                                var seconds = $('.seconds');
+
+                                                //var show_message = false;
+                                                setDate();
+                                                function setDate(){
+                                                    var now = new Date();
+                                                    var s = ((launch.getTime() - now.getTime())/1000);
+
+
+                                                    var diff = s;
+                                                    if(s < 0 ) {
+                                                        s = 0;
+                                                        if(diff > -10)
+                                                        {
+                                                            $(".hB").css( "background-color", "#03363d");
+                                                            $(".sf").css("color", "white");
+                                                            $(".icof").text("display", "block");
+                                                        }
+                                                        /*
+                                                    else
+                                                        $("#compteurfinis").hide();
+                                                         */
+                                                    }
+                                                    var d = Math.floor(s/86400);
+                                                    days.html('<strong>'+d+'</strong>'+(d>1?'s':''));
+                                                    s -= d*86400;
+                                                    var h = Math.floor(s/3600);
+                                                    hours.html('<strong> '+h+'</strong>'+(h>1?'s':''));
+                                                    s -= h*3600;
+                                                    var m = Math.floor(s/60);
+                                                    minutes.html('<strong> :'+m+'</strong>'+(m>1?'s':''));
+                                                    s -= m*60;
+                                                    s = Math.floor(s);
+                                                    seconds.html('<strong> :'+s+'</strong>'+(s>1?'s':''));
+                                                    var compteur = setTimeout(setDate,1000);
+                                                }
+                                            });
+                                        </script>
+
+                                    {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+
+                                {% for link in survey.links %}
+                                    {% if history[link.id] is defined %}
+
+                                        <div class="">
+                                            <div style="" id="divL">
+                                                <div style="width: 10%">
+                                                    <p class="" style="margin: 0px">
+                                                        <strong class="fontLink" id="stLN">
+                                                            0{{ link.numeroLien }}
+
+                                                        </strong>
+                                                    </p>
+                                                </div>
+
+                                                <div style="width: 61%">
+                                                    <p class="colorTextContenus fontLink changeNom" id="pLN">
+                                                        {{ link.name }}
+                                                        <span class=" hideG hideGD">
+                                                            DUE {{ link.dateUn.format('D d M')|capitalize}}
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                                <div style="width: 28%;  text-align: right; ">
+                                                    <a href="{{ path('user_link_redirect', {'token' : link.token}) }}"
+                                                       target="_blank" class="tasklist-item">
+                                                        <span class="hideG"><i class="material-icons" id="iconL">forward</i></span>
+                                                        <button class="hideP fontLink btn_desc hB" id="btnL" style="font-family: Montserrat;
+                                                        font-size: 14px;
+                                                        letter-spacing: 1px;
+                                                        color:#03363d">
+                                                            <strong class="sF" style="color: black">
+                                                                DUE {{ link.dateUn.format('D d M')|capitalize}}
+
+                                                                {#
+                                                                <span class="days">
+                                                                </span>
+                                                                <span class="minutes">
+                                                                </span>
+                                                                <span class="seconds">
+                                                                </span>
+                                                                #}
+                                                            </strong>
+                                                        </button>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <script type="text/javascript"
+                                                    src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+
+                                {% if survey.links is not empty %}
+                                    <div class="decoration"></div>
+                                {% endif %}
+                            </div>
+
+                            <div class="decoration"></div>
+                        {% endif %}
+
+                        {#
+                        {% if survey.status != 2 and survey.type == 2 %}
+                            {{ include('Frontend/FocusGroup/_focus_block.html.twig') }}
+                        {% endif %}
+                        #}
+                    </div>
+
+                {% else %}
+                    <p class="center-text textAlignEnqueteAndTest colorTextH mP">
+                        {{ 'Aucun test en cours ' |trans({}) }}
+                    </p>
+                {% endfor %}
+
+                <div class=" textAlignEnqueteAndTest heading-style-5">
+                    <div class="inline-button alignLeft">
+                        {# <a class="colorTextH" href="{{ path('frontend_survey_closed_test') }}" style="padding-right: 35px">
+                             {{ 'tests_closed' }}
+                         </a>
+                         #}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="inst" class="container-fluid" style="background-color: white !important; padding-bottom: 100px; ">
+        <div  class="containerBody colorTextH">
+            <div>
+                <div style="padding: 100px; padding-bottom: 20px">
+                    {% for category in surveysListByCategoryTest %}
+                        {% for surveys in category.surveys %}
+                            {% for survey in surveys %}
+                                <h1 class="colorTextH " id="colorTextHInstruct" style=" color: #03363d; font-size: 2.1em; margin-bottom: 10px">
+                                    Test instructions
+                                </h1>
+                                <p>
+                                    {{ survey.description|raw }}
+                                </p>
+                                <p style="">
+
+                                    <a href="{{ asset('images/home_page/' ~ survey.imageName) }}" download onclick="window.open(this.href); return false;">
+                                        <button class="btn_desc" id="btnInstruction" style="text-transform: uppercase;
+                                            text-transform: uppercase;
+                                            font-weight: 600;
+                                            font-size: 0.75em;
+                                            letter-spacing: 2px;
+                                            padding: 10px 40px;
+                                            background-color: #1CD9FF;
+                                            box-shadow: 0 2px 13px -1px rgba(0,0,0,.1);
+                                        }
+                                    "
+                                        >Download as pdf</button>
+                                    </a>
+                                    {#
+                                    <a href="{{ path('pdf', {'id' : survey.id}) }}" onclick="window.open(this.href); return false;">
+                                        <button class="btn_desc" id="btnInstruction">Download the Test Guidelines</button>
+                                    </a>
+                                    #}
+
+                                </p>
+                            {% endfor %}
+                        {% endfor %}
+                    {% else %}
+                        {% if survey.links | length < 1 %}
+                            <p class="center-text textAlignEnqueteAndTest colorTextH mP"> </p>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {#
+     <style>
+         .divInvit{
+             background-color: #03363d !important;
+             border-radius: 5px;
+
+             --parentHeight: 440px;
+             --parentWidth: 100px;
+             height: var(--parentHeight);
+             width: var(--parentHeight);
+         }
+
+
+         #divImgInvit{
+             height: calc(var(--parentHeight));
+             width: calc(var(--parentWidth));
+             border: 5px solid red;
+         }
+     </style>
+     #}
+
+    <div class="container-fluid" id="contFInvit" style="align-items: initial; background-color: #017991 !important; padding-right: 0px; padding-left: 0px">
+        <div class="" id="imgInvit">
+            {% for home_page in home_pages %}
+                <img  class="" style="width: 100%" src="{{ asset('images/home_page/' ~ home_page.imageNameUn) }}" alt="img">
+            {% endfor %}
+        </div>
+
+        <div class="" id="divGInvit" style="background-color: #017991 !important">
+            <div style="padding-left: 5%">
+                <h1 id="h1invit"><strong style="color: white">Invite your friends</strong> </h1>
+                <p id="souTInvit">Invite your friends to join the SYRES community and test exclusive cosmetics together. It’s free!</p>
+                {{ form_start(invitationForm) }}
+                <div class="my-custom-class-for-errors">
+                    {{ form_errors(invitationForm) }}
+                </div>
+
+                <style>
+                    #invitation_mail{
+                    background-color: #017991 !important;;
+                    }
+                </style>
+                <div id="fInvit">
+                    <div class="row">
+                    </div>
+                    <div>
+                        <div class="row" style="margin-bottom: 20px">
+                            {{ form_widget(invitationForm.mail, {'attr': {'class': 'cMail', 'placeholder': 'Your friend’s e-mail address'}}) }}
+                        </div>
+                        <button type="submit" class="label_maill butnInvite" style="font-weight: 700; color: #212529">
+                            SEND THE INVITE
+                        </button>
+                    </div>
+                </div>
+                {{ form_end(invitationForm) }}
+            </div>
+        </div>
+    </div>
+
+    <div class="container tMargin" style="background-color: white;">
+        <h1 id="h1C" style="padding-top: 70px; font-weight: 700; font-size: 3.5em!important; color: #03363d !important;">Contact us</h1>
+        <div class="container d_flex" id="foot">
+            <div class="containerBody contF MP" id="divGC">
+                <div style="" id="divLC">
+                    <p style="font-style: inherit;font-weight: inherit; margin: 0px">WhatsApp & Mobile</p>
+                    <h1 style="color: #03363d !important; font-weight: 700; margin: 0px; margin-top: 4px"> 9677 6179</h1>
+                </div>
+
+                <div class="mB" ></div>
+                <div id="divRC">
+                    <p class="" style="margin: 0px;">
+                        E-Mail
+                    </p>
+                    <h1 class=" text_alignt" id="h1mailC" style="color: #03363d !important;">team@syres.sg</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {#
+         <a href="#" class="float">
+        <i class="fa fa-plus my-float"></i>
+    </a>
+
+    <style>
+        .float{
+            position:fixed;
+            width:60px;
+            height:60px;
+            bottom:40px;
+            right:40px;
+            background-color:#47c6e0 !important;
+            color:#FFF;
+            border-radius:50px;
+            text-align:center;
+            box-shadow: 2px 2px 3px #999;
+        }
+
+        .my-float{
+            margin-top:22px;
+        }
+    </style>
+    #}
+
+{% endblock %}
+
+{% block footer %}
+    {#   {% include '/_widgets/footer.home.html.twig' %} #}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script
+            src="https://code.jquery.com/jquery-3.5.0.js"
+            integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc="
+            crossorigin="anonymous"></script>
+    <script>
+        function classToggle() {
+            const navs = document.querySelectorAll('.Navbar__Items')
+
+            navs.forEach(nav => nav.classList.toggle('Navbar__ToggleShow'));
+
+            $("#containerBody").css({"margin-top":"-39px"});
+            $(".Navbar").css({"background-color":"#01c3e7"});
+
+        }
+        document.querySelector('.Navbar__Link-toggle')
+            .addEventListener('click', classToggle);
+    </script>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+{% endblock %}

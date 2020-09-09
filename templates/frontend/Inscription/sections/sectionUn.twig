@@ -1,0 +1,402 @@
+<div class="tab">
+    <div class="styleCard">
+        <h3 class="fs-subtitle"></h3>
+        <div style="display: grid">
+            {#
+                    <span>
+                        {{ include('@App/Frontend/_widgets/flash_notifications_inscription.html.twig') }}
+                    </span>
+                    #}
+            <p>En vous inscrivant sur le panel SYRES, vous recevrez, en avant-première, des produits de marques
+                à tester chez vous. Les produits testés sont des produits de consommation et principalement des
+                produits cosmétiques : soin, maquillage, capillaire, solaire, hygiène… Ainsi, dès lors que vous
+                êtes panéliste, vous donnez votre accord pour que la société SYRES vous contacte afin de vous
+                proposer différents tests.</p>
+            <p>Tous ces produits ont été préalablement évalués en termes de sécurité (test toxicologique,
+                d’innocuité…) et ne comportent aucun risque prévisible sérieux pour un usage en conditions
+                normales d’utilisation. Les tests que nous proposons sont sur des produits déjà commercialisés
+                et/ou en cours de développement.</p>
+            <p>Ils offrent les mêmes garanties que les produits que vous achetez dans le commerce, nous
+                souhaitons juste connaître votre avis sur leur efficacité et leur sensorialité ! En testant ces
+                produits, vous nous retournerez des questionnaires pour donner vos impressions à différents
+                moments du test.</p>
+            <p>Les tests que nous vous proposons ne font généralement pas l’objet de rémunération.</p>
+            <p>Afin de faire partie de notre panel, merci de bien vouloir remplir ce formulaire d’inscription
+                avec le plus grand soin. Certaines questions demandent obligatoirement une réponse de votre part
+                afin de pouvoir enregistrer votre demande. L’absence de réponse à un champ obligatoire est
+                susceptible de compromettre la prise en compte de votre inscription.</p>
+            <p>Nous vous remercions pour le temps que vous accorderez à remplir ce formulaire.</p>
+            <div>
+                <p style="font-size: 20px">Service Gestion de Panel
+                    <br><strong>SYRES</strong>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="tab">
+    <hr id="ide">
+    <div class="styleCard">
+        <fieldset>
+            <h3 class="fs-subtitle"></h3>
+            <div style="text-align: left">
+                <div class="col">
+                    {{ form_row(formInscription.vousEtes) }}
+                </div>
+                <div class="d_flex">
+                    <div class="col-left">
+                        {{ form_row(formInscription.nom) }}
+                    </div>
+                    <div class="col-right">
+                        {{ form_row(formInscription.prenom) }}
+                    </div>
+                </div>
+                <div class="col">
+                    {#% do formInscription.dateDeNaissance.setRendered %#}
+                    <div id="output-box"></div>
+                    <div>
+                        <label for="App_inscription_dateDeNaissance" class="required">Date de naissance *</label>
+                        {{ form_widget(formInscription.dateDeNaissance, { 'attr': {'class': ''} }) }}
+
+                        {#
+                        <input class="form__field" id="prenomd" type="date" id="App_inscription_dateDeNaissance"
+                               name="App_inscription[dateDeNaissance]" max="2002-12-31" required
+                        >
+                        #}
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+</div>
+
+<div class="tab">
+    <hr id="add">
+    <div class="styleCard">
+        <fieldset>
+            <div style="text-align: left">
+                <div class="d_flex">
+                    <div class="col-left">
+                        {{ form_row(formInscription.nomAddresse) }}
+                    </div>
+
+                    <div class="col-right">
+                        {{ form_row(formInscription.apptEtageCouloir) }}
+                    </div>
+                </div>
+
+                <div class="d_flex">
+                    <div class="col-left">
+                        {{ form_row(formInscription.addBatiment) }}
+                    </div>
+                    <div class="col-right">
+                        {{ form_row(formInscription.lieuDit) }}
+                    </div>
+                </div>
+
+                <div class="d_flex">
+                    <div class="col-left">
+                        {{ form_row(formInscription.villeAddresse) }}
+                    </div>
+                    <div class="col-right" id="output">
+
+                        <div>
+                            <label>Code postal *</label>
+                            <input type="text" maxlength="5" pattern="[0-9]{5}" id="App_inscription_codePostal" name="App_inscription[codePostal]" required="required" oninput="myFunction()" placeholder="Code postal en cinq chiffres">
+                        </div>
+                        {% do formInscription.codePostal.setRendered %}
+                        <script>
+
+
+                            function myFunction() {
+                                const x = document.getElementById("App_inscription_codePostal").value;
+                                if(x.length < 5) {
+                                    $("#App_inscription_codePostal").css("background-color","#42f5ef");
+                                }
+                                if(x.length === 5) {
+                                    $("#App_inscription_codePostal").css("background-color","white");
+                                }
+                            }
+
+                            function telPFunction() {
+                                const telP = document.getElementById("App_inscription_numTelephone").value;
+                                if(telP.length < 10) {
+                                    $("#App_inscription_numTelephone").css("background-color","#42f5ef");
+                                }
+                                if(telP.length === 10) {
+                                    $("#App_inscription_numTelephone").css("background-color","white");
+                                }
+                            }
+
+                            function telFixFunction() {
+                                const telFix = document.getElementById("App_inscription_numTelDom").value;
+                                if(telFix.length < 10) {
+                                    $("#App_inscription_numTelDom").css("background-color","#42f5ef");
+                                }
+                                if(telFix.length === 10) {
+                                    $("#App_inscription_numTelDom").css("background-color","white");
+                                }
+                            }
+
+                            function telBFunction() {
+                                const telB = document.getElementById("App_inscription_numBureau").value;
+                                if(telB.length < 10) {
+                                    $("#App_inscription_numBureau").css("background-color","#42f5ef");
+                                }
+                                if(telB.length === 10) {
+                                    $("#App_inscription_numBureau").css("background-color","white");
+                                }
+                            }
+
+                        </script>
+                    </div>
+                </div>
+
+                <div class="d_flex" style="margin-top: 25px">
+                    <div class="col-left">
+                        <label for="App_inscription_numTelephone" class="required">N° de téléphone portable
+                            *</label>
+                        <input type="text" maxlength="14" oninput="telPFunction()" id="App_inscription_numTelephone"
+                               name="App_inscription[numTelephone]"
+                               required="required"
+                               placeholder="Entrez votre N° Portable en 10 chiffres"
+                               class="ajoutText" pattern="[0-9]{2}[0-9]{2}[0-9]{2}[0-9]{2}[0-9]{2}" style="margin-bottom: 0px">
+                        <span>Format: 0600000000</span>
+
+
+
+                        {% do formInscription.numTelephone.setRendered %}
+                    </div>
+                    <div class="col-right">
+                        <label for="App_inscription_numTelDom">N° de téléphone fixe </label>
+                        <input maxlength="14" oninput="telFixFunction()"
+                               type="text" id="App_inscription_numTelDom"
+                               name="App_inscription[numTelDom]"
+                               placeholder="Entrez votre N° Fixe en 10 chiffres"
+                               class="ajoutText" pattern="[0-9]{2}[0-9]{2}[0-9]{2}[0-9]{2}[0-9]{2}" style="margin-bottom: 0px">
+                        <span>Format: 0100000000</span>
+
+                        {% do formInscription.numTelDom.setRendered %}
+
+                    </div>
+                </div>
+                <div class="d_flex">
+                    <div class="col-left">
+                        <label for="App_inscription_numBureau">N° de téléphone du
+                            bureau </label>
+                        <input maxlength="14" oninput="telBFunction()" type="text" id="App_inscription_numBureau"
+                               name="App_inscription[numBureau]"
+                               placeholder="Entrez votre N° du bureau en 10 chiffres"
+                               class="ajoutText" pattern="[0-9]{2}[0-9]{2}[0-9]{2}[0-9]{2}[0-9]{2}" style="margin-bottom: 0px">
+                        <span>Format: 0100000000</span>
+                        {% do formInscription.numBureau.setRendered %}
+
+                    </div>
+                    <div class="col-right">
+                        {{ form_row(formInscription.mail) }}
+                    </div>
+                </div>
+                <div class="d_flex">
+                    <div class="col-left">
+                        {{ form_row(formInscription.typeMobile) }}
+                    </div>
+                    <div class="col-right">
+                        {{ form_row(formInscription.tablette) }}
+                    </div>
+                </div>
+
+                <div class="" style="margin-top: 25px">
+                    <div class="" style="padding-top: 30;">
+                        <p></p>
+                        {{ form_row(formInscription.connecterSurReseauxS) }}
+                    </div>
+                </div>
+                <div class="col">
+                    <label class="labelCheck" for="formInscription.checkboxUN">Pour un test, accepteriez-vous de
+                        participer à une interview en vidéo conférence sur Skype ? *</label>
+                    {{ form_row(formInscription.etreRappler) }}
+                </div>
+                {% do formInscription.deplacementRegion.setRendered %}
+                <div class="col checkUn deplacement" id="langues" style="">
+                    <div id="App_inscription_deplacementRegion" class="deplacement">
+                        <label class="" for="formInscription.checkboxUN">Où pouvez-vous vous déplacer ?</label>
+                        <div id="d_flex">
+                            <input
+                                    type="checkbox" id="App_inscription_deplacementRegion_0"
+                                    name="App_inscription[deplacementRegion][]" value="869">
+
+                            <label
+                                    for="App_inscription_deplacementRegion_0">Paris 16ème</label>
+                        </div>
+
+                        <div id="d_flex">
+                            <input
+                                    type="checkbox" id="App_inscription_deplacementRegion_1"
+                                    name="App_inscription[deplacementRegion][]" value="787">
+
+                            <label
+                                    for="App_inscription_deplacementRegion_1">Paris 13ème</label>
+                        </div>
+
+                        <div id="d_flex">
+                            <input
+                                    type="checkbox" id="App_inscription_deplacementRegion_2"
+                                    name="App_inscription[deplacementRegion][]" value="554">
+
+                            <label
+                                    for="App_inscription_deplacementRegion_2">Pantin</label>
+
+                        </div>
+
+                        <div id="d_flex">
+                            <input
+                                    type="checkbox" id="App_inscription_deplacementRegion_3"
+                                    name="App_inscription[deplacementRegion][]" value="774">
+
+                            <label
+                                    for="App_inscription_deplacementRegion_3">Neuilly</label>
+                        </div>
+
+                        <div id="d_flex">
+                            <input
+                                    type="checkbox" id="App_inscription_deplacementRegion_4"
+                                    name="App_inscription[deplacementRegion][]" value="785">
+
+                            <label
+                                    for="App_inscription_deplacementRegion_4">Chavenay /
+                                Saint-Germain-en-Laye</label>
+                        </div>
+                        <div id="d_flex">
+                            <input type="checkbox"
+                                   id="App_inscription_deplacementRegion_5"
+                                   name="App_inscription[deplacementRegion][]"
+                                   value="786">
+                            <label
+                                    for="App_inscription_deplacementRegion_5">Pas de déplacement possible,
+                                trop loin</label>
+                        </div>
+
+                        <div id="d_flex">
+                            <input type="checkbox" id="App_inscription_deplacementRegion_6"
+                                   name="App_inscription[deplacementRegion][]" value="870">
+                            <label
+                                    for="App_inscription_deplacementRegion_6">Pontoise</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+</div>
+
+<div class="tab">
+    <hr id="prof">
+    <div class="styleCard">
+        <fieldset>
+            <div>
+                <div>
+                    {{ form_row(formInscription.profession) }}
+                </div>
+                <div>
+                    {{ form_row(formInscription.domaineMetier) }}
+                </div>
+            </div>
+
+            <h4 class="fs-title">ALLERGIES</h4>
+
+            <div>
+                <div>
+                    {{ form_row(formInscription.etesAlergique) }}
+                </div>
+                <div class="descAllergie">
+                    {{ form_row(formInscription.descAlergique) }}
+                </div>
+            </div>
+
+            <h4 class="fs-title">TESTS CONSOMMATEURS</h4>
+
+            <div>
+                <div class="conditionG">
+                    {{ form_row(formInscription.connaissezCondition) }}
+                </div>
+                <div class="autreS">
+                    {{ form_row(formInscription.societeInscrit) }}
+                </div>
+            </div>
+            <h4 class="fs-title">AUTRES INFORMATIONS</h4>
+            <div>
+                <div class="col ">
+                    {{ form_row(formInscription.fumezVous) }}
+                </div>
+                <div class="col ">
+                    {{ form_row(formInscription.vapotezVous) }}
+                </div>
+                <div class="col ">
+                    {{ form_row(formInscription.zonePollue) }}
+                </div>
+                <div class="col ">
+                    {{ form_row(formInscription.utilisezProduitBio) }}
+                </div>
+            </div>
+
+        </fieldset>
+    </div>
+</div>
+
+<div class="tab">
+    <hr id="enfant">
+    <div class="styleCard">
+        <fieldset>
+            <h3 class="fs-subtitle"></h3>
+            <div style="margin: 0px">
+                <div class="divformatageTextJs">
+                    <p style="font-style: italic">Dans le cadre de nos études familiales, nous pouvons vous proposer de faire participer vos enfants. Si vous êtes d'accord, merci de renseigner les informations ci-dessous. Sinon, veuillez passer à la question suivante.
+                        Si vous avez des enfants de 18 ans ou plus, ils peuvent s'inscrire directement dans notre panel. </p>
+
+                </div>
+
+                <div class="col">
+                    {{ form_row(formInscription.enfantsMineur) }}
+                </div>
+                <div class="d_flex">
+                    <div class="col-left enfantACacher hide_0 show_un show_deux show_trois show_quatres">
+                        {{ form_row(formInscription.enfantUnSex) }}
+                    </div>
+
+                    <div class="col-right enfantACacher hide_0 show_un show_deux show_trois show_quatres">
+
+                        {{ form_row(formInscription.enfantUnAge) }}
+                    </div>
+                </div>
+
+                <div class="d_flex">
+                    <div class="col-left enfantACacher hide_0 hide_plus_un show_deux show_trois show_quatres">
+                        {{ form_row(formInscription.enfantDeuxSex) }}
+                    </div>
+                    <div class="col-right enfantACacher hide_0 hide_plus_un show_deux show_trois show_quatres">
+                        {{ form_row(formInscription.enfantDeuxAge) }}
+                    </div>
+                </div>
+
+                <div class="d_flex">
+                    <div class="col-left hide_0 hide_plus_un hide_plus_deux show_trois show_quatres">
+                        {{ form_row(formInscription.enfantTroisSex) }}
+                    </div>
+                    <div class="col-right hide_0 hide_plus_un hide_plus_deux show_trois show_quatres">
+                        {{ form_row(formInscription.enfantTroisAge) }}
+                    </div>
+                </div>
+
+                <div class="d_flex">
+                    <div class="col-left hide_0 hide_plus_un hide_plus_deux hide_plus_trois show_quatres">
+                        {{ form_row(formInscription.enfantQuatreSex) }}
+                    </div>
+                    <div class="col-right hide_0 hide_plus_un hide_plus_deux hide_plus_trois show_quatres">
+                        {{ form_row(formInscription.enfantQuatreAge) }}
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+</div>

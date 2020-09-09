@@ -1,0 +1,48 @@
+<div class="wrap" id="menuGrend">
+    <a class="a aTest" href="{{ path('user_survey_tests') }}" title="Veuillez cliquer ici" style="padding-bottom: 0px; overflow: visible; width: 47.5%;
+height: 48.5%;">
+        <div class="divVosTest" style="padding-right:-8%; background-color: rgba(255,255,255,.75)">
+            <p class="enqueteText pVosTest" style="margin-left: 15%; padding-top: 20%">
+                <strong class="strongVosTest" style="color: black; font-weight: normal">
+                    MON</br>   TEST
+                    {% if surveys_count[2] > 0 %}
+                        <i class="insight-notification" style=" background: #2980b9;color: white; font-size: 19px; padding: 9px 16px; position: inherit">{{ surveys_count[2] }}</i>
+                    {% endif %}
+                </strong>
+            </p>
+        </div>
+    </a>
+    <a class="a aTAVenir" href="{{ path('user_test_a_venirs_index') }}" title="Veuillez cliquer ici" style="overflow: visible; width: 44.5%">
+        <div style="
+                    color: #0E1112;
+                    font-size: 26px;
+                    padding-top: 15%;
+                    text-align: end;
+                    padding-right: 25%;
+                    background-color: rgba(255,255,255,.75)
+            ">
+            <strong style="font-weight: 500; font-size: 30px; color: black; font-weight: normal">TESTS </br> À </br> VENIR</strong> <br>
+        </div>
+    </a>
+    <a class="a aArticle" href="{{ path('user_survey_enquete') }}" title="Veuillez cliquer ici">
+        <div style="padding-top: 50%;
+                font-size: 26px;
+                padding-left: 10%;
+                background-color: rgba(255,255,255,.75);;
+                overflow: visible
+            ">
+            <strong style="text-align: center; color: black; font-weight: normal; font-size: 30px">
+                ENQUETES
+            </strong>
+            {% if surveys_count[2] > 0 %}
+                <i class="insight-notification" style="  position: inherit; font-size: 19px;  padding: 9px 16px;background: #2980b9; color: white; top: 32px">{{ surveys_count[2] }}</i>
+            {% endif %}
+        </div>
+    </a>
+    <a class="a aEnquete" href="{{ path('user_fag') }}" title="Veuillez cliquer ici" style="width: 44.5%">
+        <div style="padding-top: 60%; padding-left: 30%; background-color: rgba(255,255,255,.75)">
+            <p style="font-size: 40px; color: black">FAQ</p>
+        </div>
+    </a>
+    <a class="a" href="#" title="Veuillez cliquer ici"><div style="text-align: center"></div></a>
+</div>

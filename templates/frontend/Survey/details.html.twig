@@ -1,0 +1,323 @@
+{% extends "frontend/_layout_details.html.twig" %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .survey {
+            display: flex;
+            margin: 20px 0;
+            height: 100px;
+            box-shadow:0 2px 36px rgba(0,0,100,.15), 0 0 1px rgba(0,0,100,.15);
+            transition:.3s;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .pasOuvert{
+            box-shadow: 0 1px 1px rgba(0,0,100,.25), 0 0 rgba(0,0,100,.25);
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .pPas{
+            font-size: 18px !important;
+            margin-top: 13px !important;
+            text-align: center;
+            color: #03363D;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .numberL{
+            text-shadow: 1px 0px 0.5px rgba(0,0,100,.15);
+            color: #03363D !important;
+            font-size: 3em !important;
+            /* font-weight: 800 !important; */
+            line-height: 64px;
+        }
+    </style>
+{% endblock %}
+
+{# CONTENT #}
+{% block content %}
+    {{ parent() }}
+
+    <div class="container">
+        <div class="header-clear-large"></div>
+
+        <div class="content">
+            <div class="container heading-style-5">
+                {% if survey.type == 1 %}
+                    <div class="container heading-style-5">
+                            <h4 class="heading-title">{{ 'preselections' |trans({}, 'survey') }}
+                            {% include 'frontend/header-title.html.twig' %}
+                        </h4>
+                    </div>
+                {% elseif survey.type == 2 %}
+                    <div class="container heading-style-5">
+                        <h4 class="heading-title">
+                            {{ 'test' |trans({}, 'survey') }}
+                            {% include 'frontend/header-title.html.twig' %}
+                        </h4>
+                    </div>
+                {% else %}
+                    <div class="container heading-style-5">
+                        <h4 class="heading-title">{{ 'survey' |trans({}, 'survey') }}
+                            {% include 'frontend/header-title.html.twig' %}
+                        </h4>
+                    </div>
+                {% endif %}
+                <i class="fa fa-align-left heading-icon"></i>
+                <div class="line bg-gray-dark"></div>
+            </div>
+
+            <div class="container-fullscreen heading-style-3">
+                <h3 class="heading-title">{{ survey.name }}</h3>
+                <em class="heading-subtitle">{{ survey.statusFormatted |trans({}, 'survey') }} - #{{ survey.idSurvey }}</em>
+                <div class="overlay bg-gray-dark"></div>
+            </div>
+
+            <div class="decoration"></div>
+
+            <div class="container">
+                <p style="text-align: center">{{ survey.description | raw }}</p>
+                <p style="text-align: center">
+                    {% if survey.imageName %}
+                        <a style="margin-top: 20px;" href="{{ asset('home_page/' ~ survey.imageName) }}" download onclick="window.open(this.href); return false;">
+                            <button class="button" id="btnInstruction">Pdf à telecharger</button>
+                        </a>
+                    {% endif %}
+                </p>
+            </div>
+
+            <div class="decoration"></div>
+
+            {% if survey.status == 2 and survey.type == 2 %}
+                {{ include('Frontend/FocusGroup/_focus_block.html.twig') }}
+            {% endif %}
+
+            {% if survey.links | length > 0 %}
+                <div class="container-fullscreen heading-style-3">
+                    <h3 class="heading-title">{{ 'survey' |trans({}, 'survey') }}s</h3>
+                    <div class="overlay bg-gray-dark"></div>
+                </div>
+
+                <div class="">
+                    {% for link in survey.links %}
+                        {% if history[link.id] is not defined %}
+
+                            <div>
+                                {% if date(link.dateUn) <= date() %}
+                                    <div  style="display: flex; height: 63px" class="survey" id="divL idOpacite">
+                                        <div style="width: 10%">
+                                            <p class="numero-questionnaire" style="margin: 0px">
+                                                <strong class="fontLink numberL">
+                                                    {{ link.numeroLien }}
+                                                </strong>
+                                            </p>
+                                        </div>
+                                        <div style="width: 60%">
+                                            <p class="colorTextContenus fontLink changeNom pln pPas"  id="pLN">
+                                                {{ link.name }}
+                                                <span class=" hideG hideGD">
+                                                        Le {{ link.dateUn | date("d/m/Y")}}
+                                                </span>
+                                            </p>
+                                        </div>
+                                        <div style="width: 30%;  text-align: right;">
+                                            <a href="{{link.link}}{{ userP }}" target="_blank" class="tasklist-item">
+                                                <span class="hideG"><i class="material-icons" id="iconL">forward</i></span>
+                                                <button class="hideP fontLink btn_desc hB" id="btnL">
+                                                    <div class="sF">
+                                                        Ouvert
+                                                    </div>
+                                                </button>
+
+                                            </a>
+                                        </div>
+                                    </div>
+                                {% else %}
+
+                                    <div class="pasOuvert" style="display: flex; text-align: center; height: 63px">
+                                        <div style="width: 10%">
+                                            <p class="numero-questionnaire" style="margin: 0px;">
+                                                <strong class="fontLink numberL">
+                                                    {{ link.numeroLien }}
+                                                </strong>
+                                            </p>
+                                        </div>
+
+                                        <div style="width: 60%">
+                                            <p class="colorTextContenus fontLink changeNom pln pPas"  id="pLN">
+                                                {{ link.name }}
+                                                <span class=" hideG hideGD">
+                                                        Le {{ link.dateUn | date("d/m/Y")}}
+                                                </span>
+                                            </p>
+                                        </div>
+                                        <div style="width: 30%;  text-align: right;">
+                                            <a href="{{link.link}}{{ userP }}" target="_blank" class="tasklist-item">
+                                                <span class="hideG"><i class="material-icons" id="iconL">forward</i></span>
+
+                                                <button class="hideP fontLink btn_desc hB" id="btnL">
+                                                    <div class="sF">
+                                                        Le {{ link.dateUn | date("d/m/Y")}}
+                                                    </div>
+                                                </button>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                {% endif %}
+                           </div>
+
+
+                            {#
+                             <a href="{{ path('user_link_redirect', {'token' : link.token}) }}" target="_blank" class="tasklist-item">
+                                <h5>{{ link.name }}</h5>
+                            </a>
+                              <a href="{{ link.link}}" target="_blank" class="tasklist-item">
+                                <h5>{{ link.name }}</h5>
+                            </a>
+                            #}
+
+
+                            {#
+                            <div class="">
+                                <div class=""  style="display: flex;  margin-bottom: 20px; margin: 20px 0;
+    height: 63px;
+    box-shadow: 0 2px 36px rgba(0,0,100,.15), 0 0 1px rgba(0,0,100,.15);
+    transition: .3s;
+    border-radius: 10px;
+    text-align: center;">
+                                    <div style="width: 10%;">
+                                        <p class="fontLink sF" style="font-size: 28px; margin-top: 10px">{{ link.numeroLien }}</p>
+                                    </div>
+                                    <div style="width: 59%;">
+                                        <p class="colorTextContenus sF fontLink" style="font-size: 18px; margin-top: 13px; text-align: center">{{ link.name }}</p>
+                                    </div>
+                                    <div style="width: 31%; height: 20px">
+                                        <a href="{{ link.link }}" target="_blank" class="tasklist-item" style="height: 20px">
+                                            {% if date(link.dateUn) < date() %}
+                                                <button class="hideP fontLink btn_desc hB" id="" style="width: 100%;
+    border-radius: 10px;
+    height: 50px;
+    background-color: white">
+                                                    <span style="color: black">
+                                                          Ouvert
+                                                    </span>
+                                                </button>
+                                            {% else %}
+                                                <button class="hideP fontLink btn_desc hB" id="" style="width: 100%;
+    border-radius: 10px;
+    height: 50px; background-color: white">
+                                                    <span style="color: black">
+                                                        Le {{ link.dateUn.format('D d M')|capitalize}}
+                                                    </span>
+                                                </button>
+                                            {% endif %}
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            #}
+                            <div class="decoration"></div>
+
+                        {% endif %}
+                    {% endfor %}
+
+                    {% for link in survey.links %}
+                        {% if history[link.id] is defined %}
+                            <div>
+                                {% if date(link.dateUn) <= date() %}
+                                    <div  style="display: flex; height: 63px" class="survey" id="divL idOpacite">
+                                        <div style="width: 10%">
+                                            <p class="numero-questionnaire" style="margin: 0px">
+                                                <strong class="fontLink numberL">
+                                                    {{ link.numeroLien }}
+                                                </strong>
+                                            </p>
+                                        </div>
+                                        <div style="width: 60%">
+                                            <p class="colorTextContenus fontLink changeNom pln pPas"  id="pLN">
+                                                {{ link.name }}
+                                                <span class=" hideG hideGD">
+                                                        Le {{ link.dateUn | date("d/m/Y")}}
+                                                </span>
+                                            </p>
+                                        </div>
+                                        <div style="width: 30%;  text-align: right;">
+					                            <a href="{{link.link}}{{ userP }}" target="_blank" class="tasklist-item">
+                                                <span class="hideG"><i class="material-icons" id="iconL">forward</i></span>
+
+                                                <button class="hideP fontLink btn_desc hB" id="btnL">
+                                                    <div class="sF">
+                                                        Ouvert
+                                                    </div>
+                                                </button>
+
+                                            </a>
+                                        </div>
+                                    </div>
+                                {% else %}
+                                    <div class="pasOuvert" style="display: flex; text-align: center; height: 63px">
+                                        <div style="width: 10%">
+                                            <p class="numero-questionnaire" style="margin: 0px">
+                                                <strong class="fontLink numberL">
+                                                    {{ link.numeroLien }}
+                                                </strong>
+                                            </p>
+                                        </div>
+
+                                        <div style="width: 60%">
+                                            <p class="colorTextContenus fontLink changeNom pln pPas"  id="pLN pPas">
+                                                {{ link.name }}
+                                                <span class=" hideG hideGD">
+                                                        Le {{ link.dateUn | date("d/m/Y")}}
+                                                </span>
+                                            </p>
+                                        </div>
+                                        <div style="width: 30%;  text-align: right;">
+                                            <a href="{{link.link}}{{ userP }}" target="_blank" class="tasklist-item">
+                                                <span class="hideG"><i class="material-icons" id="iconL">forward</i></span>
+
+                                                <button class="hideP fontLink btn_desc hB" id="btnL">
+                                                    <div class="sF">
+                                                        Le {{ link.dateUn | date("d/m/Y")}}
+                                                    </div>
+                                                </button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            </div>
+                            <div class="decoration"></div>
+                        {% endif %}
+                    {% endfor %}
+
+                    {% if survey.links is not empty %}
+                        <div class="decoration"></div>
+                    {% endif %}
+                </div>
+
+            {% endif %}
+
+            {% if survey.status != 2 and survey.type == 2 %}
+                {{ include('frontend/FocusGroup/_focus_block.html.twig') }}
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+           $('.tasklist-completed').click(function() {
+               return confirm({{ 'confirmation' |trans({}, 'survey') }});
+           });
+        });
+    </script>
+{% endblock %}

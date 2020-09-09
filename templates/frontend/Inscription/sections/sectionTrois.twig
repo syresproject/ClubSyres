@@ -1,0 +1,483 @@
+
+<div class="tab classHomme">
+    <hr id="rasage" class="classHomme">
+    <div class="styleCard">
+        <fieldset>
+            <h3 class="fs-subtitle"></h3>
+            <div class="col classHomme">
+                <table id="customers">
+                    <tr>
+                        <th>Type de rasoir *</th>
+                        <th class="textAlignCenter">Oui</th>
+                        <th class="textAlignCenter">Non</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Rasoir électrique </label>
+                        </td>
+                        <td>
+                            <input type="radio" id="App_inscription_typeRasageRElec_0"
+                                   name="App_inscription[typeRasageRElec]" value="1">
+                        </td>
+
+                        <td>
+                            <input type="radio" id="App_inscription_typeRasageRElec_1"
+                                   name="App_inscription[typeRasageRElec]" value="3">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="">Rasoir mécanique jetable </label>
+                        </td>
+                        <td>
+                            <input type="radio" id="App_inscription_typeRasageMeca_0"
+                                   name="App_inscription[typeRasageMeca]" value="1">
+                        </td>
+
+                        <td>
+                            <input type="radio" id="App_inscription_typeRasageMeca_1"
+                                   name="App_inscription[typeRasageMeca]" value="3">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="">Rasoir mécanique rechargeable </label>
+                        </td>
+                        <td>
+                            <input type="radio" id="App_inscription_typeRasageMecaR_0"
+                                   name="App_inscription[typeRasageMecaR]" value="1">
+                        </td>
+
+                        <td>
+                            <input type="radio" id="App_inscription_typeRasageMecaR_1"
+                                   name="App_inscription[typeRasageMecaR]" value="3">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="">Tondeuse à barbe </label>
+                        </td>
+                        <td>
+                            <input type="radio" id="App_inscription_typeRasageTondeuse_0"
+                                   name="App_inscription[typeRasageTondeuse]" value="1">
+                        </td>
+
+                        <td>
+                            <input type="radio" id="App_inscription_typeRasageTondeuse_1"
+                                   name="App_inscription[typeRasageTondeuse]" value="3">
+                        </td>
+                    </tr>
+                </table>
+
+                {% do formInscription.typeRasageRElec.setRendered %}
+                {% do formInscription.typeRasageMeca.setRendered %}
+                {% do formInscription.typeRasageMecaR.setRendered %}
+                {% do formInscription.typeRasageTondeuse.setRendered %}
+
+            </div>
+            <div class="col classHomme classHommes">
+                {{ form_row(formInscription.frequenceRasage) }}
+            </div>
+        </fieldset>
+    </div>
+</div>
+
+<div class="tab classHomme">
+    <hr id="longB" class="classHomme">
+    <div class="styleCard">
+        <fieldset>
+            <div class="">
+                <fieldset>
+                    <div class="col classHomme classHommes">
+                        {{ form_row(formInscription.longueBarbe) }}
+                    </div>
+                </fieldset>
+            </div>
+        </fieldset>
+    </div>
+</div>
+
+<div class="" style="text-align: left">
+</div>
+<div class="tab classHomme">
+    <hr id="autreInfo" class="classHomme">
+    <div class="styleCard">
+        <fieldset>
+            <div class="col classHomme">
+                <table id="customers">
+                    <tr>
+
+                        <th>Avez-vous des problèmes de peau ? *</th>
+                        <th class="textAlignCenter">Oui</th>
+                        <th class="textAlignCenter">Non</th>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="">Poils incarnés </label>
+                        </td>
+                        <td>
+                            <input type="radio" id="App_inscription_problemePeauPoileInc_0"
+                                   name="App_inscription[problemePeauPoileInc]" value="1">
+                        </td>
+
+                        <td>
+                            <input type="radio" id="App_inscription_problemePeauPoileInc_1"
+                                   name="App_inscription[problemePeauPoileInc]" value="3">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="">Barbe dure </label>
+                        </td>
+                        <td>
+                            <input type="radio" id="App_inscription_problemePeauBarbe_0"
+                                   name="App_inscription[problemePeauBarbe]" value="1">
+                        </td>
+
+                        <td>
+                            <input type="radio" id="App_inscription_problemePeauBarbe_1"
+                                   name="App_inscription[problemePeauBarbe]" value="3">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="">Sensible au feu du rasoir </label>
+                        </td>
+                        <td>
+                            <input type="radio" id="App_inscription_problemePeauSensible_0"
+                                   name="App_inscription[problemePeauSensible]" value="1">
+                        </td>
+
+                        <td>
+                            <input type="radio" id="App_inscription_problemePeauSensible_1"
+                                   name="App_inscription[problemePeauSensible]" value="3">
+                        </td>
+                    </tr>
+                </table>
+                {% do formInscription.problemePeauPoileInc.setRendered %}
+                {% do formInscription.problemePeauBarbe.setRendered %}
+                {% do formInscription.problemePeauSensible.setRendered %}
+
+            </div>
+            <div class="col classHomme classHommes">
+                {{ form_row(formInscription.calvitie) }}
+            </div>
+        </fieldset>
+    </div>
+</div>
+
+<div class="tab">
+    <hr id="infoCapi" class="">
+    <div class="styleCard">
+        <fieldset>
+            <h3 class="fs-subtitle"></h3>
+
+            {#***********************#}
+
+            <div class="col">
+                {{ form_row(formInscription.typeCheveux) }}
+            </div>
+            <div class="col">
+                {{ form_row(formInscription.couleurCheveux) }}
+            </div>
+            {#
+              <div class="col">
+                  {{ form_row(formInscription.longueurCheveux) }}
+              </div>
+
+              #}
+            <div class="col">
+                {{ form_row(formInscription.natureCheveux) }}
+            </div>
+            <div class="col">
+                {{ form_row(formInscription.alopecie) }}
+            </div>
+
+            <div>
+                {# ///*****************************#}
+                <table id="customers">
+                    <tr>
+
+                        <th>Autres produits capillaires *</th>
+                        <th class="textAlignCenter">Oui</th>
+                        <th class="textAlignCenter">Non</th>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="">Après-shampooing</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="App_inscription_autresProduitsCapillairesApreS_0"
+                                   name="App_inscription[autresProduitsCapillairesApreS]"
+                                   value="1" required>
+                        </td>
+
+                        <td>
+                            <input type="radio" id="App_inscription_autresProduitsCapillairesApreS_1"
+                                   name="App_inscription[autresProduitsCapillairesApreS]"
+                                   value="3" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="">Baume démêlant</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="App_inscription_autresProduitsCapillairesBaume_0"
+                                   name="App_inscription[autresProduitsCapillairesBaume]"
+                                   value="1" required>
+                        </td>
+
+                        <td>
+                            <input type="radio" id="App_inscription_autresProduitsCapillairesBaume_1"
+                                   name="App_inscription[autresProduitsCapillairesBaume]"
+                                   value="3" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="">Crème de soin cheveux</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="App_inscription_autresProduitsCapillairesCreme_0"
+                                   name="App_inscription[autresProduitsCapillairesCreme]"
+                                   value="1" required>
+                        </td>
+
+                        <td>
+                            <input type="radio" id="App_inscription_autresProduitsCapillairesCreme_1"
+                                   name="App_inscription[autresProduitsCapillairesCreme]"
+                                   value="3" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="">Lotion capillaire</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="App_inscription_autresProduitsCapillairesLotion_0"
+                                   name="App_inscription[autresProduitsCapillairesLotion]"
+                                   value="1" required>
+                        </td>
+
+                        <td>
+                            <input type="radio" id="App_inscription_autresProduitsCapillairesLotion_1"
+                                   name="App_inscription[autresProduitsCapillairesLotion]"
+                                   value="3" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="">Masque de soin cheveux</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="App_inscription_autresProduitsCapillairesMasque_0"
+                                   name="App_inscription[autresProduitsCapillairesMasque]"
+                                   value="1" required>
+                        </td>
+
+                        <td>
+                            <input type="radio" id="App_inscription_autresProduitsCapillairesMasque_1"
+                                   name="App_inscription[autresProduitsCapillairesMasque]"
+                                   value="3" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="">Mousse sans rinçage</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="App_inscription_autresProduitsCapillairesMousse_0"
+                                   name="App_inscription[autresProduitsCapillairesMousse]"
+                                   value="1" required>
+                        </td>
+
+                        <td>
+                            <input type="radio" id="App_inscription_autresProduitsCapillairesMousse_1"
+                                   name="App_inscription[autresProduitsCapillairesMousse]"
+                                   value="3" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="">Capsule, masque, huile de soin sans rincage</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="App_inscription_autresProduitsCapillairesCapsule_0"
+                                   name="App_inscription[autresProduitsCapillairesCapsule]"
+                                   value="1" required>
+                        </td>
+
+                        <td>
+                            <input type="radio" id="App_inscription_autresProduitsCapillairesCapsule_1"
+                                   name="App_inscription[autresProduitsCapillairesCapsule]"
+                                   value="3" required>
+                        </td>
+                    </tr>
+                </table>
+                {% do formInscription.autresProduitsCapillairesApreS.setRendered %}
+                {% do formInscription.autresProduitsCapillairesBaume.setRendered %}
+                {% do formInscription.autresProduitsCapillairesCreme.setRendered %}
+                {% do formInscription.autresProduitsCapillairesLotion.setRendered %}
+                {% do formInscription.autresProduitsCapillairesMasque.setRendered %}
+                {% do formInscription.autresProduitsCapillairesMousse.setRendered %}
+                {% do formInscription.autresProduitsCapillairesCapsule.setRendered %}
+            </div>
+        </fieldset>
+    </div>
+</div>
+
+<div class="tab">
+    <hr id="shampooing" class="">
+    <div class="styleCard">
+        <fieldset>
+            <div>
+
+                <table id="customers">
+                    <style type="text/css">
+                        table td {
+                            text-align: start;
+                        }
+
+                        table th {
+                            border: none;
+                            text-align: start;
+                        }
+                    </style>
+
+                    <tr>
+
+                        <th>Utilisez-vous un de ces shampooings ? *</th>
+                        <th class="textAlignCenter">Oui</th>
+                        <th class="textAlignCenter">Non</th>
+                    </tr>
+
+                    <tr>
+
+                        <td>
+                            <label for="">Antichute</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="App_inscription_typeSAntichute_0"
+                                   name="App_inscription[typeSAntichute]" value="1" required>
+                        </td>
+
+                        <td>
+                            <input type="radio" id="App_inscription_typeSAntichute_1"
+                                   name="App_inscription[typeSAntichute]" value="3" required>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="">
+                                Antipelliculaire
+                            </label>
+                        </td>
+                        <td>
+                            <input type="radio" id="App_inscription_typeSAntipelliculaire_0"
+                                   name="App_inscription[typeSAntipelliculaire]" value="1" required>
+                        </td>
+
+                        <td>
+                            <input type="radio" id="App_inscription_typeSAntipelliculaire_1"
+                                   name="App_inscription[typeSAntipelliculaire]" value="3" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="">
+                                Pour cheveux colorés ou permanentés
+                            </label>
+                        </td>
+                        <td>
+                            <input type="radio" id="App_inscription_typeSCheveuxColore_0"
+                                   name="App_inscription[typeSCheveuxColore]" value="1" required>
+                        </td>
+
+                        <td>
+                            <input type="radio" id="App_inscription_typeSCheveuxColore_1"
+                                   name="App_inscription[typeSCheveuxColore]" value="3" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="">
+                                Pour cheveux gras
+                            </label>
+                        </td>
+                        <td>
+                            <input type="radio" id="App_inscription_typeSCheveuxGras_0"
+                                   name="App_inscription[typeSCheveuxGras]" value="1" required>
+                        </td>
+
+                        <td>
+                            <input type="radio" id="App_inscription_typeSCheveuxGras_1"
+                                   name="App_inscription[typeSCheveuxGras]" value="3" required>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="">
+                                Huile douche shampooing
+                            </label>
+                        </td>
+                        <td>
+                            <input type="radio" id="App_inscription_typeSHuile_0"
+                                   name="App_inscription[typeSHuile]" value="1" required>
+                        </td>
+
+                        <td>
+                            <input type="radio" id="App_inscription_typeSHuile_1"
+                                   name="App_inscription[typeSHuile]" value="3" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="">
+                                Shampooing sec
+                            </label>
+                        </td>
+                        <td>
+                            <input type="radio" id="App_inscription_typeSShampooingSec_0"
+                                   name="App_inscription[typeSShampooingSec]" value="1" required>
+                        </td>
+
+                        <td>
+                            <input type="radio" id="App_inscription_typeSShampooingSec_1"
+                                   name="App_inscription[typeSShampooingSec]" value="3" required>
+                        </td>
+
+                    </tr>
+
+                </table>
+                {% do formInscription.typeSAntichute.setRendered %}
+                {% do formInscription.typeSAntipelliculaire.setRendered %}
+                {% do formInscription.typeSCheveuxColore.setRendered %}
+                {% do formInscription.typeSCheveuxGras.setRendered %}
+                {% do formInscription.typeSHuile.setRendered %}
+                {% do formInscription.typeSShampooingSec.setRendered %}
+                {% do formInscription.typeSCheveuxColore.setRendered %}
+            </div>
+        </fieldset>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New FormTrois{% endblock %}
+
+{% block content %}
+    {{ parent() }}
+    <h1>Create new FormTrois</h1>
+
+    {{ include('form_trois/_form.html.twig') }}
+
+    <a href="{{ path('form_trois_index') }}">back to list</a>
+{% endblock %}

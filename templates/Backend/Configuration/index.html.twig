@@ -1,0 +1,169 @@
+{% extends 'backend/_layout.html.twig' %}
+
+{% block page_title %}
+    <h3 class="page-title"> Configuration
+        <small>édition de la configuration générale du site</small>
+    </h3>
+{% endblock %}
+
+{% block content %}
+    {{ form_start(configuration_form, {'attr' : {
+        'class' : 'form-horizontal'
+    }}) }}
+        <div class="portlet light bordered">
+
+            {# GENERALE #}
+            <div class="portlet-title">
+                <div class="caption">
+                    <span class="caption-subject font-red-sunglo bold uppercase">Générale</span>
+                </div>
+            </div>
+            <div class="portlet-body form">
+                <div class="form-body">
+                    <div class="form-group">
+                        {{ form_label(configuration_form.site_name, null, {'label': 'Nom du site', 'label_attr': {'class': 'col-md-2 control-label'}}) }}
+                        <div class="col-md-10">
+                            {{ form_widget(configuration_form.site_name, {'attr': {'class': 'form-control', 'placeholder' : 'Nom du site'}}) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(configuration_form.mode_maintenance, null, {'label': 'Mode maintenance', 'label_attr': {'class': 'col-md-2 control-label'}}) }}
+                        <div class="col-md-10">
+                            <div class="radio-list">
+                                <label class="radio-inline">
+                                    {{ form_widget(configuration_form.mode_maintenance.0) }} {{ 'yes' |trans({}, 'bo_formlabel') }} </label>
+                                <label class="radio-inline">
+                                    {{ form_widget(configuration_form.mode_maintenance.1) }} {{ 'no' |trans({}, 'bo_formlabel') }} </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(configuration_form.mode_maintenance_text, null, {'label': 'Texte de maintenance', 'label_attr': {'class': 'col-md-2 control-label'}}) }}
+                        <div class="col-md-10">
+                            {{ form_widget(configuration_form.mode_maintenance_text, {'attr': {'class': 'form-control', 'placeholder' : 'Texte de maintenance'}}) }}
+                            <p class="help-block">Affiché seulement lorsque le site est en mode maintenance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {# REFERENCEMENT #}
+            <div class="portlet-title">
+                <div class="caption">
+                    <span class="caption-subject font-red-sunglo bold uppercase">Référencement</span>
+                </div>
+            </div>
+            <div class="portlet-body form">
+                <div class="form-body">
+                    <div class="form-group">
+                        {{ form_label(configuration_form.meta_title, null, {'label': 'Méta titre', 'label_attr': {'class': 'col-md-2 control-label'}}) }}
+                        <div class="col-md-10">
+                            {{ form_widget(configuration_form.meta_title, {'attr': {'class': 'form-control', 'placeholder' : 'Méta titre'}}) }}
+                            <p class="help-block">Le méta-titre ne doit pas dépasser 55 caractères.</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(configuration_form.meta_description, null, {'label': 'Méta description', 'label_attr': {'class': 'col-md-2 control-label'}}) }}
+                        <div class="col-md-10">
+                            {{ form_widget(configuration_form.meta_description, {'attr': {'class': 'form-control', 'placeholder' : 'Méta description'}}) }}
+                            <p class="help-block">La méta-description ne doit pas dépasser 155 caractères.</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(configuration_form.meta_keywords, null, {'label': 'Mots-clés', 'label_attr': {'class': 'col-md-2 control-label'}}) }}
+                        <div class="col-md-10">
+                            {{ form_widget(configuration_form.meta_keywords, {'attr': {'class': 'form-control', 'placeholder' : 'Mots-clés'}}) }}
+                            <p class="help-block">Les mots-clés doivent être séparés par des virgules.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {# CONTACT #}
+            <div class="portlet-title">
+                <div class="caption">
+                    <span class="caption-subject font-red-sunglo bold uppercase">Contact</span>
+                </div>
+            </div>
+            <div class="portlet-body form">
+                <div class="form-body">
+                    <div class="form-group">
+                        {{ form_label(configuration_form.contact_phone, null, {'label': 'Téléphone', 'label_attr': {'class': 'col-md-2 control-label'}}) }}
+                        <div class="col-md-10">
+                            {{ form_widget(configuration_form.contact_phone, {'attr': {'class': 'form-control', 'placeholder' : 'Téléphone'}}) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(configuration_form.contact_fax, null, {'label': 'Fax', 'label_attr': {'class': 'col-md-2 control-label'}}) }}
+                        <div class="col-md-10">
+                            {{ form_widget(configuration_form.contact_fax, {'attr': {'class': 'form-control', 'placeholder' : 'Fax'}}) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(configuration_form.contact_email, null, {'label': 'Email', 'label_attr': {'class': 'col-md-2 control-label'}}) }}
+                        <div class="col-md-10">
+                            {{ form_widget(configuration_form.contact_email, {'attr': {'class': 'form-control', 'placeholder' : 'Email'}}) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {# ANALYTICS #}
+            <div class="portlet-title">
+                <div class="caption">
+                    <span class="caption-subject font-red-sunglo bold uppercase">Google</span>
+                </div>
+            </div>
+            <div class="portlet-body form">
+                <div class="form-body">
+                    <div class="form-group">
+                        {{ form_label(configuration_form.google_analytics, null, {'label': 'Clé analytics', 'label_attr': {'class': 'col-md-2 control-label'}}) }}
+                        <div class="col-md-10">
+                            {{ form_widget(configuration_form.google_analytics, {'attr': {'class': 'form-control', 'placeholder' : 'Clé analytics'}}) }}
+                            <p class="help-block">La clé analytics doit être sous la forme UA-XXXX-X</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {# SOCIAL #}
+            <div class="portlet-title">
+                <div class="caption">
+                    <span class="caption-subject font-red-sunglo bold uppercase">Social</span>
+                </div>
+            </div>
+            <div class="portlet-body form">
+                <div class="form-body">
+                    <div class="form-group">
+                        {{ form_label(configuration_form.social_facebook, null, {'label': 'Page Facebook', 'label_attr': {'class': 'col-md-2 control-label'}}) }}
+                        <div class="col-md-10">
+                            {{ form_widget(configuration_form.social_facebook, {'attr': {'class': 'form-control', 'placeholder' : 'Page Facebook'}}) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(configuration_form.social_twitter, null, {'label': 'Compte Instagram', 'label_attr': {'class': 'col-md-2 control-label'}}) }}
+                        <div class="col-md-10">
+                            {{ form_widget(configuration_form.social_twitter, {'attr': {'class': 'form-control', 'placeholder' : 'Compte Instagram'}}) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(configuration_form.website, null, {'label': 'Site Web', 'label_attr': {'class': 'col-md-2 control-label'}}) }}
+                        <div class="col-md-10">
+                            {{ form_widget(configuration_form.website, {'attr': {'class': 'form-control', 'placeholder' : 'Site Web'}}) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {# SAVE #}
+            <div class="form-actions">
+                <div class="row">
+                    <div class="col-md-offset-3 col-md-4">
+                        <button class="btn green" type="submit">Enregistrer</button>
+                        <a class="btn default" href="{{ path('backend_configuration_index') }}">Retour</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{ form_end(configuration_form) }}
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends 'backend/_layout.html.twig' %}
+
+{% block stylesheets %}
+{% endblock %}
+{% block content %}
+    <style>
+        .input_mail{
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+        /* formulaire */
+        input[type=text], select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+        label{
+            margin-left: 0px;
+        }
+        .hUnAlign{
+            text-align: center;
+        }
+    </style>
+
+    <h1 class="hUnAlign">Modifier les Newsletters</h1>
+
+    {{ form_start(edit_form) }}
+    {{ form_widget(edit_form) }}
+    {#
+            <input type="submit" value="Edit" />
+    #}
+
+    <p style="text-align: right; font-size: 26px">
+        <i class="fa fa-eye fa-lg" aria-hidden="true"></i>
+        <a href="{{ path('backend__news_shows', { 'id': edit_form.id }) }}" style="text-decoration: none">Voir le newsletter</a>
+    </p>
+    {{ form_end(edit_form) }}
+    {#
+    <ul>
+        <li>
+            <a href="{{ path('backend__news_shows') }}">Back to the list</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+    #}
+{% endblock %}

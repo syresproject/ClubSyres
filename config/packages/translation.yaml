@@ -1,0 +1,8 @@
+framework:
+    default_locale: fr
+ ##   translator:
+  #      default_path: '%kernel.project_dir%/translations'
+   #     fallbacks:
+    #        - en
+
+#les fichier translation il sont placer ou ? je les mis a la racine du src c'e

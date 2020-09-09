@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New PDeuxIns{% endblock %}
+
+{% block content %}
+    {{ parent() }}
+    <h1>Create new PDeuxIns</h1>
+
+
+    {{ include('p_deux_ins/_form.html.twig') }}
+    {{ include('form_trois/_form.html.twig') }}
+
+
+    <a href="{{ path('p_deux_ins_index') }}">back to list</a>
+{% endblock %}
